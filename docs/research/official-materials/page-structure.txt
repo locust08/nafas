@@ -1,0 +1,75 @@
+WEBSITES PAGES STRUCTURE / LAYOUT
+Planned pages include:
+Home 
+Hero Section 
+Dari tanah ke kehidupan…>>> Daripada peladang untuk Peladang
+Info Lanjut 
+Hubungi Kami 
+Gambaran Syarikat ( about us )
+Info lanjut 
+Kepakaran / Keupayaan (Expertise/ Capabilities) -Count number 
+Nilai Membina Perubahan 
+Industri Yang Dilayani (Industries Served)
+Untuk Planet Kita 
+Komitmen Kelestarian Jaminan Makanan 
+Info lanjut 
+Berita Terkini 
+Berita dan inisiatif Terkini NBK 
+Info Lanjut 
+Seruan Tindakan (CTA)
+About Us 
+Update Info (Company Overview)
+Gambaran Syarikat (Company Background)
+Muat Turun Profil Syarikat (Company Profile)   
+Nilai Teras (Core Values)/ Piawaian 
+Visi, Misi dan Tujuan 
+Arah tuju dan Prinsip yang membimbing Operasi Kami 
+Carta Organisasi (Leadership Team / Key Personnel)
+Pencapaian (Milestones / Company Growth Timeline)
+Fakta Korporat 
+Lokasi Gudang (Peta) 
+Perkhidmatan 
+Operasi Pembungkusan 
+Pergudangan Baja 
+Jualan dan Pemasaran 
+Pengimportan Baja 
+Agronomi
+CTA 
+Produk
+Banner Produk 
+Testimoni / Pencapaian Kejayaan (Testimonials / Success Highlights)
+Sasaran Kami 
+Manfaat dan hasil 
+Nilai yang Diperoleh Pelanggan
+Gambaran Keseluruhan Produk
+tunjukkan 7 kategori baja 
+Lihat Semua  (View Product)
+eg: Urea Prill (UP) 
+Maklumat Produk 
+Hantar Pertanyaan 
+Dokumen produk 
+Muat Turun Brosur 
+Galeri
+M Safety Data Sheet (MSDS) -Preview 
+Certification of Analysis (COA)-Preview 
+CTA
+Kelestarian (Sustainability) 
+Komitmen kami terhadap Pertanian Lestari 
+Ketahui lebih lanjut ( ESG Report) 
+Pendekatan Kami 
+Pendidikan Kita 
+Bagaimana Kami Mengintegrasikan Kelestarian 
+Ketahui lebih lanjut ( Share education Poster Izzah )
+Galeri Kelestarian
+2025, 2026, …
+CTA
+News and Media 
+Event etc
+Pengedar
+Kerjaya (Careers) 
+Inspired by MAHAJAYA 
+Hubungi Kami 
+Connect with Us 
+Name, Phone/ Email, Jenis Tanaman (type)  ,Luas ladang (Option-<1 ekar, 1-10 ekar, etc) , State, Company name , Type of Enquiry (Dropdown option product enquiry and feedback) , Your Enquiry
+Voice your concern
+ Feedback

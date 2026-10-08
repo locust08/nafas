@@ -1,0 +1,604 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/c7e23cb4-b5b6-4362-90ba-66957937580c";
+const imgImage = `${assetPathPrefix}/7a0b4.png`;
+const imgLine313 = `${assetPathPrefix}/510c2.svg`;
+const imgRectangle26 = `${assetPathPrefix}/1f96f.png`;
+const imgFrame1000002052 = `${assetPathPrefix}/92ea4.svg`;
+const imgLine312 = `${assetPathPrefix}/cf93b.svg`;
+const imgRectangle315 = `${assetPathPrefix}/33eeb.png`;
+const imgRectangle316 = `${assetPathPrefix}/26207.png`;
+const imgRectangle354 = `${assetPathPrefix}/de268.png`;
+const imgRectangle355 = `${assetPathPrefix}/6d333.png`;
+const imgRectangle356 = `${assetPathPrefix}/4dea1.png`;
+const imgRectangle357 = `${assetPathPrefix}/cb8f7.png`;
+const imgRectangle359 = `${assetPathPrefix}/9fceb.png`;
+const imgVector32 = `${assetPathPrefix}/5393a.png`;
+const imgRectangle325 = `${assetPathPrefix}/0da4e.png`;
+const imgSm5B321C99945A21 = `${assetPathPrefix}/cd5ac.png`;
+const imgFrame1000002053 = `${assetPathPrefix}/16b3b.svg`;
+const imgFrame1000002054 = `${assetPathPrefix}/c7a7e.svg`;
+const imgGroup1000001831 = `${assetPathPrefix}/182cd.svg`;
+const imgVector31 = `${assetPathPrefix}/af321.svg`;
+const imgVector = `${assetPathPrefix}/b50ff.svg`;
+const imgVector1 = `${assetPathPrefix}/9b828.svg`;
+const imgVector2 = `${assetPathPrefix}/39fc4.svg`;
+
+type HeaderGreenHpsp2Props = {
+  className?: string;
+  property1?: "Default";
+};
+
+function HeaderGreenHpsp2({ className, property1 = "Default" }: HeaderGreenHpsp2Props) {
+  return (
+    <button className={className || "block h-[113px] relative w-[1920px]"} data-node-id="17668:1242">
+      <div className="absolute h-[113px] left-[100px] top-0 w-[1720px]" data-node-id="17668:1243" />
+      <div className="absolute content-stretch flex gap-[20px] items-center left-[380px] top-[43px]" data-node-id="17668:1244">
+        <div className="[word-break:break-word] content-stretch cursor-pointer flex gap-[10px] items-center leading-[1.2] not-italic relative shrink-0 text-left text-white whitespace-nowrap" data-node-id="17668:1245">
+          <p className="font-['Tomorrow:Medium'] relative shrink-0 text-[22px]" data-node-id="17668:1246">
+            Tentang Kami
+          </p>
+          <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0 text-[20px]" data-node-id="17668:1247">
+            angle-down
+          </p>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex gap-[10px] items-center leading-[1.2] not-italic relative shrink-0 text-left text-white whitespace-nowrap" data-node-id="17668:1248">
+          <p className="font-['Tomorrow:Medium'] relative shrink-0 text-[22px]" data-node-id="17668:1249">
+            Produk Kami
+          </p>
+          <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0 text-[20px]" data-node-id="17668:1250">
+            angle-down
+          </p>
+        </div>
+        <div className="[word-break:break-word] cursor-pointer font-['Tomorrow:Medium'] leading-[0] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1253">
+          <p className="leading-[1.2]">Kelestarian</p>
+        </div>
+        <div className="content-stretch cursor-pointer flex items-center relative shrink-0" data-node-id="17668:1251">
+          <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1252">{`Berita & Media`}</p>
+        </div>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1255">
+          Pengedar
+        </p>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1254">
+          Kerjaya
+        </p>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#006430] text-[22px] text-left w-[87px] whitespace-pre-wrap" data-node-id="17868:1328">{`     BM     `}</p>
+        <div className="flex h-[20px] items-center justify-center relative shrink-0 w-0" data-node-id="17868:1338">
+          <div className="flex-none rotate-90">
+            <div className="h-0 relative w-[20px]">
+              <div className="absolute inset-[-1px_0_0_0]">
+                <img alt="" className="block max-w-none size-full" src={imgLine313} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white w-[83px] whitespace-pre-wrap" data-node-id="17868:1351">{`     EN     `}</p>
+      </div>
+      <div className="absolute contents left-[129px] top-[17px]" data-node-id="17668:1256">
+        <div className="absolute h-[87px] left-[129px] top-[17px] w-[211px]" data-node-id="17668:1257" data-name="image">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[100.28%] left-[-0.15%] max-w-none top-[-0.57%] w-[111.85%]" src={imgImage} />
+          </div>
+        </div>
+      </div>
+      <div className="[word-break:break-word] absolute border border-solid border-white content-stretch flex gap-[10px] items-center justify-center leading-[1.2] left-[1547px] not-italic px-[30px] py-[20px] rounded-[40px] text-[22px] text-center text-white top-[24px] whitespace-nowrap" data-node-id="17668:1258" data-name="second button">
+        <p className="font-['Tomorrow:Medium'] relative shrink-0" data-node-id="I17668:1258;17668:1228">
+          Hubungi Kami
+        </p>
+        <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0" data-node-id="I17668:1258;17668:1229">
+          arrow-right
+        </p>
+      </div>
+    </button>
+  );
+}
+
+function FooterV4({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[742px] relative w-[1920px]"} data-node-id="17680:2881" data-name="footer v4">
+      <div className="absolute bg-gradient-to-t from-[#012b22] h-[742px] left-0 rounded-tl-[40px] rounded-tr-[40px] to-[#194139] top-0 w-[1920px]" data-node-id="17680:2801" />
+      <div className="absolute content-stretch flex gap-[497px] items-start left-[100px] top-[80px] w-[1720px]" data-node-id="17680:2802">
+        <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0" data-node-id="17680:2803" data-name="Logo & Short Description">
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="17680:2804">
+            <div className="col-1 h-[108px] ml-0 mt-0 relative row-1 w-[277px]" data-node-id="17680:2805">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute h-[214.69%] left-[-4.07%] max-w-none top-[-43.58%] w-full" src={imgRectangle26} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex font-['Font_Awesome_5_Brands:Regular'] gap-[20px] items-center leading-[normal] not-italic relative shrink-0 text-[30px] text-center text-white whitespace-nowrap" data-node-id="17680:2806">
+            <p className="relative shrink-0" data-node-id="17680:2807">
+              instagram
+            </p>
+            <p className="relative shrink-0" data-node-id="17680:2808">
+              facebook-f
+            </p>
+            <p className="relative shrink-0" data-node-id="17680:2809">
+              tiktok
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-[1_0_0] gap-[141px] items-start min-w-px relative" data-node-id="17680:2810">
+          <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0" data-node-id="17680:2811" data-name="navigation">
+            <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17680:2812">
+              Pautan Pantas
+            </p>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2813">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2814" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Tentang Kami
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2815">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2816" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Perkhidmatan
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2817">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2818" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Kelestarian
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2819">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2820" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Sumber
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2821">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2822" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Pengedar
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2823">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2824" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Hubungi Kami
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0" data-node-id="17680:2825" data-name="navigation">
+            <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17680:2826">
+              Produk
+            </p>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2827">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2828" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2829">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2830" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Gred Tinggi
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2831">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2832" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Sebatian
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2833">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2834" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Sebatian Kompak
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2835">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2836" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Foliar
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2837">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2838" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Organik
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0" data-node-id="17680:2839" data-name="Contact Details">
+            <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17680:2840">
+              Contact Us
+            </p>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2841">
+              <div className="content-stretch flex flex-col h-[130px] items-start relative shrink-0 w-[346px]" data-node-id="17680:2842">
+                <div className="h-[162px] relative shrink-0 w-full" data-node-id="17680:2843">
+                  <div className="absolute contents left-[11px] top-[7px]" data-node-id="17680:2844">
+                    <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid'] leading-[1.2] left-[11px] not-italic text-[25px] text-justify text-white top-[7px] whitespace-nowrap" data-node-id="17680:2845">
+                      map-marker-alt
+                    </p>
+                  </div>
+                  <div className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[0] left-[50px] text-[#f5f5f5] text-[18px] top-[2px] w-[287px] whitespace-pre-wrap" data-node-id="17680:2846" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[1.8] mb-0">{`Lot 1, Jalan Teknologi 3/5, Taman Sains Selangor 1, `}</p>
+                    <p className="leading-[1.8]">Kota Damansara, 47810 Petaling Jaya, Selangor Darul Ehsan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2847">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-[346px]" data-node-id="17680:2848">
+                <div className="h-[44px] relative shrink-0 w-full" data-node-id="17680:2849">
+                  <div className="absolute contents left-[11px] top-[7px]" data-node-id="17680:2850">
+                    <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid'] leading-[1.2] left-[11px] not-italic text-[25px] text-justify text-white top-[7px] whitespace-nowrap" data-node-id="17680:2851">
+                      mobile
+                    </p>
+                  </div>
+                  <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.8] left-[50px] text-[#f5f5f5] text-[18px] top-[6px] w-[287px]" data-node-id="17680:2852" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    03 6144 1200
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2853">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-[346px]" data-node-id="17680:2854">
+                <div className="h-[44px] relative shrink-0 w-full" data-node-id="17680:2855">
+                  <div className="absolute contents left-[11px] top-[7px]" data-node-id="17680:2856">
+                    <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid'] leading-[1.2] left-[11px] not-italic text-[25px] text-justify text-white top-[7px] whitespace-nowrap" data-node-id="17680:2857">
+                      envelope
+                    </p>
+                  </div>
+                  <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.8] left-[49px] text-[#f5f5f5] text-[18px] top-[6px] w-[287px]" data-node-id="17680:2858" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    info@nafas.com.my
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex gap-[25px] items-center left-[101px] top-[479px]" data-node-id="17680:2859" data-name="credits">
+        <div className="[word-break:break-word] content-stretch flex flex-col font-['Open_Sans:Regular'] font-normal gap-[25px] h-[183px] items-start relative shrink-0 w-[932px]" data-node-id="17680:2880">
+          <p className="leading-[1.8] overflow-hidden relative shrink-0 text-[18px] text-ellipsis text-white w-[757px] whitespace-nowrap" data-node-id="17680:2861" style={{ fontVariationSettings: '"wdth" 100' }}>
+            © 2026 NAFAS Bajakimia Sdn Bhd ( 20112345778445 ) | All rights reserved.
+          </p>
+          <div className="leading-[0] min-w-full opacity-30 relative shrink-0 text-[16px] text-[rgba(245,245,245,0.51)] w-[min-content] whitespace-pre-wrap" data-node-id="17680:2862" style={{ fontVariationSettings: '"wdth" 100' }}>
+            <p className="leading-[1.5] mb-0">{`Disclaimer: Some images on this website are sourced from Noun Projects& Pexel. We strive to adhere to mentioned resource’s terms of use and provide proper attribution. `}</p>
+            <p className="leading-[1.5]">If there are any concerns about the usage of these images, please contact us directly. We appreciate the contributions of mentioned resources.</p>
+          </div>
+        </div>
+        <div className="bg-[rgba(255,255,255,0.3)] border border-[#00a650] border-solid content-stretch flex flex-col h-[183px] items-start pb-[34px] pt-[35px] px-[40px] relative rounded-[40px] shrink-0 w-[764px]" data-node-id="17680:2879">
+          <div className="content-stretch flex gap-[100px] items-center relative shrink-0" data-node-id="17680:2878">
+            <div className="content-stretch flex gap-[28px] items-center relative shrink-0" data-node-id="17680:2870">
+              <div className="relative shrink-0 size-[78px]" data-node-id="17680:2864">
+                <div className="absolute inset-[-1.28%_-8.97%_-10.26%_-1.28%]">
+                  <img alt="" className="block max-w-none size-full" src={imgFrame1000002052} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-white w-[109px]" data-node-id="17680:2869">
+                <p className="font-['Tomorrow:Bold'] leading-[1.2] not-italic relative shrink-0 text-[45px] text-center w-full" data-node-id="17680:2867">
+                  128
+                </p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[18px] w-full" data-node-id="17680:2868" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Today Visitor
+                </p>
+              </div>
+            </div>
+            <div className="flex h-[114px] items-center justify-center relative shrink-0 w-0" data-node-id="17680:2877">
+              <div className="flex-none rotate-90">
+                <div className="h-0 relative w-[114px]">
+                  <div className="absolute inset-[-1px_0_0_0]">
+                    <img alt="" className="block max-w-none size-full" src={imgLine312} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[28px] items-center relative shrink-0" data-node-id="17680:2871">
+              <div className="relative shrink-0 size-[78px]" data-node-id="17680:2872">
+                <div className="absolute inset-[-1.28%_-8.97%_-10.26%_-1.28%]">
+                  <img alt="" className="block max-w-none size-full" src={imgFrame1000002052} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-white" data-node-id="17680:2874">
+                <p className="font-['Tomorrow:Bold'] leading-[1.2] not-italic relative shrink-0 text-[45px] text-center whitespace-nowrap" data-node-id="17680:2875">
+                  10,644
+                </p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-full relative shrink-0 text-[18px] w-[min-content]" data-node-id="17680:2876" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Total Visitor
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[rgba(245,245,245,0.1)] h-[0.998px] left-[101px] top-[438px] w-[1720px]" data-node-id="17680:2860" />
+    </div>
+  );
+}
+
+function CtaV21({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-white content-stretch flex flex-col items-center justify-center px-[483px] py-[80px] relative w-[1920px]"} data-node-id="16976:1466" data-name="cta v2.1">
+      <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-center w-[1240px]" data-node-id="16976:1459">
+        <p className="font-['Tomorrow:Medium'] leading-[1.2] min-w-full not-italic relative shrink-0 text-[#7cac2f] text-[27px] w-[min-content]" data-node-id="16976:1460">
+          Mari Bekerjasama
+        </p>
+        <p className="font-['Tomorrow:SemiBold'] leading-[1.2] min-w-full not-italic relative shrink-0 text-[#1d1d1d] text-[35px] w-[min-content]" data-node-id="16976:1461">
+          Mencari rakan pembekal baja yang boleh dipercayai?
+        </p>
+        <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-full relative shrink-0 text-[#1d1d1d] text-[18px] w-[min-content]" data-node-id="16976:1462" style={{ fontVariationSettings: '"wdth" 100' }}>
+          Hubungi kami untuk membincangkan keperluan anda atau sebarang pertanyaan.
+        </p>
+        <div className="bg-[#7cac2f] content-stretch flex gap-[10px] items-center justify-center leading-[1.2] not-italic px-[30px] py-[20px] relative rounded-[40px] shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17305:564" data-name="primary button">
+          <p className="font-['Tomorrow:Medium'] relative shrink-0" data-node-id="I17305:564;17248:1548">
+            Hubungi Kami
+          </p>
+          <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0" data-node-id="I17305:564;17248:1549">
+            arrow-right
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ProductCatagories() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="17668:1677" data-name="product catagories">
+      <div className="absolute h-[988px] left-0 top-0 w-[2163px]" data-node-id="17668:1680" data-name="banner + intro">
+        <div className="absolute contents left-0 top-0" data-node-id="17668:1681">
+          <div className="absolute h-[988px] left-0 top-0 w-[1920px]" data-node-id="17668:1682">
+            <div aria-hidden className="absolute inset-0 pointer-events-none">
+              <img alt="" className="absolute max-w-none object-cover size-full" src={imgRectangle315} />
+              <div className="absolute bg-gradient-to-b from-[rgba(206,204,217,0.52)] inset-0 to-[rgba(102,102,102,0)]" />
+            </div>
+          </div>
+          <div className="absolute h-[669px] left-[863px] top-[319px] w-[1300px]" data-node-id="17668:1683">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle316} />
+          </div>
+        </div>
+        <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[340px] top-[210px] w-[825px]" data-node-id="17668:1684">
+          <p className="font-['Tomorrow:Bold'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[55px] w-full" data-node-id="17668:1685">
+            Baja Tunggal
+          </p>
+          <div className="font-['Open_Sans:Regular'] font-normal leading-[0] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:1686" style={{ fontVariationSettings: '"wdth" 100' }}>
+            <p className="leading-[1.8] mb-0">NAFAS Bajakimia Sdn. Bhd. menyediakan rangkaian Baja Tunggal yang lengkap untuk memenuhi keperluan nutrien tanaman secara khusus di sektor pertanian dan perladangan di seluruh Malaysia.</p>
+            <p className="leading-[1.8]">Produk yang ditawarkan merangkumi Urea Prill (UP), Urea Granular (UG), Muriate of Potash (MOP), Phosphate Rock (CIRP / ERP), Ammonium Sulphate (AS), Ammonium Chloride (AC), Borate (B), Zeolite (Zeo), Ground Magnesium Limestone (GML), Calcium Magnesium Carbonate (Dolomite), Kieserite (Kies) dan Magnesium Oxide (MgO), yang diformulasikan selaras dengan piawaian industri dan keperluan nutrien tanaman yang berbeza.</p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col gap-[40px] items-center left-[100px] top-[1068px] w-[1720px]" data-node-id="17668:1717" data-name="sector">
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-center w-[1240px]" data-node-id="17668:1718">
+          <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#7cac2f] text-[27px] w-full" data-node-id="17668:1719">
+            Sasaran Kami
+          </p>
+          <p className="font-['Tomorrow:SemiBold'] leading-[0] not-italic relative shrink-0 text-[#1d1d1d] text-[35px] w-full" data-node-id="17668:1720">
+            <span className="leading-[1.2]">{`Untuk setiap keperluan dalam `}</span>
+            <span className="leading-[1.2] text-[#7cac2f]">sektor pertanian</span>
+          </p>
+          <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#1d1d1d] text-[18px] w-full" data-node-id="17668:1721" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Kami membekalkan baja dan penyelesaian kepada pelbagai segmen termasuk perladangan, pengedar, komuniti petani dan institusi pertanian.
+          </p>
+        </div>
+        <div className="content-stretch flex gap-[20px] items-center relative shrink-0 w-full" data-node-id="17668:1722">
+          <div className="h-[539px] relative shrink-0 w-[417px]" data-node-id="17668:1723">
+            <div className="absolute h-[539px] left-0 top-0 w-[417px]" data-node-id="17668:1724">
+              <div className="absolute inset-[-0.56%_-2.7%_-9.28%_-2.7%]">
+                <img alt="" className="block max-w-none size-full" height="592" src={imgRectangle354} width="439.517" />
+              </div>
+            </div>
+            <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[53px] top-[341px] w-[280px]" data-node-id="17668:1725">
+              <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:1726">
+                Perladangan kelapa sawit dan pertanian besar
+              </p>
+              <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:1727" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Bekalan baja berkualiti menyokong hasil ladang berskala besar
+              </p>
+            </div>
+            <div className="absolute left-[53px] size-[78px] top-[239px]" data-node-id="17668:1728">
+              <div className="absolute inset-[-1.28%_-8.97%_-10.26%_-1.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgFrame1000002053} />
+              </div>
+            </div>
+          </div>
+          <div className="h-[539px] relative shrink-0 w-[417px]" data-node-id="17668:1730">
+            <div className="absolute h-[539px] left-0 top-0 w-[417px]" data-node-id="17668:1731">
+              <div className="absolute inset-[-0.56%_-2.7%_-9.28%_-2.7%]">
+                <img alt="" className="block max-w-none size-full" height="592" src={imgRectangle355} width="439.517" />
+              </div>
+            </div>
+            <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[53px] top-[341px] w-[280px]" data-node-id="17668:1732">
+              <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:1733">
+                Pembekal dan pengedar baja untuk ladang
+              </p>
+              <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:1734" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Bekalan baja cekap dan konsisten untuk pengedar dipercayai
+              </p>
+            </div>
+            <div className="absolute left-[53px] size-[78px] top-[239px]" data-node-id="17668:1735">
+              <div className="absolute inset-[-1.28%_-8.97%_-10.26%_-1.28%]">
+                <img alt="" className="block max-w-none size-full" src={imgFrame1000002054} />
+              </div>
+            </div>
+          </div>
+          <div className="h-[539px] relative shrink-0 w-[417px]" data-node-id="17668:1737">
+            <div className="absolute h-[539px] left-0 top-0 w-[417px]" data-node-id="17668:1738">
+              <div className="absolute inset-[-0.56%_-2.7%_-9.28%_-2.7%]">
+                <img alt="" className="block max-w-none size-full" height="592" src={imgRectangle356} width="439.517" />
+              </div>
+            </div>
+            <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[53px] top-[341px] w-[280px]" data-node-id="17668:1739">
+              <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:1740">
+                Petani serta kumpulan pertanian berorganisasi
+              </p>
+              <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:1741" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Penyelesaian baja praktikal menyokong komuniti petani dan organisasi pertanian
+              </p>
+            </div>
+            <div className="absolute bg-white content-stretch drop-shadow-[6px_7px_1.5px_rgba(133,133,133,0),4px_5px_1.5px_rgba(133,133,133,0.01),2px_3px_1px_rgba(133,133,133,0.05),1px_1px_1px_rgba(133,133,133,0.09),0px_0px_0.5px_rgba(133,133,133,0.1)] flex items-center justify-center left-[53px] pb-[17px] pt-[18px] px-[19px] rounded-[39px] size-[78px] top-[239px]" data-node-id="17668:1742">
+              <div className="h-[33px] relative shrink-0 w-[26.77px]" data-node-id="17668:1743">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup1000001831} />
+              </div>
+            </div>
+          </div>
+          <div className="h-[539px] relative shrink-0 w-[417px]" data-node-id="17668:1749">
+            <div className="absolute h-[539px] left-0 top-0 w-[417px]" data-node-id="17668:1750">
+              <div className="absolute inset-[-0.56%_-2.7%_-9.28%_-2.7%]">
+                <img alt="" className="block max-w-none size-full" height="592" src={imgRectangle357} width="439.517" />
+              </div>
+            </div>
+            <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[53px] top-[341px] w-[280px]" data-node-id="17668:1751">
+              <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:1752">
+                Inisiatif pertanian kerajaan dan institusi
+              </p>
+              <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:1753" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Kerjasama agensi kerajaan memperkukuh pembangunan pertanian mampan
+              </p>
+            </div>
+            <div className="absolute bg-white content-stretch drop-shadow-[6px_7px_1.5px_rgba(133,133,133,0),4px_5px_1.5px_rgba(133,133,133,0.01),2px_3px_1px_rgba(133,133,133,0.05),1px_1px_1px_rgba(133,133,133,0.09),0px_0px_0.5px_rgba(133,133,133,0.1)] flex items-center justify-center left-[53px] pb-[17px] pt-[18px] px-[19px] rounded-[39px] size-[78px] top-[239px]" data-node-id="17668:1754">
+              <p className="[word-break:break-word] font-['Font_Awesome_5_Free:Solid'] leading-[normal] not-italic relative shrink-0 text-[#7cac2f] text-[33px] whitespace-nowrap" data-node-id="17668:1755">
+                landmark
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[973px] left-0 top-[1873px] w-[1820px]" data-node-id="17668:1756" data-name="benefit">
+        <div className="absolute contents left-0 top-0" data-node-id="17668:1757">
+          <div className="absolute h-[742px] left-0 top-0 w-[974px]" data-node-id="17668:1758">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle359} />
+          </div>
+          <div className="absolute h-[827px] left-[661px] top-[146px] w-[889px]" data-node-id="17668:1759">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector31} />
+          </div>
+          <div className="absolute h-[742.5px] left-[753.5px] top-0 w-[244px]" data-node-id="17668:1760">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" height="742.5" src={imgVector32} width="244" />
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col gap-[40px] items-start justify-center left-[1056px] top-[130px] w-[764px]" data-node-id="17668:1761" data-name="intro">
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-start not-italic relative shrink-0 w-full" data-node-id="17668:1762">
+            <p className="font-['Tomorrow:Medium'] leading-[1.2] relative shrink-0 text-[#7cac2f] text-[27px] w-full" data-node-id="17668:1763">{`Manfaat & Hasil`}</p>
+            <p className="font-['Tomorrow:SemiBold'] leading-[0] relative shrink-0 text-[#1d1d1d] text-[35px] w-full" data-node-id="17668:1764">
+              <span className="leading-[1.2] text-[#7cac2f]">{`Nilai `}</span>
+              <span className="leading-[1.2]">yang Diperoleh Pelanggan</span>
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-[504px]" data-node-id="17668:1765">
+            <div className="content-stretch flex gap-[40px] items-center relative shrink-0 w-full" data-node-id="17668:1766">
+              <div className="h-[44px] relative shrink-0 w-[36px]" data-node-id="17668:1767" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector} />
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-px relative text-[#1d1d1d] text-[18px]" data-node-id="17668:1768" style={{ fontVariationSettings: '"wdth" 100' }}>{`Bekalan yang stabil dan konsisten disokong oleh rangkaian import dan logistik yang kukuh `}</p>
+            </div>
+            <div className="content-stretch flex gap-[40px] items-center relative shrink-0 w-full" data-node-id="17668:1769">
+              <div className="h-[44px] relative shrink-0 w-[39px]" data-node-id="17668:1770" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector1} />
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-px relative text-[#1d1d1d] text-[18px]" data-node-id="17668:1771" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Produk berkualiti tinggi melalui pemeriksaan dalaman dan proses yang diseragamkan
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[40px] items-center relative shrink-0 w-full" data-node-id="17668:1772">
+              <div className="h-[44px] relative shrink-0 w-[43px]" data-node-id="17668:1773" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector2} />
+              </div>
+              <p className="[word-break:break-word] flex-[1_0_0] font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-px relative text-[#1d1d1d] text-[18px]" data-node-id="17668:1774" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Kecekapan operasi hasil daripada keupayaan pergudangan dan pengedaran bersepadu
+              </p>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex gap-[16px] items-center leading-[1.8] relative shrink-0 w-full" data-node-id="17668:1775">
+              <p className="font-['Font_Awesome_5_Free:Solid'] not-italic relative shrink-0 text-[#7cac2f] text-[33px] w-[67px]" data-node-id="17668:1776">
+                handshake
+              </p>
+              <p className="flex-[1_0_0] font-['Open_Sans:Regular'] font-normal min-w-px relative text-[#1d1d1d] text-[18px]" data-node-id="17668:1777" style={{ fontVariationSettings: '"wdth" 100' }}>{`Keyakinan bekalan jangka panjang yang disokong oleh pemilikan institusi serta pengalaman industri selama beberapa dekad. `}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[1252px] left-0 top-[2616px] w-[1920px]" data-node-id="17668:1778" data-name="product list">
+        <div className="absolute bg-gradient-to-b from-[rgba(222,248,206,0)] h-[806px] left-0 to-[rgba(255,255,255,0)] top-0 w-[1920px]" data-node-id="17668:1779" />
+        <div className="absolute content-stretch flex flex-col gap-[40px] items-center left-[340px] py-[80px] top-0 w-[1240px]" data-node-id="17668:1780" data-name="product list">
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] h-[94px] items-center not-italic relative shrink-0 text-center w-[902px]" data-node-id="17668:1781">
+            <p className="font-['Tomorrow:Medium'] leading-[1.2] relative shrink-0 text-[#7cac2f] text-[27px] w-full" data-node-id="17668:1782">
+              Produk
+            </p>
+            <p className="font-['Tomorrow:SemiBold'] leading-[0] relative shrink-0 text-[#1d1d1d] text-[35px] w-full" data-node-id="17668:1783">
+              <span className="leading-[1.2]">{`Rangkaian `}</span>
+              <span className="leading-[1.2] text-[#7cac2f]">Baja Tunggal</span>
+            </p>
+          </div>
+          <div className="content-stretch cursor-pointer flex gap-[20px] items-center relative shrink-0 w-full" data-node-id="17668:1784">
+            <a className="block drop-shadow-[148px_218px_37px_rgba(156,156,156,0),95px_139px_33.5px_rgba(156,156,156,0.01),53px_78px_28.5px_rgba(156,156,156,0.05),24px_35px_21px_rgba(156,156,156,0.09),6px_9px_11.5px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17668:1785">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17668:1786" />
+              <p className="[word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[75px] not-italic text-[#1d1d1d] text-[22px] text-left top-[324px] whitespace-nowrap" data-node-id="17668:1787">
+                Urea Prill (UP)
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17668:1788" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17668:1789">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+            <a className="block drop-shadow-[17px_13px_3px_rgba(156,156,156,0),11px_8px_2.5px_rgba(156,156,156,0.01),6px_5px_2.5px_rgba(156,156,156,0.05),3px_2px_1.5px_rgba(156,156,156,0.09),1px_1px_1px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17668:1790">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17668:1791" />
+              <p className="[word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[48px] not-italic text-[#1d1d1d] text-[22px] text-left top-[324px] whitespace-nowrap" data-node-id="17668:1792">
+                Urea Granular (UG)
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17668:1793" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17668:1794">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+            <a className="block drop-shadow-[17px_13px_3px_rgba(156,156,156,0),11px_8px_2.5px_rgba(156,156,156,0.01),6px_5px_2.5px_rgba(156,156,156,0.05),3px_2px_1.5px_rgba(156,156,156,0.09),1px_1px_1px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17668:1795">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17668:1796" />
+              <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[147.5px] not-italic text-[#1d1d1d] text-[22px] text-center top-[324px] w-[181px]" data-node-id="17668:1797">
+                Phosphate Rock (CIRP / ERP)
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17668:1798" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17668:1799">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+            <a className="block drop-shadow-[17px_13px_3px_rgba(156,156,156,0),11px_8px_2.5px_rgba(156,156,156,0.01),6px_5px_2.5px_rgba(156,156,156,0.05),3px_2px_1.5px_rgba(156,156,156,0.09),1px_1px_1px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17668:1800">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17668:1801" />
+              <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[147.5px] not-italic text-[#1d1d1d] text-[22px] text-center top-[324px] w-[181px]" data-node-id="17668:1802">{`Muriate of Potash (MOP) `}</p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17668:1803" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17668:1804">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+          </div>
+          <div className="content-stretch cursor-pointer flex gap-[20px] items-center justify-center relative shrink-0 w-full" data-node-id="17723:3706">
+            <a className="block drop-shadow-[17px_13px_3px_rgba(156,156,156,0),11px_8px_2.5px_rgba(156,156,156,0.01),6px_5px_2.5px_rgba(156,156,156,0.05),3px_2px_1.5px_rgba(156,156,156,0.09),1px_1px_1px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17723:3712">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17723:3713" />
+              <p className="[word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[48px] not-italic text-[#1d1d1d] text-[22px] text-left top-[324px] whitespace-nowrap" data-node-id="17723:3714">
+                Urea Granular (UG)
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17723:3715" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17723:3716">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+            <a className="block drop-shadow-[17px_13px_3px_rgba(156,156,156,0),11px_8px_2.5px_rgba(156,156,156,0.01),6px_5px_2.5px_rgba(156,156,156,0.05),3px_2px_1.5px_rgba(156,156,156,0.09),1px_1px_1px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17723:3717">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17723:3718" />
+              <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[147.5px] not-italic text-[#1d1d1d] text-[22px] text-center top-[324px] w-[181px]" data-node-id="17723:3719">
+                Phosphate Rock (CIRP / ERP)
+              </p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17723:3720" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17723:3721">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+            <a className="block drop-shadow-[17px_13px_3px_rgba(156,156,156,0),11px_8px_2.5px_rgba(156,156,156,0.01),6px_5px_2.5px_rgba(156,156,156,0.05),3px_2px_1.5px_rgba(156,156,156,0.09),1px_1px_1px_rgba(156,156,156,0.1)] h-[406px] relative shrink-0 w-[295px]" data-node-id="17723:3722">
+              <div className="absolute bg-white h-[406px] left-0 top-0 w-[295px]" data-node-id="17723:3723" />
+              <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Tomorrow:Medium'] leading-[1.2] left-[147.5px] not-italic text-[#1d1d1d] text-[22px] text-center top-[324px] w-[181px]" data-node-id="17723:3724">{`Muriate of Potash (MOP) `}</p>
+              <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.5] left-[100px] text-[#1d1d1d] text-[16px] text-left top-[280px] whitespace-nowrap" data-node-id="17723:3725" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+              <div className="absolute h-[240px] left-0 top-[20px] w-[295px]" data-node-id="17723:3726">
+                <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgRectangle325} />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <CtaV21 className="absolute bg-white content-stretch flex flex-col items-center justify-center left-[2px] px-[483px] py-[80px] top-[3788px] w-[1920px]" />
+      <FooterV4 className="absolute h-[742px] left-0 top-[4180px] w-[1920px]" />
+      <div className="absolute left-[1738px] size-[96px] top-[963px]" data-node-id="17668:1808" data-name="sm_5b321c99945a2 1">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSm5B321C99945A21} />
+      </div>
+      <HeaderGreenHpsp2 className="absolute block cursor-pointer h-[113px] left-0 top-[30px] w-[1920px]" />
+    </div>
+  );
+}

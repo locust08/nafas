@@ -1,0 +1,7 @@
+# Homepage, news and enquiry component specifications
+
+Homepage source: 17668:1317, desktop screenshots and contact sheets. At1440: hero copy x75/y280; title42px Tomorrow bold; nav logo154x57. Overview text x255, approx330px wide, precomposed masked farmer asset60, preserve entire graphic. Capacity greenhouse asset46 with white top/bottom gradients, metrics350,000/200,000/220,000 MT. Malaysia map100 source untouched. Values/silo gradient70 source untouched. Four expertise cards source19(port),107(NAFAS),58(truck),6(field). Planet background48 source untouched. Avoid partner template logos; official copy-listed partner names can appear as text until official marks supplied. News layout uses authentic award source; no fake company news. CTA/footer shared.
+
+News route: source actual article hotspot not operational. Listing/detail structure inferred from Orient reference; only authentic source award information from Drive copy. No invented date/author/corporate announcement. Enquiry route: original prototype Contact hotspot does not navigate. Fields based on supplied page-structure/copy, native input validation and email preparation, no pretend backend submission. Career: safe no supplied vacancies state, contact route. Pengedar: content available later, nav position betweenNews andCareer.
+
+Validation: compare desktop screenshot sections and inferred mobile/tablet states; check all route links, keyboard menu, contact validation/prepared email, reducedmotion, overflow, assets, console, metadata, lint/typecheck/build. No production URL configured.

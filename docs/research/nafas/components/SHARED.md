@@ -1,0 +1,5 @@
+# Shared component visual specifications
+
+At matching 1440px source viewport: header content x75–1365, top22/40, logo153x57; transparent initial header, white rounded scrolled panel. Desktop Tomorrow medium16px navigation. Buttons Tomorrow medium16px, height49px, full pill, green #80aa25, white arrow. Heading28px Tomorrow bold; body14px Open Sans with24px line-height. Central content930px; wide content1290px. Footer dark green gradient, top corners30px, four columns, source white logo and confirmed contact info. Repeated split sections600–750px; source precomposed masked images retained as images without re-drawing layers. Hero793px at1440 homepage,741px inner. Mobile: inferred single-column sections, 24px gutters, labeled disclosure menu, fixed accessible header, no scaled canvas.
+
+Interactions: sticky header responds to scroll, keyboard-accessible dropdowns/mobile menu, reveal .6s opacity/transform with modest20px travel, stagger where supported, image hover1.025/.35s. Reduced motion disables reveals/video autoplay and shows content. Route metadata excludes unknown canonical domain. No fake visitor counters, unavailable downloads or form-success claims.

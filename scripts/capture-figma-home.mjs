@@ -1,0 +1,12 @@
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.NAFAS_PLAYWRIGHT_PATH || 'playwright');
+const browser = await chromium.launch({ channel:'chrome', headless:true });
+const page = await browser.newPage({ viewport:{ width:1440, height:1000 }, deviceScaleFactor:1 });
+const url = 'https://www.figma.com/proto/D3opPmg9aXegenFd3eTM90/NAFAS-Bajakimia-Sdn-Bhd?node-id=17668-1317&viewport=217%2C506%2C0.08&t=XIbtLTfOOGjdVost-8&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=17668%3A1317&page-id=17668%3A1130&hide-ui=1';
+await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});
+await page.waitForTimeout(8000);
+console.log(page.url());
+console.log((await page.title()).slice(0,200));
+await page.screenshot({path:'output/playwright/strict-qa/figma-home-current.png'});
+await browser.close();

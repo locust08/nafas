@@ -1,0 +1,11 @@
+# Product implementation specification
+
+Source: official `copywriting-malay-v2.txt`, `page-structure.txt`, Figma category 17668:1677 and product 17668:1813 captures. Seven category routes and 38 product routes, plus category overview. Unknown categories/products return 404. All route params use the installed Next.js async page convention.
+
+Category hero: 741px at 1440px with precomposed official asset96; heading x255/y166 approximately42px Tomorrow, paragraph14px Open Sans/24px, width640px. Below: centered target heading, four wide audience photo cards; full-width left angled landscape/lab collage asset71 paired with four benefits; 930px product grid at four columns desktop/two mobile, seven related items at most; contact CTA/footer shared. Other categories reuse this sole supplied category frame and authentic names/formulas.
+
+Detail: white page under fixed header, left gallery and right title/specification panel, bordered title, five supplied specification rows and enquiry link. DAP gallery alone has matching front0/back28 with keyboard-operable thumbnails and native-dialog enlargement. All other products use neutral name/formula panels because individually matching images were not supplied. Never relabel DAP as Urea. Three distinct supplied ISO certificate graphics follow; related cards and shared CTA. No testimonial carousel: supplied example named person was not confirmed authentic.
+
+38 products: Tunggal12, Gred Tinggi3, Sebatian11, Sebatian Kompak7, Foliar2, Organik1, Campuran2. 35 five-field blocks are transcribed automatically from supplied copy; organic seven fields transcribed separately; mixtures have names only and enquiry instructions. Organic overview says NPK >5%, detailed copy says ±5%; detail preserves ±5% and confirmation note. Source sizes such as `>1% g/cm3`, pH `7–8%`, and nutrient max/min labels are preserved as supplied pending client confirmation. No agronomic recommendations invented.
+
+Missing brochures/MSDS/COA are visibly unavailable, never fake links. No domain/canonical guessed. Source mobile frames unavailable: responsive stacking inferred and requires local visual checks by root validation workflow. Own CSS module provides category/detail geometry; shared globals remain untouched.

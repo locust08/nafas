@@ -1,0 +1,703 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/b6edf48c-cfd7-49bf-be8a-7d67a1425372";
+const imgImage = `${assetPathPrefix}/7a0b4.png`;
+const imgLine313 = `${assetPathPrefix}/510c2.svg`;
+const imgA = `${assetPathPrefix}/e29bb.svg`;
+const imgRectangle26 = `${assetPathPrefix}/1f96f.png`;
+const imgFrame1000002052 = `${assetPathPrefix}/92ea4.svg`;
+const imgLine312 = `${assetPathPrefix}/cf93b.svg`;
+const imgRectangle315 = `${assetPathPrefix}/dd080.png`;
+const imgRectangle349 = `${assetPathPrefix}/0d0a3.png`;
+const imgRectangle348 = `${assetPathPrefix}/8110c.png`;
+const imgRectangle381 = `${assetPathPrefix}/be4ea.png`;
+const imgRectangle382 = `${assetPathPrefix}/224af.png`;
+const imgRectangle374 = `${assetPathPrefix}/0d6bf.png`;
+const imgRectangle378 = `${assetPathPrefix}/7001f.png`;
+const imgRectangle379 = `${assetPathPrefix}/02347.png`;
+const imgRectangle380 = `${assetPathPrefix}/c314e.png`;
+const imgSm5B321C99945A21 = `${assetPathPrefix}/cd5ac.png`;
+const imgEllipse18 = `${assetPathPrefix}/0a111.svg`;
+const imgGroup = `${assetPathPrefix}/2134f.svg`;
+const imgVector = `${assetPathPrefix}/826fd.svg`;
+const imgVector1 = `${assetPathPrefix}/c3770.svg`;
+
+type HeaderGreenHpsp2Props = {
+  className?: string;
+  property1?: "Default";
+};
+
+function HeaderGreenHpsp2({ className, property1 = "Default" }: HeaderGreenHpsp2Props) {
+  return (
+    <button className={className || "block h-[113px] relative w-[1920px]"} data-node-id="17668:1242">
+      <div className="absolute h-[113px] left-[100px] top-0 w-[1720px]" data-node-id="17668:1243" />
+      <div className="absolute content-stretch flex gap-[20px] items-center left-[380px] top-[43px]" data-node-id="17668:1244">
+        <div className="[word-break:break-word] content-stretch cursor-pointer flex gap-[10px] items-center leading-[1.2] not-italic relative shrink-0 text-left text-white whitespace-nowrap" data-node-id="17668:1245">
+          <p className="font-['Tomorrow:Medium'] relative shrink-0 text-[22px]" data-node-id="17668:1246">
+            Tentang Kami
+          </p>
+          <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0 text-[20px]" data-node-id="17668:1247">
+            angle-down
+          </p>
+        </div>
+        <div className="[word-break:break-word] content-stretch cursor-pointer flex gap-[10px] items-center leading-[1.2] not-italic relative shrink-0 text-left text-white whitespace-nowrap" data-node-id="17668:1248">
+          <p className="font-['Tomorrow:Medium'] relative shrink-0 text-[22px]" data-node-id="17668:1249">
+            Produk Kami
+          </p>
+          <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0 text-[20px]" data-node-id="17668:1250">
+            angle-down
+          </p>
+        </div>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1253">
+          Kelestarian
+        </p>
+        <div className="content-stretch cursor-pointer flex items-center relative shrink-0" data-node-id="17668:1251">
+          <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1252">{`Berita & Media`}</p>
+        </div>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1255">
+          Pengedar
+        </p>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white whitespace-nowrap" data-node-id="17668:1254">
+          Kerjaya
+        </p>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#006430] text-[22px] text-left w-[87px] whitespace-pre-wrap" data-node-id="17868:1328">{`     BM     `}</p>
+        <div className="flex h-[20px] items-center justify-center relative shrink-0 w-0" data-node-id="17868:1338">
+          <div className="flex-none rotate-90">
+            <div className="h-0 relative w-[20px]">
+              <div className="absolute inset-[-1px_0_0_0]">
+                <img alt="" className="block max-w-none size-full" src={imgLine313} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-left text-white w-[83px] whitespace-pre-wrap" data-node-id="17868:1351">{`     EN     `}</p>
+      </div>
+      <div className="absolute contents left-[129px] top-[17px]" data-node-id="17668:1256">
+        <div className="absolute h-[87px] left-[129px] top-[17px] w-[211px]" data-node-id="17668:1257" data-name="image">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[100.28%] left-[-0.15%] max-w-none top-[-0.57%] w-[111.85%]" src={imgImage} />
+          </div>
+        </div>
+      </div>
+      <div className="[word-break:break-word] absolute border border-solid border-white content-stretch flex gap-[10px] items-center justify-center leading-[1.2] left-[1547px] not-italic px-[30px] py-[20px] rounded-[40px] text-[22px] text-center text-white top-[24px] whitespace-nowrap" data-node-id="17668:1258" data-name="second button">
+        <p className="font-['Tomorrow:Medium'] relative shrink-0" data-node-id="I17668:1258;17668:1228">
+          Hubungi Kami
+        </p>
+        <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0" data-node-id="I17668:1258;17668:1229">
+          arrow-right
+        </p>
+      </div>
+    </button>
+  );
+}
+
+type LeftButtonProps = {
+  className?: string;
+  property1?: "Default";
+};
+
+function LeftButton({ className, property1 = "Default" }: LeftButtonProps) {
+  return (
+    <div className={className || "border border-[#7cac2f] border-solid content-stretch drop-shadow-[3px_2px_0.5px_rgba(156,156,156,0),2px_1px_0.5px_rgba(156,156,156,0.01),1px_1px_0.5px_rgba(156,156,156,0.05),0px_0px_0.5px_rgba(156,156,156,0.09)] flex flex-col items-center justify-center px-[18px] py-[21px] relative rounded-[10px] size-[69px]"} data-node-id="17668:1306">
+      <div className="flex h-[25.884px] items-center justify-center leading-[0] relative shrink-0 w-[31.15px]" data-node-id="17668:1307">
+        <div className="-rotate-90 flex-none">
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative" data-name="Group">
+            <div className="col-1 h-[31.15px] ml-0 mt-0 relative row-1 w-[25.884px]" data-node-id="17668:1308" data-name="a">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgA} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FooterV4({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[742px] relative w-[1920px]"} data-node-id="17680:2881" data-name="footer v4">
+      <div className="absolute bg-gradient-to-t from-[#012b22] h-[742px] left-0 rounded-tl-[40px] rounded-tr-[40px] to-[#194139] top-0 w-[1920px]" data-node-id="17680:2801" />
+      <div className="absolute content-stretch flex gap-[497px] items-start left-[100px] top-[80px] w-[1720px]" data-node-id="17680:2802">
+        <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0" data-node-id="17680:2803" data-name="Logo & Short Description">
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="17680:2804">
+            <div className="col-1 h-[108px] ml-0 mt-0 relative row-1 w-[277px]" data-node-id="17680:2805">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute h-[214.69%] left-[-4.07%] max-w-none top-[-43.58%] w-full" src={imgRectangle26} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex font-['Font_Awesome_5_Brands:Regular'] gap-[20px] items-center leading-[normal] not-italic relative shrink-0 text-[30px] text-center text-white whitespace-nowrap" data-node-id="17680:2806">
+            <p className="relative shrink-0" data-node-id="17680:2807">
+              instagram
+            </p>
+            <p className="relative shrink-0" data-node-id="17680:2808">
+              facebook-f
+            </p>
+            <p className="relative shrink-0" data-node-id="17680:2809">
+              tiktok
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-[1_0_0] gap-[141px] items-start min-w-px relative" data-node-id="17680:2810">
+          <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0" data-node-id="17680:2811" data-name="navigation">
+            <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17680:2812">
+              Pautan Pantas
+            </p>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2813">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2814" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Tentang Kami
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2815">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2816" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Perkhidmatan
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2817">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2818" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Kelestarian
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2819">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2820" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Sumber
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2821">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2822" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Pengedar
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2823">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2824" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Hubungi Kami
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0" data-node-id="17680:2825" data-name="navigation">
+            <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17680:2826">
+              Produk
+            </p>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2827">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2828" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Tunggal
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2829">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2830" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Gred Tinggi
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2831">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2832" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Sebatian
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2833">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2834" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Sebatian Kompak
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2835">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2836" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Foliar
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2837">
+              <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#f5f5f5] text-[18px] text-justify whitespace-nowrap" data-node-id="17680:2838" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Baja Organik
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0" data-node-id="17680:2839" data-name="Contact Details">
+            <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17680:2840">
+              Contact Us
+            </p>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2841">
+              <div className="content-stretch flex flex-col h-[130px] items-start relative shrink-0 w-[346px]" data-node-id="17680:2842">
+                <div className="h-[162px] relative shrink-0 w-full" data-node-id="17680:2843">
+                  <div className="absolute contents left-[11px] top-[7px]" data-node-id="17680:2844">
+                    <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid'] leading-[1.2] left-[11px] not-italic text-[25px] text-justify text-white top-[7px] whitespace-nowrap" data-node-id="17680:2845">
+                      map-marker-alt
+                    </p>
+                  </div>
+                  <div className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[0] left-[50px] text-[#f5f5f5] text-[18px] top-[2px] w-[287px] whitespace-pre-wrap" data-node-id="17680:2846" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    <p className="leading-[1.8] mb-0">{`Lot 1, Jalan Teknologi 3/5, Taman Sains Selangor 1, `}</p>
+                    <p className="leading-[1.8]">Kota Damansara, 47810 Petaling Jaya, Selangor Darul Ehsan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2847">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-[346px]" data-node-id="17680:2848">
+                <div className="h-[44px] relative shrink-0 w-full" data-node-id="17680:2849">
+                  <div className="absolute contents left-[11px] top-[7px]" data-node-id="17680:2850">
+                    <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid'] leading-[1.2] left-[11px] not-italic text-[25px] text-justify text-white top-[7px] whitespace-nowrap" data-node-id="17680:2851">
+                      mobile
+                    </p>
+                  </div>
+                  <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.8] left-[50px] text-[#f5f5f5] text-[18px] top-[6px] w-[287px]" data-node-id="17680:2852" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    03 6144 1200
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="17680:2853">
+              <div className="content-stretch flex flex-col items-start relative shrink-0 w-[346px]" data-node-id="17680:2854">
+                <div className="h-[44px] relative shrink-0 w-full" data-node-id="17680:2855">
+                  <div className="absolute contents left-[11px] top-[7px]" data-node-id="17680:2856">
+                    <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid'] leading-[1.2] left-[11px] not-italic text-[25px] text-justify text-white top-[7px] whitespace-nowrap" data-node-id="17680:2857">
+                      envelope
+                    </p>
+                  </div>
+                  <p className="[word-break:break-word] absolute font-['Open_Sans:Regular'] font-normal leading-[1.8] left-[49px] text-[#f5f5f5] text-[18px] top-[6px] w-[287px]" data-node-id="17680:2858" style={{ fontVariationSettings: '"wdth" 100' }}>
+                    info@nafas.com.my
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex gap-[25px] items-center left-[101px] top-[479px]" data-node-id="17680:2859" data-name="credits">
+        <div className="[word-break:break-word] content-stretch flex flex-col font-['Open_Sans:Regular'] font-normal gap-[25px] h-[183px] items-start relative shrink-0 w-[932px]" data-node-id="17680:2880">
+          <p className="leading-[1.8] overflow-hidden relative shrink-0 text-[18px] text-ellipsis text-white w-[757px] whitespace-nowrap" data-node-id="17680:2861" style={{ fontVariationSettings: '"wdth" 100' }}>
+            © 2026 NAFAS Bajakimia Sdn Bhd ( 20112345778445 ) | All rights reserved.
+          </p>
+          <div className="leading-[0] min-w-full opacity-30 relative shrink-0 text-[16px] text-[rgba(245,245,245,0.51)] w-[min-content] whitespace-pre-wrap" data-node-id="17680:2862" style={{ fontVariationSettings: '"wdth" 100' }}>
+            <p className="leading-[1.5] mb-0">{`Disclaimer: Some images on this website are sourced from Noun Projects& Pexel. We strive to adhere to mentioned resource’s terms of use and provide proper attribution. `}</p>
+            <p className="leading-[1.5]">If there are any concerns about the usage of these images, please contact us directly. We appreciate the contributions of mentioned resources.</p>
+          </div>
+        </div>
+        <div className="bg-[rgba(255,255,255,0.3)] border border-[#00a650] border-solid content-stretch flex flex-col h-[183px] items-start pb-[34px] pt-[35px] px-[40px] relative rounded-[40px] shrink-0 w-[764px]" data-node-id="17680:2879">
+          <div className="content-stretch flex gap-[100px] items-center relative shrink-0" data-node-id="17680:2878">
+            <div className="content-stretch flex gap-[28px] items-center relative shrink-0" data-node-id="17680:2870">
+              <div className="relative shrink-0 size-[78px]" data-node-id="17680:2864">
+                <div className="absolute inset-[-1.28%_-8.97%_-10.26%_-1.28%]">
+                  <img alt="" className="block max-w-none size-full" src={imgFrame1000002052} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-white w-[109px]" data-node-id="17680:2869">
+                <p className="font-['Tomorrow:Bold'] leading-[1.2] not-italic relative shrink-0 text-[45px] text-center w-full" data-node-id="17680:2867">
+                  128
+                </p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[18px] w-full" data-node-id="17680:2868" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Today Visitor
+                </p>
+              </div>
+            </div>
+            <div className="flex h-[114px] items-center justify-center relative shrink-0 w-0" data-node-id="17680:2877">
+              <div className="flex-none rotate-90">
+                <div className="h-0 relative w-[114px]">
+                  <div className="absolute inset-[-1px_0_0_0]">
+                    <img alt="" className="block max-w-none size-full" src={imgLine312} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[28px] items-center relative shrink-0" data-node-id="17680:2871">
+              <div className="relative shrink-0 size-[78px]" data-node-id="17680:2872">
+                <div className="absolute inset-[-1.28%_-8.97%_-10.26%_-1.28%]">
+                  <img alt="" className="block max-w-none size-full" src={imgFrame1000002052} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-white" data-node-id="17680:2874">
+                <p className="font-['Tomorrow:Bold'] leading-[1.2] not-italic relative shrink-0 text-[45px] text-center whitespace-nowrap" data-node-id="17680:2875">
+                  10,644
+                </p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-full relative shrink-0 text-[18px] w-[min-content]" data-node-id="17680:2876" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Total Visitor
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[rgba(245,245,245,0.1)] h-[0.998px] left-[101px] top-[438px] w-[1720px]" data-node-id="17680:2860" />
+    </div>
+  );
+}
+
+function CtaV21({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-white content-stretch flex flex-col items-center justify-center px-[483px] py-[80px] relative w-[1920px]"} data-node-id="16976:1466" data-name="cta v2.1">
+      <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-center w-[1240px]" data-node-id="16976:1459">
+        <p className="font-['Tomorrow:Medium'] leading-[1.2] min-w-full not-italic relative shrink-0 text-[#7cac2f] text-[27px] w-[min-content]" data-node-id="16976:1460">
+          Mari Bekerjasama
+        </p>
+        <p className="font-['Tomorrow:SemiBold'] leading-[1.2] min-w-full not-italic relative shrink-0 text-[#1d1d1d] text-[35px] w-[min-content]" data-node-id="16976:1461">
+          Mencari rakan pembekal baja yang boleh dipercayai?
+        </p>
+        <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-full relative shrink-0 text-[#1d1d1d] text-[18px] w-[min-content]" data-node-id="16976:1462" style={{ fontVariationSettings: '"wdth" 100' }}>
+          Hubungi kami untuk membincangkan keperluan anda atau sebarang pertanyaan.
+        </p>
+        <div className="bg-[#7cac2f] content-stretch flex gap-[10px] items-center justify-center leading-[1.2] not-italic px-[30px] py-[20px] relative rounded-[40px] shrink-0 text-[22px] text-white whitespace-nowrap" data-node-id="17305:564" data-name="primary button">
+          <p className="font-['Tomorrow:Medium'] relative shrink-0" data-node-id="I17305:564;17248:1548">
+            Hubungi Kami
+          </p>
+          <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0" data-node-id="I17305:564;17248:1549">
+            arrow-right
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Sustainability() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="17668:2044" data-name="sustainability">
+      <div className="absolute h-[988px] left-0 top-0 w-[1920px]" data-node-id="17668:2047" data-name="banner + intro">
+        <div className="absolute h-[988px] left-0 rounded-bl-[40px] rounded-br-[40px] top-0 w-[1920px]" data-node-id="17668:2048">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-bl-[40px] rounded-br-[40px]">
+            <img alt="" className="absolute h-[129.55%] left-0 max-w-none top-[0.02%] w-full" src={imgRectangle315} />
+          </div>
+        </div>
+        <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[20px] items-start left-[340px] top-[210px] w-[825px]" data-node-id="17668:2049">
+          <p className="font-['Tomorrow:Bold'] leading-[1.2] min-w-full not-italic relative shrink-0 text-[#1d1d1d] text-[55px] w-[min-content]" data-node-id="17668:2050">
+            Komitmen Kami terhadap Pertanian Lestari
+          </p>
+          <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-full relative shrink-0 text-[#595959] text-[18px] w-[min-content]" data-node-id="17668:2051" style={{ fontVariationSettings: '"wdth" 100' }}>
+            NAFAS Bajakimia Sdn. Bhd. komited dalam menyokong kelestarian sektor pertanian melalui operasi yang bertanggungjawab, pengurusan rantaian bekalan yang berstruktur dan pematuhan piawaian industri. Pendekatan kami menekankan kesinambungan bekalan, kecekapan sumber dan sokongan jangka panjang kepada keselamatan makanan negara.
+          </p>
+          <div className="bg-[#7cac2f] content-stretch flex gap-[10px] items-center justify-center leading-[1.2] not-italic px-[30px] py-[20px] relative rounded-[40px] shrink-0 text-[22px] text-center text-white whitespace-nowrap" data-node-id="17785:1787" data-name="primary button">
+            <p className="font-['Tomorrow:Medium'] relative shrink-0" data-node-id="I17785:1787;17668:1221">
+              Muat Turun Laporan Kelestarian 2026
+            </p>
+            <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0" data-node-id="I17785:1787;17668:1222">
+              arrow-right
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-center justify-center left-[340px] py-[80px] top-[988px] w-[1240px]" data-node-id="17668:2052" data-name="quote">
+        <p className="[word-break:break-word] font-['Tomorrow:SemiBold'] leading-[0] min-w-full not-italic relative shrink-0 text-[#1d1d1d] text-[0px] text-center w-[min-content]" data-node-id="17668:2053">
+          <span className="leading-[1.2] text-[35px]">{`“ `}</span>
+          <span className="font-['Raleway:Regular'] font-normal leading-[1.2] text-[20px]">{`Kami `}</span>
+          <span className="leading-[1.2] text-[35px]">{`percaya kelestarian dicapai `}</span>
+          <span className="font-['Raleway:Regular'] font-normal leading-[1.2] text-[20px]">melalui</span>
+          <span className="leading-[1.2] text-[35px]">{` tadbir urus yang kukuh, `}</span>
+          <span className="font-['Tomorrow:Regular'] leading-[1.2] text-[35px]">{`kecekapan sumber `}</span>
+          <span className="font-['Raleway:Regular'] font-normal leading-[1.2] text-[20px]">dan</span>
+          <span className="font-['Tomorrow:Regular'] leading-[1.2] text-[35px]">{` `}</span>
+          <span className="leading-[1.2] text-[35px]">{`komitmen berterusan `}</span>
+          <span className="font-['Raleway:Regular'] font-normal leading-[1.2] text-[20px]">{`terhadap `}</span>
+          <span className="leading-[1.2] text-[35px]">piawaian industri. “</span>
+        </p>
+        <div className="content-stretch flex items-center relative shrink-0" data-node-id="17668:2054">
+          <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#1d1d1d] text-[18px] text-center whitespace-nowrap" data-node-id="17668:2055" style={{ fontVariationSettings: '"wdth" 100' }}>
+            ------ NAFAS Bajakimia Sdn Bhd
+          </p>
+        </div>
+      </div>
+      <div className="absolute h-[987px] left-[340px] top-[1320px] w-[1480px]" data-node-id="17668:2056" data-name="how we do">
+        <div className="absolute contents left-[508px] top-0" data-node-id="17668:2057">
+          <div className="absolute h-[880px] left-[544px] top-px w-[936px]" data-node-id="17668:2058">
+            <div className="absolute inset-[-2.39%_0.77%_-7.77%_-12.98%]">
+              <img alt="" className="block max-w-none size-full" height="969.383" src={imgRectangle349} width="1050.291" />
+            </div>
+          </div>
+          <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] h-[344px] left-[508px] to-[43.551%] to-[rgba(255,255,255,0.9)] top-[643px] w-[877px]" data-node-id="17668:2059" />
+          <div className="absolute h-[822px] left-[680px] top-0 w-[684px]" data-node-id="17668:2060">
+            <div className="absolute inset-[0_2.48%]">
+              <img alt="" className="block max-w-none size-full" height="822" src={imgRectangle348} width="650.043" />
+            </div>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col gap-[40px] items-start left-0 top-0" data-node-id="17668:2061">
+          <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0" data-node-id="17668:2062">
+            <div className="content-stretch flex gap-[20px] items-center relative shrink-0 w-[421px]" data-node-id="17668:2063">
+              <div className="relative shrink-0 size-[18px]" data-node-id="17668:2064">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse18} />
+              </div>
+              <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#7cac2f] text-[27px] whitespace-nowrap" data-node-id="17668:2065">
+                Pendekatan Kami
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['Tomorrow:SemiBold'] leading-[0] not-italic relative shrink-0 text-[#1d1d1d] text-[35px] w-[421px]" data-node-id="17668:2066">
+              <span className="leading-[1.2] text-[#7cac2f]">{`Bagaimana `}</span>
+              <span className="leading-[1.2]">Kami Mengintegrasikan Kelestarian</span>
+            </p>
+            <p className="[word-break:break-word] font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-[421px]" data-node-id="17668:2067" style={{ fontVariationSettings: '"wdth" 100' }}>
+              Pendekatan kelestarian NAFAS Bajakimia fokus operasi berstruktur dan kecekapan sumber
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-[421px]" data-node-id="17668:2068">
+            <div className="content-stretch flex gap-[40px] items-start relative shrink-0 w-full" data-node-id="17668:2069">
+              <div className="h-[44px] relative shrink-0 w-[44.838px]" data-node-id="17668:2070" data-name="Group">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup} />
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[20px] items-start justify-center min-w-px relative" data-node-id="17668:2073">
+                <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:2074">
+                  Operasi yang Terkawal
+                </p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:2075" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Kami amalkan proses operasi jelas terkawal, pastikan kecekapan, keselamatan, pematuhan
+                </p>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[40px] items-start relative shrink-0 w-full" data-node-id="17668:2076">
+              <div className="relative shrink-0 size-[44px]" data-node-id="17668:2077" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector} />
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[20px] items-start min-w-px relative" data-node-id="17668:2078">
+                <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:2079">{`Rantaian bekalan mampan `}</p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:2080" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Pendekatan sumber pelbagai dan logistik nasional sokong bekalan baja bertanggungjawab
+                </p>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[48px] items-start relative shrink-0 w-full" data-node-id="17668:2081">
+              <div className="h-[44px] relative shrink-0 w-[36px]" data-node-id="17668:2082" data-name="Vector">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgVector1} />
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[20px] items-start min-w-px relative" data-node-id="17668:2083">
+                <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] w-full" data-node-id="17668:2084">
+                  Pematuhan Piawaian
+                </p>
+                <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#595959] text-[18px] w-full" data-node-id="17668:2085" style={{ fontVariationSettings: '"wdth" 100' }}>
+                  Pemeriksaan dalaman dan kawalan kualiti pastikan produk sesuai industri
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[987px] left-0 top-[2307px] w-[1920px]" data-node-id="17945:1350">
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <img alt="" className="absolute max-w-none object-cover size-full" src={imgRectangle381} />
+          <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0.8)] inset-0 to-[rgba(255,255,255,0.88)]" />
+        </div>
+      </div>
+      <div className="absolute h-[441px] left-0 top-[2949px] w-[1920px]" data-node-id="17945:1352">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle382} />
+      </div>
+      <div className="absolute h-[724px] left-0 top-[3353px] w-[1920px]" data-node-id="17945:1353">
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <img alt="" className="absolute max-w-none object-cover size-full" src={imgRectangle381} />
+          <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0.83)] inset-0 to-[rgba(255,255,255,0.9)]" />
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col gap-[20px] items-end left-[342px] top-[3374px] w-[1241px]" data-node-id="17809:733">
+        <div className="content-stretch flex flex-col gap-[40px] h-[231px] items-end relative shrink-0 w-full" data-node-id="17809:732">
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-center relative shrink-0 text-[#1d1d1d] text-center w-full" data-node-id="17803:713">
+            <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[27px] w-full" data-node-id="17802:643">{`Pendidikan& Komuniti`}</p>
+            <p className="font-['Tomorrow:SemiBold'] leading-[1.2] not-italic relative shrink-0 text-[35px] w-full" data-node-id="17802:644">
+              Laporan Kelestarian
+            </p>
+            <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[18px] w-full" data-node-id="17803:646" style={{ fontVariationSettings: '"wdth" 100' }}>
+              Ketahui lebih lanjut mengenai usaha kelestarian kami dan impak positif kepada alam sekitar serta komuniti.
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col h-[45px] items-start relative shrink-0 w-full" data-node-id="17803:647" data-name="tab">
+            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="17803:648">
+              <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-[41px] place-items-start relative row-1" data-node-id="17803:649">
+                <div className="bg-[#e0e0e0] col-1 h-[4px] ml-0 mt-0 relative row-1 w-[1123.977px]" data-node-id="17803:650" />
+                <div className="bg-[#c7c7c7] col-1 h-[4px] ml-[116.02px] mt-0 relative row-1 w-[1123.977px]" data-node-id="17803:651" />
+              </div>
+              <div className="col-1 content-stretch flex gap-[40px] items-start ml-0 mt-0 relative row-1" data-node-id="17803:652">
+                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="17803:653">
+                  <div className="col-1 content-stretch flex flex-col gap-[15px] items-center ml-0 mt-0 relative row-1 w-[128px]" data-node-id="17803:654">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:655">
+                      2026
+                    </p>
+                    <div className="bg-[#1d1d1d] h-[4px] relative shrink-0 w-full" data-node-id="17803:656" />
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[60px] items-center relative shrink-0" data-node-id="17803:721">
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:657">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:658">
+                      2025
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:686">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:687">
+                      2024
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:689">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:690">
+                      2023
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:692">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:693">
+                      2022
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:695">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:696">
+                      2021
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:698">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:699">
+                      2020
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:701">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:702">
+                      2019
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:704">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:705">
+                      2018
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17803:707">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17803:708">
+                      2017
+                    </p>
+                  </div>
+                  <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17922:1849">
+                    <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17922:1850">
+                      20
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white border border-[#e0e0e0] border-solid content-stretch drop-shadow-[0px_48px_7px_rgba(143,143,143,0),0px_31px_6px_rgba(143,143,143,0.01),0px_17px_5px_rgba(143,143,143,0.05),0px_8px_4px_rgba(143,143,143,0.09),0px_2px_2px_rgba(143,143,143,0.1)] flex flex-col h-[372px] items-start pb-[33px] pt-[32px] px-[30px] relative rounded-[20px] shrink-0 w-full" data-node-id="17809:730">
+          <div className="content-stretch flex gap-[21px] items-center relative shrink-0" data-node-id="17807:729">
+            <div className="h-[307px] relative rounded-[20px] shrink-0 w-[264px]" data-node-id="17803:714">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[20px]">
+                <img alt="" className="absolute h-[113.33%] left-[-6.5%] max-w-none top-[0.1%] w-[113.28%]" src={imgRectangle374} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-[895px]" data-node-id="17807:728">
+              <p className="font-['Tomorrow:Medium'] leading-[1.2] min-w-full not-italic relative shrink-0 text-[27px] text-black w-[min-content]" data-node-id="17803:715">
+                Laporan Disember Kelestarian 2026
+              </p>
+              <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] min-w-full relative shrink-0 text-[18px] text-black w-[min-content]" data-node-id="17803:716" style={{ fontVariationSettings: '"wdth" 100' }}>
+                Laporan tahunan yang memaparkan pencapaian, inisiatif dan komitmen kami dalam menyokong kelestarian alam sekitar dan komuniti.
+              </p>
+              <div className="bg-[#7cac2f] content-stretch flex gap-[10px] items-center justify-center leading-[1.2] not-italic px-[30px] py-[20px] relative rounded-[40px] shrink-0 text-[22px] text-center text-white whitespace-nowrap" data-node-id="17803:718" data-name="primary button">
+                <p className="font-['Tomorrow:Medium'] relative shrink-0" data-node-id="I17803:718;17668:1221">
+                  Lihat Laporan
+                </p>
+                <p className="font-['Font_Awesome_5_Free:Solid'] relative shrink-0" data-node-id="I17803:718;17668:1222">
+                  arrow-right
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <CtaV21 className="absolute bg-white content-stretch flex flex-col items-center justify-center left-0 px-[483px] py-[80px] top-[4077px] w-[1920px]" />
+      <FooterV4 className="absolute h-[742px] left-0 top-[4469px] w-[1920px]" />
+      <div className="absolute content-stretch flex flex-col gap-[40px] items-start left-[340px] top-[2387px] w-[1241px]" data-node-id="17945:1351">
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[20px] h-[146px] items-center relative shrink-0 text-center w-full" data-node-id="17945:1242">
+          <p className="font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#7cac2f] text-[27px] w-full" data-node-id="17945:1243">{`Pendidikan& Komuniti`}</p>
+          <p className="font-['Tomorrow:SemiBold'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[35px] w-full" data-node-id="17945:1244">
+            Poster Bulanan
+          </p>
+          <p className="font-['Open_Sans:Regular'] font-normal leading-[1.8] relative shrink-0 text-[#1d1d1d] text-[18px] w-full" data-node-id="17945:1245" style={{ fontVariationSettings: '"wdth" 100' }}>
+            Melalui penerbitan berkala kami, NAFAS Bajakimia berkongsi ilmu yang memberi inspirasi kepada komuniti dalam alam sekitar.
+          </p>
+        </div>
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="17945:1247">
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-[41px] place-items-start relative row-1" data-node-id="17945:1248">
+            <div className="bg-[#e0e0e0] col-1 h-[4px] ml-0 mt-0 relative row-1 w-[1123.977px]" data-node-id="17945:1249" />
+            <div className="bg-[#c7c7c7] col-1 h-[4px] ml-[116.02px] mt-0 relative row-1 w-[1123.977px]" data-node-id="17945:1250" />
+          </div>
+          <div className="col-1 content-stretch flex gap-[40px] items-start ml-0 mt-0 relative row-1" data-node-id="17945:1251">
+            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="17945:1252">
+              <div className="col-1 content-stretch flex flex-col gap-[15px] items-center ml-0 mt-0 relative row-1 w-[128px]" data-node-id="17945:1253">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1254">
+                  2026
+                </p>
+                <div className="bg-[#1d1d1d] h-[4px] relative shrink-0 w-full" data-node-id="17945:1255" />
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[60px] items-center relative shrink-0" data-node-id="17945:1256">
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1257">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1258">
+                  2025
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1259">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1260">
+                  2024
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1261">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1262">
+                  2023
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1263">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1264">
+                  2022
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1265">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1266">
+                  2021
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1267">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1268">
+                  2020
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1269">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1270">
+                  2019
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1271">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1272">
+                  2018
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1273">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1274">
+                  2017
+                </p>
+              </div>
+              <div className="content-stretch flex flex-col items-center relative shrink-0" data-node-id="17945:1275">
+                <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[#1d1d1d] text-[22px] text-center w-full" data-node-id="17945:1276">
+                  20
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[20px] items-center relative shrink-0 w-full" data-node-id="17945:1346">
+          <LeftButton className="border border-[#7cac2f] border-solid content-stretch drop-shadow-[3px_2px_0.5px_rgba(156,156,156,0),2px_1px_0.5px_rgba(156,156,156,0.01),1px_1px_0.5px_rgba(156,156,156,0.05),0px_0px_0.5px_rgba(156,156,156,0.09)] flex flex-col items-center justify-center px-[18px] py-[21px] relative rounded-[10px] shrink-0 size-[69px]" />
+          <div className="content-stretch flex flex-[1_0_0] gap-[20px] items-center min-w-px relative" data-node-id="17945:1345">
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-center min-w-px relative" data-node-id="17945:1344">
+              <div className="h-[484px] relative rounded-[20px] shrink-0 w-full" data-node-id="17945:1317">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle378} />
+              </div>
+              <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[27px] text-black text-center w-full" data-node-id="17945:1334">
+                Poster Sep 2026
+              </p>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-center min-w-px relative" data-node-id="17945:1343">
+              <div className="h-[484px] relative rounded-[20px] shrink-0 w-full" data-node-id="17945:1318">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle379} />
+              </div>
+              <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[27px] text-black text-center w-full" data-node-id="17945:1340">
+                Poster Ogos 2026
+              </p>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-center min-w-px relative" data-node-id="17945:1342">
+              <div className="h-[484px] relative rounded-[20px] shrink-0 w-full" data-node-id="17945:1320">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle380} />
+              </div>
+              <p className="[word-break:break-word] font-['Tomorrow:Medium'] leading-[1.2] not-italic relative shrink-0 text-[27px] text-black text-center w-full" data-node-id="17945:1341">
+                Poster Julai 2026
+              </p>
+            </div>
+          </div>
+          <LeftButton className="flex items-center justify-center relative shrink-0" />
+        </div>
+      </div>
+      <div className="absolute left-[1738px] size-[96px] top-[850px]" data-node-id="17668:2117" data-name="sm_5b321c99945a2 1">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSm5B321C99945A21} />
+      </div>
+      <HeaderGreenHpsp2 className="absolute block cursor-pointer h-[113px] left-0 top-[30px] w-[1920px]" />
+    </div>
+  );
+}
