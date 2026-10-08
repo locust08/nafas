@@ -20,6 +20,19 @@ npm run start -- --hostname 127.0.0.1 --port 3001
 
 `check` runs ESLint, TypeScript and the production build. `start` launches Next.js's standalone server and copies its public and static assets into the standalone output before serving. No production origin is assumed. Set `NAFAS_SITE_URL` to the confirmed origin before building to generate the full sitemap.
 
+## Deploy to Cloudflare Workers
+
+The existing Next.js workflow remains available. The additional vinext workflow builds and previews the application in Cloudflare's Workers runtime:
+
+```sh
+npm run cf:typegen
+npm run build:vinext
+npm run start:vinext
+npm run deploy:vinext
+```
+
+Authenticate with `npx cf auth login` before the first deployment. Worker settings are defined in `cloudflare.config.ts`; generated `.cloudflare` and `.vinext` output is ignored by Git.
+
 ## Content and routes
 
 Main pages: `/`, `/tentang-kami`, `/perkhidmatan`, `/produk`, `/kelestarian`, `/berita-media`, `/kerjaya`, `/pengedar`, `/hubungi-kami`. The catalogue includes seven categories and 38 product details. One source-backed award article has a news detail route.

@@ -52,3 +52,5 @@ temp/
 .source-assets/
 .playwright-cli/
 output/
+.vinext/
+.cloudflare/
