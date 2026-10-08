@@ -1,6 +1,6 @@
 # NAFAS Bajakimia website
 
-Responsive Malay website built with Next.js 16, React 19 and TypeScript. The supplied public Figma prototype is the visual reference; official Drive copy supplies business facts. No deployment or remote push has been performed.
+Responsive Malay website built with Next.js 16, React 19 and TypeScript. The supplied public Figma prototype is the visual reference; official Drive copy supplies business facts. The Cloudflare Workers deployment is available at https://nafas-bajakimia-site.easondev.workers.dev.
 
 ## Run locally
 
@@ -31,7 +31,7 @@ npm run start:vinext
 npm run deploy:vinext
 ```
 
-Authenticate with `npx cf auth login` before the first deployment. Worker settings are defined in `cloudflare.config.ts`; generated `.cloudflare` and `.vinext` output is ignored by Git.
+Authenticate with `npx cf auth login` before the first deployment. Worker settings, the target Cloudflare account and the public origin used by the sitemap are defined in `cloudflare.config.ts`; generated `.cloudflare` and `.vinext` output is ignored by Git.
 
 ## Content and routes
 
