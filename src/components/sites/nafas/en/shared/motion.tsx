@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { assets } from "@/lib/nafas/en/assets";
 export function CountUp({ value, suffix = '' }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLElement>(null);
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(value);
   useEffect(() => {
     const node = ref.current;
     if (!node) return;

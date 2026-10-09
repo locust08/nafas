@@ -6,9 +6,9 @@ import {
   Globe,
   Handshake,
 } from 'lucide-react';
-import { asset, assets } from '@/lib/nafas/assets';
+import { asset } from '@/lib/nafas/assets';
 import { CallToAction, Media, SectionHeading } from '@/components/sites/nafas/shared/sections';
-import { HeroVideo, ScrollLine } from '@/components/sites/nafas/shared/motion';
+import { CountUp, HeroVideo, ScrollLine } from '@/components/sites/nafas/shared/motion';
 import { MilestoneCarousel } from '@/components/sites/nafas/inner-interactions';
 import '@/components/sites/nafas/inner-pages.css';
 
@@ -70,12 +70,12 @@ export default function AboutPage() {
     </section>
 
     <section id="gambaran-syarikat" className="about-overview">
-      <Media src={assets.values} className="hero-background" />
+      <Media src="/sites/nafas/assets/company-overview-factory.png" className="hero-background" />
       <div className="container"><div className="overview-text">
         <SectionHeading label="Gambaran Syarikat">Bekalan baja negara sejak <span className="accent">1974</span></SectionHeading>
         <p>Sejak 1974, NAFAS Bajakimia mengurus import, pengilangan, pengangkutan, dan pengedaran baja melalui cawangan PPK seluruh Malaysia.</p>
         <button className="button" type="button" disabled title="Profil syarikat belum tersedia">Muat Turun Profil Syarikat<ArrowRight size={22} aria-hidden="true" /></button>
-        <div className="experience"><span className="experience-icon"><Image src="/sites/nafas/figma/thumb.svg" width={35.1937} height={33.0001} alt="" /></span><div><strong>50+</strong><h3>Tahun Pengalaman</h3><p>Pengalaman luas sokong baja negara.</p></div></div>
+        <div className="experience"><span className="experience-icon"><Image src="/sites/nafas/figma/thumb.svg" width={35.1937} height={33.0001} alt="" /></span><div><CountUp value={50} suffix="+" /><h3>Tahun Pengalaman</h3><p>Pengalaman luas sokong baja negara.</p></div></div>
       </div></div>
     </section>
 

@@ -1,0 +1,138 @@
+{
+  "data": [
+    {
+      "route": "/",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/tentang-kami",
+      "cls": 0,
+      "main": 1,
+      "h1": 0,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/produk",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/perkhidmatan",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/kelestarian",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/berita-media",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/pengedar",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/kerjaya",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/hubungi-kami",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/tentang-kami",
+      "cls": 0,
+      "main": 1,
+      "h1": 0,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/produk",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/perkhidmatan",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/kelestarian",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/berita-media",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/pengedar",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/kerjaya",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    },
+    {
+      "route": "/en/hubungi-kami",
+      "cls": 0,
+      "main": 1,
+      "h1": 1,
+      "unnamedButtons": 0
+    }
+  ],
+  "errors": [],
+  "lightbox": 1,
+  "productCards": 4,
+  "fields": 9,
+  "invalid": true,
+  "mobileNavigation": true,
+  "reducedMotionAnimations": 0,
+  "noJSHeading": true
+}

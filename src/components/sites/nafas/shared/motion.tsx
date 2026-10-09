@@ -2,9 +2,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { assets } from '@/lib/nafas/assets';
+import { animateEntrance, animateParallax, type MotionVariant } from '@/lib/nafas/animation';
 export function CountUp({ value, suffix = '' }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLElement>(null);
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(value);
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
@@ -56,34 +57,78 @@ export function ScrollLine() {
 export function MotionEnhancer() {
   const pathname = usePathname();
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const root = document.querySelector('.figma-page');
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (typeof IntersectionObserver === 'undefined' || typeof Element.prototype.animate !== 'function') return;
+    const root = document.querySelector('main');
+    if (!root) return;
     const observed = new Set<Element>();
+    const animations = new Set<Animation>();
+    const active = new WeakMap<Element, Animation[]>();
+    const sections = Array.from(root.querySelectorAll('section'));
+    const stop = () => { if (preference.matches) animations.forEach(animation => animation.cancel()); };
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
+        if (!entry.isIntersecting) {
+          const running = active.get(entry.target);
+          if (running) { running.forEach(animation => animation.finish()); observer.unobserve(entry.target); }
+          return;
+        }
+        const element = entry.target as HTMLElement;
+        if (element.dataset.motionEntered === 'true') return;
+        element.classList.add('revealed');
+        element.dataset.motionEntered = 'true';
+        if (preference.matches) { observer.unobserve(element); return; }
+        const variant = element.dataset.motionVariant as MotionVariant;
+        const entrance = animateEntrance(element, variant, Number(element.dataset.motionDelay ?? 0));
+        active.set(element, entrance);
+        entrance.forEach(animation => {
+          animations.add(animation);
+          animation.finished.then(() => { animations.delete(animation); observer.unobserve(element); }).catch(() => animations.delete(animation));
+        });
       });
     }, { threshold: 0.05 });
     const register = () => {
-      const elements = root
-        ? root.querySelectorAll('section, .hero-copy, .sustainability-quote, .media, .approach-list article, .product-card, .reveal')
-        : document.querySelectorAll('.reveal');
+      const selector = 'h1,h2,h3,p,.button,.media>img,.farmer-layer,.product-card,.news-card,.about-value,.value-card,.career-benefit,.fact-marker,.approach-icon,.expertise-card,.metric,.benefit-strip article,.partner-names,.hero-curve,.home-map>img,.home-map-marker,svg,.reveal,[data-motion]';
+      const elements = [...root.querySelectorAll(selector), ...document.querySelectorAll('.site-footer .footer-brand,.site-footer .footer-grid>div,.site-footer .footer-bottom')];
       elements.forEach(element => {
-        if (observed.has(element) || element.closest('dialog') || element.classList.contains('hero-background')) return;
-        // Category cards reveal independently; a parent fade would mask their stagger.
-        if (element.tagName === 'SECTION' && element.querySelector('.product-card')) return;
+        if (observed.has(element) || element.closest('dialog,.career-marquee-track,form,.dropdown,.mobile-nav')) return;
+        // Containers never mask independently animated children; controls stay usable.
+        if (element.tagName === 'SECTION' || element.matches('.media,.hero-copy,.layered-farmer,.sustainability-farmer,.expertise-card,.benefit-strip article')) return;
+        if (element.matches('.reveal') && !element.matches('.media,.farmer-layer,.product-card,.news-card,.career-benefit,.value-card,.about-value') && element.querySelector('h1,h2,h3,p,.media')) return;
+        if (element.parentElement?.closest('.product-card,.news-card,.career-benefit,.farmer-layer,.button')) return;
+        if (element.matches('.hero-background') && element.closest('.home-hero,.corporate-banner')) return;
         observed.add(element);
-        if (root) element.classList.add(element.classList.contains('media') ? 'v3-image-ready' : 'v3-motion-ready');
-        else element.classList.add('motion-ready');
+        const node = element as HTMLElement;
+        const section = element.closest('section');
+        const sectionIndex = section ? sections.indexOf(section) : 0;
+        const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
+        const order = Math.max(0, siblings.indexOf(element));
+        let variant: MotionVariant = sectionIndex % 2 ? 'right' : 'left';
+        if (element.matches('p,.button,.metric,.site-footer *')) variant = 'up';
+        if (element.matches('.product-card,.news-card,.value-card,.career-benefit')) variant = order % 2 ? 'diagonal' : 'scale';
+        if (element.matches('.about-value')) variant = 'rotate';
+        if (element.matches('img,.farmer-layer,.hero-curve')) variant = order % 2 ? 'right' : 'layer';
+        if (element.closest('.about-overview')) variant = element.matches('img') ? 'right' : 'left';
+        if (element.matches('.fact-marker,.approach-icon,.home-map-marker,svg')) variant = 'scale';
+        node.dataset.motionVariant = node.dataset.motionVariant ?? variant;
+        node.dataset.motionDelay = String(Math.min(order % 5 * 65, 260));
+        if (element.matches('.home-map-marker')) node.dataset.motionDelay = String(Math.min(350 + order * 35, 700));
+        node.dataset.motionRegistered = 'true';
+        if (!preference.matches && element.matches('.sustainability-page .hero-background>img,.sustainability-ghost>img')) {
+          const subject = element.closest('section');
+          if (subject) { const parallax = animateParallax(node, subject); if (parallax) animations.add(parallax); }
+        }
         observer.observe(element);
       });
     };
     register();
-    const additions = new MutationObserver(register);
-    if (root) additions.observe(root, { childList: true, subtree: true });
-    return () => { observer.disconnect(); additions.disconnect(); };
+    const additions = new MutationObserver(records => {
+      // Count-up text changes do not need a new scan of the page.
+      if (records.some(record => Array.from(record.addedNodes).some(node => node.nodeType === Node.ELEMENT_NODE))) register();
+    });
+    additions.observe(root, { childList: true, subtree: true });
+    preference.addEventListener('change', stop);
+    return () => { observer.disconnect(); additions.disconnect(); preference.removeEventListener('change', stop); animations.forEach(animation => animation.cancel()); };
   }, [pathname]);
   return null;
 }
