@@ -44,7 +44,7 @@
 .benefitArtwork :global(.v3-image-ready) img{scale:1}
 .overviewCards .card{box-shadow:0 8px 24px #23351a14,0 2px 5px #23351a0d}
 .overviewCards .card:hover{box-shadow:0 14px 32px #23351a24,0 3px 8px #23351a14}
-.overviewCards .card:global(.v3-motion-ready){transition:opacity .8s cubic-bezier(.22,1,.36,1),translate 1s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
+.overviewCards .card:global(.v3-motion-ready){transition:opacity 1.25s ease,translate 1.25s ease,box-shadow .35s ease}
 .overviewCards .card:nth-child(4n+2){transition-delay:100ms}
 .overviewCards .card:nth-child(4n+3){transition-delay:200ms}
 .overviewCards .card:nth-child(4n+4){transition-delay:300ms}

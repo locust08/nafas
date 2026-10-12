@@ -1,10 +1,8 @@
+import { SolidIcon } from '@/components/sites/nafas/shared/solid-icon';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import {
   ArrowRight,
-  FlaskConical,
-  Globe,
-  Handshake,
 } from 'lucide-react';
 import { asset } from '@/lib/nafas/assets';
 import { CallToAction, Media, SectionHeading } from '@/components/sites/nafas/shared/sections';
@@ -81,10 +79,10 @@ export default function AboutPage() {
 
     <section className="wide-container benefit-strip">
       {[
-        { title: 'Pembekal Utama Negara', text: 'Antara pembekal utama baja yang menyumbang ekonomi sektor pertanian Malaysia.', Icon: Globe },
-        { title: 'Produk Berprestasi Tinggi', text: 'Baja MPOBF3 Zeolite meningkatkan kesuburan tanah dan hasil tanaman sawit.', Icon: FlaskConical },
-        { title: 'Jenama Peladang Dipercayai', text: 'Komitmen membekalkan baja berkualiti Peladang untuk kelestarian industri.', Icon: Handshake },
-      ].map(({ title, text, Icon }) => <article key={title}><Icon aria-hidden="true" /><div><h3>{title}</h3><p>{text}</p></div></article>)}
+        { title: 'Pembekal Utama Negara', text: 'Antara pembekal utama baja yang menyumbang ekonomi sektor pertanian Malaysia.', icon: 'globe' as const },
+        { title: 'Produk Berprestasi Tinggi', text: 'Baja MPOBF3 Zeolite meningkatkan kesuburan tanah dan hasil tanaman sawit.', icon: 'flask' as const },
+        { title: 'Jenama Peladang Dipercayai', text: 'Komitmen membekalkan baja berkualiti Peladang untuk kelestarian industri.', icon: 'handshake' as const },
+      ].map(({ title, text, icon }) => <article key={title}><SolidIcon name={icon} className="solid-icon-feature" /><div><h3>{title}</h3><p>{text}</p></div></article>)}
     </section>
 
     <section id="nilai-teras" className="content-section wide-container about-values-section">

@@ -1,0 +1,107 @@
+/* BugHerd #1–14: V3.1 only. Keep the current image sources and crops. */
+:root{--green:#7cac2f;--button-hover:#e8efde}
+html,body{overflow-x:clip}
+/* #3: reserve the border in both states so hover never moves the label. */
+body .button,body .figma-page .button{border:1px solid var(--green);transition:background .25s,color .25s,border-color .25s}
+body .button:hover,body .button-outline:hover,body .figma-page .button:hover,body .site-header.solid .header-contact:hover{background:var(--button-hover);color:var(--green);border-color:var(--green);transform:none;box-shadow:none}
+body .button-outline{background:transparent;border-color:currentColor}
+body .resource-arrow:hover:not(:disabled),body .carousel-controls button:hover:not(:disabled),body .category-tabs a:hover{background:var(--button-hover);color:var(--green);border-color:var(--green);transform:none}
+/* #4, #6: copy rules previously overrode the shared eyebrow color. */
+body main .eyebrow,body .section-heading .eyebrow,body .split-copy .section-heading .eyebrow,body .figma-page .section-heading .eyebrow{color:var(--green)}
+body .career-missing .eyebrow{color:var(--green)}
+/* #1: include the curved extension in the 95% viewport banner. */
+body .home-hero{height:calc(95svh - var(--explore-below));min-height:0;max-height:none;--explore-cutout:clamp(140px,11.82vw,227px)}
+body .home-hero .hero-copy{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-block:140px 130px}
+body .home-hero .hero-copy .actions{flex:none}
+/* Keep the video one pixel inside the SVG edge to avoid a hairline at small sizes. */
+body .home-hero .hero-video{height:calc(100% + var(--explore-below) - 1px)}
+/* #2: contain images inside complete rounded frames, without cutting their corners. */
+body .overview{min-height:0;overflow:visible;padding-bottom:60px}
+body .overview .layered-farmer{height:clamp(450px,45vw,860px)}
+body .layered-farmer .farmer-layer{clip-path:inset(0 round clamp(38px,4.32vw,83px));border:0}
+/* #5, #10: fade the factory image before the numbers, not across them. */
+body .capacity .capacity-image:after{height:clamp(100px,10vw,192px);background:linear-gradient(transparent,#fff)}
+body .capacity .metrics{margin-top:0;background:#fff}
+body .capacity{border:0;box-shadow:none}
+/* #7: blend photographic sections into the surrounding white canvas. */
+body .background-section>.media{mask-image:linear-gradient(to bottom,transparent,#000 24%,#000 76%,transparent)}
+body .planet-section .planet-visual{inset:0;width:100%;margin:0;box-shadow:none}
+body .content-section+.content-section{border-top:0}
+/* Blend the factory photograph into white without moving its backdrop. */
+body .about-page .about-overview>.hero-background{mask-image:linear-gradient(to bottom,transparent,#000 clamp(80px,10vw,160px))}
+/* #8, #9: V3.1 filled artwork and room below the longest card text. */
+body .expertise-card{height:auto;min-height:clamp(460px,28.65vw,550px);overflow:hidden}
+body .expertise-content{padding-bottom:40px}
+body .expertise-icon img{max-width:100%;height:auto}
+body .expertise-icon.figma-icon-disc{background:transparent;box-shadow:none}
+body .expertise-icon.figma-icon-disc img{width:110.25%;max-width:none}
+body .expertise-icon .figma-building-icon{width:43.125%;height:auto}
+/* #11, #12: the footer additions are shared by every route and locale. */
+@font-face{font-family:'NAFAS Figma Brands';src:url('/sites/nafas/fonts/fa-brands-400.woff2') format('woff2');font-weight:400;font-display:block}
+.footer-brand-column{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.footer-social{display:flex;gap:20px;align-items:center}
+.footer-social-icon{display:grid;place-items:center;min-width:30px;min-height:44px;font-family:'NAFAS Figma Brands';font-size:30px;line-height:1}
+.footer-credits{display:flex;flex-direction:column;gap:25px}
+body .footer-bottom{align-items:start}
+body .footer-disclaimer{font-size:clamp(12px,.833vw,16px);line-height:1.5;color:#ffffff82;max-width:932px}
+body .footer-disclaimer a{text-decoration:underline}
+body .footer-contact .v3-font-icon{flex:none;width:20px;margin-top:4px;color:inherit;text-align:center;font-size:20px}
+/* Related pages use the same filled icon family and smooth interaction pace. */
+.solid-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;font-size:24px;line-height:1;width:1.2em}
+.solid-icon-large{font-size:34px}
+.solid-icon-feature{font-size:42px}
+body .career-benefit-icon .solid-icon{font-size:28px;color:var(--green)}
+body .contact-methods .solid-icon{margin-top:4px}
+body .contact-address>.solid-icon{margin-bottom:25px}
+body .career-story-arrow:hover{background:var(--button-hover);color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+/* Text entrances are owned by MotionEnhancer, including newly selected slides. */
+body .career-story-slide,body .figma-page .testimonial-copy,body .testimonial-copy{animation:none}
+body .resource-track figure{transition:transform 1.25s ease,opacity 1.25s ease}
+body .figma-page .v3-motion-ready{transition:opacity 1.25s ease,translate 1.25s ease}
+body .figma-page .v3-image-ready img{transition:scale 1.25s ease}
+/* Shared viewport motion owns all entrances; avoid competing CSS effects. */
+body .figma-page .page-hero .hero-background img{animation:none}
+body .figma-page .v3-motion-ready,body .figma-page .v3-image-ready{opacity:1;translate:none;transition:none}
+body .figma-page .v3-image-ready img{scale:1;transition:none}
+@media(prefers-reduced-motion:reduce){
+  body .career-story-slide,body .testimonial-copy{animation:none}
+  body .resource-track figure,body .figma-page .v3-motion-ready,body .figma-page .v3-image-ready img{transition:none}
+}
+@media(min-width:768px) and (max-width:1023px){body .overview .container{width:calc(100% - 64px);margin-inline:auto}body .overview .split-grid{grid-template-columns:1fr 1fr;gap:24px}body .overview .split-media.layered-farmer{height:460px}body .overview .farmer-front{width:80%!important;left:10%!important}body .overview .farmer-ghost{width:84%!important;left:8%!important}body .overview{padding-block:100px 40px}}
+@media(max-width:767px){
+  body .home-hero{min-height:0}
+  body .home-hero .hero-copy{padding-block:115px 130px}
+  body .home-hero h1{font-size:32px}
+  body .home-hero .actions{gap:12px}
+  body .overview{padding-block:95px 40px}
+  body .overview .split-media.layered-farmer{height:auto;aspect-ratio:4/5}
+  body .layered-farmer .farmer-front{width:80%!important;left:10%!important}
+  body .layered-farmer .farmer-ghost{width:84%!important;left:8%!important}
+  body .capacity .metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+  body .capacity .metric{padding:12px 6px;border-bottom:0}
+  body .capacity .metric+.metric{border-left:1px solid #999}
+  body .capacity .metric strong{font-size:clamp(17px,4.6vw,27px);margin-bottom:10px;white-space:nowrap}
+  body .capacity .metric span{font-size:11px;line-height:1.5;display:block}
+  body .expertise-grid{padding-top:48px;padding-bottom:65px}
+  body .expertise-card{min-height:0}
+  body .expertise-content{padding-bottom:36px}
+  .footer-brand-column{grid-column:1/-1}
+}
+@media(max-height:740px) and (min-width:768px){body .home-hero .hero-copy{padding-block:100px 100px}}
+@media(max-height:480px) and (orientation:landscape){
+  body .home-hero{--explore-cutout:100px}
+  body .home-hero .hero-copy{padding-block:80px 55px}
+  body .home-hero h1{font-size:22px;margin-bottom:8px}
+  body .home-hero p{font-size:11px;line-height:1.4;margin-bottom:8px}
+  body .home-hero .actions{gap:8px;flex-wrap:nowrap}
+  body .home-hero .actions .button{font-size:12px;min-height:32px;padding:6px 10px;gap:6px}
+  body .home-hero .actions .button svg{width:16px;height:16px}
+}
+@media(max-width:767px) and (max-height:740px) and (orientation:portrait){
+  body .home-hero .hero-copy{padding-block:100px 100px}
+  body .home-hero h1{font-size:28px}
+  body .home-hero p{font-size:13px;line-height:1.65;margin-bottom:18px}
+  body .home-hero .actions{gap:8px;flex-wrap:nowrap}
+  body .home-hero .actions .button{font-size:13px;min-height:42px;padding:9px 10px;gap:6px}
+  body .home-hero .actions .button svg{width:18px;height:18px}
+}

@@ -1,11 +1,9 @@
+import { SolidIcon } from '@/components/sites/nafas/shared/solid-icon';
 // Generated from the BM design source by scripts/generate-english.mjs.
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import {
   ArrowRight,
-  FlaskConical,
-  Globe,
-  Handshake,
 } from 'lucide-react';
 import { asset } from "@/lib/nafas/en/assets";
 import { CallToAction, Media, SectionHeading } from "@/components/sites/nafas/en/shared/sections";
@@ -82,10 +80,10 @@ export default function AboutPage() {
 
     <section className="wide-container benefit-strip">
       {[
-        { title: "Leading National Supplier", text: "A leading fertilizer supplier contributing to Malaysia's agricultural economy.", Icon: Globe },
-        { title: "High-performance Products", text: "MPOBF3 Zeolite fertilizer improves soil fertility and oil palm yields.", Icon: FlaskConical },
-        { title: "Trusted Peladang Brand", text: "Committed to supplying quality Peladang fertilizers for a sustainable industry.", Icon: Handshake },
-      ].map(({ title, text, Icon }) => <article key={title}><Icon aria-hidden="true" /><div><h3>{title}</h3><p>{text}</p></div></article>)}
+        { title: "Leading National Supplier", text: "A leading fertilizer supplier contributing to Malaysia's agricultural economy.", icon: 'globe' as const },
+        { title: "High-performance Products", text: "MPOBF3 Zeolite fertilizer improves soil fertility and oil palm yields.", icon: 'flask' as const },
+        { title: "Trusted Peladang Brand", text: "Committed to supplying quality Peladang fertilizers for a sustainable industry.", icon: 'handshake' as const },
+      ].map(({ title, text, icon }) => <article key={title}><SolidIcon name={icon} className="solid-icon-feature" /><div><h3>{title}</h3><p>{text}</p></div></article>)}
     </section>
 
     <section id="nilai-teras" className="content-section wide-container about-values-section">

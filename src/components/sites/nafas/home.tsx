@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Ship, Sprout, Truck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { asset, assets } from '@/lib/nafas/assets';
@@ -8,19 +8,19 @@ import { HomeMap } from './home-map';
 import { ButtonLink, CallToAction, Media, SectionHeading } from './shared/sections';
 
 const expertise = [
-  { image:19, icon:Ship, title:'Kepakaran Pembekalan Urea Berskala Besar', text:'Mengkhusus dalam pengimportan, pengedaran baja Urea berskala besar.' },
-  { image:107, icon:Building2, title:'Kebolehpercayaan Disokong Institusi dan Industri', text:'Beroperasi di bawah NAFAS dengan tadbir urus kukuh dan kestabilan jangka Panjang.' },
-  { image:58, icon:Truck, title:'Kawalan Rantaian Bekalan Bersepadu', text:'Pengurusan sumber hingga pengedaran memastikan bekalan boleh dipercayai.' },
-  { image:6, icon:Sprout, title:'Pengalaman Terbukti Selama Beberapa Dekad', text:'Pengalaman lebih 50 tahun dalam rangkaian bekalan baja dan pertanian.' },
+  { image:19, icon:'ship', title:'Kepakaran Pembekalan Urea Berskala Besar', text:'Mengkhusus dalam pengimportan, pengedaran baja Urea berskala besar.' },
+  { image:107, icon:'building', title:'Kebolehpercayaan Disokong Institusi dan Industri', text:'Beroperasi di bawah NAFAS dengan tadbir urus kukuh dan kestabilan jangka Panjang.' },
+  { image:58, icon:'truck', title:'Kawalan Rantaian Bekalan Bersepadu', text:'Pengurusan sumber hingga pengedaran memastikan bekalan boleh dipercayai.' },
+  { image:6, icon:'sprout', title:'Pengalaman Terbukti Selama Beberapa Dekad', text:'Pengalaman lebih 50 tahun dalam rangkaian bekalan baja dan pertanian.' },
 ];
 // The Figma strip uses sample marks. They are displayed as design placeholders,
 // without presenting them as verified NAFAS partners.
 const partnerLogos = [
-  { image:51, name:'ADNOC' }, { image:122, name:'Aramco' },
-  { image:66, name:'DEWA' }, { image:41, name:'ExxonMobil' },
-  { image:74, name:'Ministry of Water and Electricity' }, { image:119, name:'JKR' },
-  { image:5, name:'Larsen & Toubro' }, { image:72, name:'Microsoft' },
-  { image:42, name:'Jabatan Air Sabah' }, { image:20, name:'Dubai World Trade Centre' },
+  { image:'/sites/nafas/assets/partners-v3-1/82d46.png', name:'ADNOC' }, { image:'/sites/nafas/assets/partners-v3-1/ae1ed.png', name:'Aramco' },
+  { image:'/sites/nafas/assets/partners-v3-1/88ab2.png', name:'DEWA' }, { image:'/sites/nafas/assets/partners-v3-1/8da11.png', name:'ExxonMobil' },
+  { image:'/sites/nafas/assets/partners-v3-1/ad266.png', name:'Ministry of Water and Electricity' }, { image:'/sites/nafas/assets/partners-v3-1/6dd05.png', name:'JKR' },
+  { image:'/sites/nafas/assets/partners-v3-1/478b3.png', name:'Larsen & Toubro' }, { image:'/sites/nafas/assets/partners-v3-1/981bb.png', name:'Microsoft' },
+  { image:'/sites/nafas/assets/partners-v3-1/3d18a.png', name:'Jabatan Air Sabah' }, { image:'/sites/nafas/assets/partners-v3-1/2f9f9.png', name:'Dubai World Trade Centre' },
 ];
 
 function LayeredFarmerImage() {
@@ -78,17 +78,17 @@ export function HomePage() {
     <section className="background-section reveal"><Media src={assets.values} /><div className="container"><div className="split-copy"><SectionHeading label="Nilai Membina Perubahan"><span className="accent">Dipacu</span> pengalaman,<br /><span className="accent">disokong</span> kepercayaan</SectionHeading><p>Kami memastikan bekalan baja yang stabil dan berkualiti melalui operasi bersepadu dan rangkaian nasional yang kukuh, menyokong pertumbuhan pertanian secara mampan.</p></div></div></section>
     <section className="wide-container expertise-grid" aria-label="Kepakaran NAFAS Bajakimia">
       {expertise.map((item) => {
-        const Icon = item.icon;
+        const iconSrc = `/sites/nafas/figma/bugherd-v3-1/${item.icon}.svg`;
         return <article className="expertise-card reveal" key={item.title}>
           <Media src={asset(item.image)} className="expertise-image" alt="" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 45vw, 23vw" />
-          <div className="expertise-content"><span className="expertise-icon"><Icon size={27} aria-hidden="true" /></span><h3>{item.title}</h3><p>{item.text}</p></div>
+          <div className="expertise-content"><span className={`expertise-icon ${item.icon === 'building' ? '' : 'figma-icon-disc'}`}><Image className={item.icon === 'building' ? 'figma-building-icon' : ''} src={iconSrc} width={item.icon === 'building' ? 34 : 86} height={item.icon === 'building' ? 33 : 87} alt="" /></span><h3>{item.title}</h3><p>{item.text}</p></div>
         </article>;
       })}
     </section>
     <section className="partners" aria-label="Contoh susun atur logo rakan">
       <div className="partner-marquee"><div className="partner-names">
         {[...partnerLogos, ...partnerLogos].map((logo, index) => <span key={`${logo.name}-${index}`} aria-hidden={index >= partnerLogos.length}>
-          <Image src={asset(logo.image)} alt={index < partnerLogos.length ? `${logo.name} — logo contoh` : ''} width={160} height={64} sizes="160px" />
+          <Image src={logo.image} alt={index < partnerLogos.length ? `${logo.name} — logo contoh` : ''} width={138} height={110} sizes="219px" />
         </span>)}
       </div></div>
     </section>

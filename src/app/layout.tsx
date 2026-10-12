@@ -10,6 +10,8 @@ import { MotionEnhancer } from '@/components/sites/nafas/shared/motion';
 import './globals.css';
 import '@/components/sites/nafas/refinements.css';
 import '@/components/sites/nafas/figma-pages.css';
+import '@/components/sites/nafas/bugherd-fixes.css';
+import '@/components/sites/nafas/hero-sizing.css';
 const body = Open_Sans({variable:'--font-body',subsets:['latin'],display:'swap'});
 const heading = Tomorrow({variable:'--font-heading',subsets:['latin'],weight:['400','500','600','700'],display:'swap'});
 const circular = Raleway({variable:'--font-circular',subsets:['latin'],weight:['400','700'],display:'swap'});

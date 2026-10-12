@@ -1,0 +1,37 @@
+/* Match the homepage's visible footprint, including its curved extension. */
+:root{--hero-screen-height:95svh;--hero-space-top:140px;--hero-space-bottom:130px}
+body .home-hero{height:calc(var(--hero-screen-height) - var(--explore-below))}
+body main :is(.figma-page .page-hero,.page-hero,.editorial-hero,.career-opening,.about-page .corporate-banner){
+  box-sizing:border-box;min-height:var(--hero-screen-height);height:auto;max-height:none;
+}
+body main :is(.figma-page .page-hero,.page-hero) .hero-copy{
+  box-sizing:border-box;min-height:var(--hero-screen-height);height:auto;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  padding-block:var(--hero-space-top) var(--hero-space-bottom);
+}
+body main :is(.editorial-hero,.career-opening){padding-block:var(--hero-space-top) var(--hero-space-bottom)}
+body main .editorial-hero{display:flex;align-items:center}
+body main .about-page .corporate-banner{height:var(--hero-screen-height)}
+/* Remove oversized exported image heights; retain each image's alignment. */
+body main :is(.figma-page .page-hero,.page-hero) .hero-background img{
+  width:100%!important;height:100%!important;object-fit:cover;max-width:100%;
+}
+body main .figma-page.sustainability-page .page-hero .hero-background img{object-fit:cover}
+body main .figma-page.sustainability-page .page-hero .hero-copy{padding-block:var(--hero-space-top) var(--hero-space-bottom)}
+/* This landscape export includes bags at its right edge. Keep its field
+   aligned left behind the separate foreground bags on narrow screens. */
+body main .figma-page .product-category-hero .hero-background img{object-fit:cover;object-position:left center}
+body main .career-page .career-opening>.media img{object-fit:contain}
+body main .figma-page .product-category-hero .product-hero-bags{
+  top:auto;bottom:0;left:45%;width:55%;height:70%;max-height:var(--hero-screen-height);
+}
+body main .figma-page .product-category-hero .product-hero-bags img{object-fit:contain;object-position:bottom right}
+@media(max-height:740px) and (min-width:768px){:root{--hero-space-top:100px;--hero-space-bottom:100px}}
+@media(max-width:767px){
+  :root{--hero-space-top:115px;--hero-space-bottom:130px;--hero-mobile-art-height:clamp(160px,20svh,220px)}
+  body main .figma-page .product-category-hero .hero-copy{padding-bottom:calc(var(--hero-mobile-art-height) + 30px)}
+  body main .figma-page .product-category-hero .product-hero-bags{left:8%;width:84%;height:var(--hero-mobile-art-height)}
+  body main .career-page .career-opening>.media{height:var(--hero-mobile-art-height);min-height:0;aspect-ratio:auto}
+}
+@media(max-width:767px) and (max-height:740px) and (orientation:portrait){:root{--hero-space-top:100px;--hero-space-bottom:100px}}
+@media(max-height:480px) and (orientation:landscape){:root{--hero-space-top:80px;--hero-space-bottom:55px}}

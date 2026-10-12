@@ -1,17 +1,18 @@
 'use client';
 import { useState } from 'react';
-import { ArrowUpRight, ChevronLeft, ChevronRight, Coffee, GraduationCap, HeartPulse, Palmtree, ShieldCheck, Users } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { SolidIcon } from '@/components/sites/nafas/shared/solid-icon';
 import { asset, assets } from '@/lib/nafas/assets';
 import { ButtonLink, Media, SectionHeading } from './shared/sections';
 import './career-experience.css';
 
 const benefits = [
-  { icon: HeartPulse, en: ['Health & Wellbeing', 'Feel supported with medical care and wellbeing initiatives.'], ms: ['Kesihatan & Kesejahteraan', 'Nikmati sokongan penjagaan kesihatan dan inisiatif kesejahteraan.'] },
-  { icon: GraduationCap, en: ['Room to Grow', 'Keep learning through training, mentoring and new opportunities.'], ms: ['Ruang untuk Berkembang', 'Terus belajar melalui latihan, bimbingan dan peluang baharu.'] },
-  { icon: Palmtree, en: ['Time to Recharge', 'Take a well-earned break and make time for what matters.'], ms: ['Masa untuk Berehat', 'Nikmati rehat yang bermakna dan masa untuk perkara yang penting.'] },
-  { icon: Users, en: ['A Connected Team', 'Build friendships through team activities and shared experiences.'], ms: ['Pasukan yang Erat', 'Bina persahabatan melalui aktiviti pasukan dan pengalaman bersama.'] },
-  { icon: ShieldCheck, en: ['Peace of Mind', 'Plan ahead with a supportive workplace and employee protection.'], ms: ['Ketenangan Fikiran', 'Rancang masa depan dengan tempat kerja yang menyokong dan perlindungan pekerja.'] },
-  { icon: Coffee, en: ['Everyday Comforts', 'Enjoy welcoming spaces to unwind, connect and recharge.'], ms: ['Keselesaan Harian', 'Nikmati ruang yang selesa untuk berehat dan berhubung dengan rakan sekerja.'] },
+  { icon: 'health' as const, en: ['Health & Wellbeing', 'Feel supported with medical care and wellbeing initiatives.'], ms: ['Kesihatan & Kesejahteraan', 'Nikmati sokongan penjagaan kesihatan dan inisiatif kesejahteraan.'] },
+  { icon: 'learning' as const, en: ['Room to Grow', 'Keep learning through training, mentoring and new opportunities.'], ms: ['Ruang untuk Berkembang', 'Terus belajar melalui latihan, bimbingan dan peluang baharu.'] },
+  { icon: 'holiday' as const, en: ['Time to Recharge', 'Take a well-earned break and make time for what matters.'], ms: ['Masa untuk Berehat', 'Nikmati rehat yang bermakna dan masa untuk perkara yang penting.'] },
+  { icon: 'team' as const, en: ['A Connected Team', 'Build friendships through team activities and shared experiences.'], ms: ['Pasukan yang Erat', 'Bina persahabatan melalui aktiviti pasukan dan pengalaman bersama.'] },
+  { icon: 'shield' as const, en: ['Peace of Mind', 'Plan ahead with a supportive workplace and employee protection.'], ms: ['Ketenangan Fikiran', 'Rancang masa depan dengan tempat kerja yang menyokong dan perlindungan pekerja.'] },
+  { icon: 'coffee' as const, en: ['Everyday Comforts', 'Enjoy welcoming spaces to unwind, connect and recharge.'], ms: ['Keselesaan Harian', 'Nikmati ruang yang selesa untuk berehat dan berhubung dengan rakan sekerja.'] },
 ];
 const gallery = [assets.packaging, assets.warehouse, asset(25), assets.farmers, assets.agronomy, assets.farming];
 const people = [
@@ -49,7 +50,7 @@ export function CareerExperience({ locale }: { locale: 'en' | 'ms' }) {
         <div className="career-marquee-track">{[0, 1].map(group => <div className="career-marquee-group" key={group} aria-hidden={group === 1 ? true : undefined}>{gallery.map((src, index) => <div className="career-gallery-frame" key={src}><Media src={src} sizes="(max-width: 900px) 480px, 640px" alt={group === 0 ? (en ? `Sample workplace image ${index + 1}` : `Gambar contoh tempat kerja ${index + 1}`) : ''} /><span>{en ? 'Together, we grow' : 'Bersama, kita berkembang'}<ArrowUpRight size={18} /></span></div>)}</div>)}</div>
       </div><p className="resource-sample center">{en ? 'Sample gallery images' : 'Gambar galeri contoh'}</p>
     </section>
-    <section className="career-perks content-section"><div className="container"><div className="reveal"><SectionHeading label={en ? 'Perks & Benefits' : 'Faedah & Manfaat'} center>{en ? 'A little more for you.' : 'Lebih lagi untuk anda.'}</SectionHeading><p className="career-section-intro">{en ? 'Support for your wellbeing, your ambitions and your everyday life.' : 'Sokongan untuk kesejahteraan, cita-cita dan kehidupan harian anda.'}</p></div><div className="career-benefit-grid">{benefits.map(({ icon: Icon, ...item }) => { const [title, description] = item[locale]; return <article className="career-benefit reveal" key={title}><span className="career-benefit-icon"><Icon size={28} strokeWidth={1.6} aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></article>; })}</div><p className="resource-sample center">{en ? 'Illustrative benefits — sample content for this page.' : 'Manfaat ilustrasi — kandungan contoh untuk halaman ini.'}</p></div></section>
+    <section className="career-perks content-section"><div className="container"><div className="reveal"><SectionHeading label={en ? 'Perks & Benefits' : 'Faedah & Manfaat'} center>{en ? 'A little more for you.' : 'Lebih lagi untuk anda.'}</SectionHeading><p className="career-section-intro">{en ? 'Support for your wellbeing, your ambitions and your everyday life.' : 'Sokongan untuk kesejahteraan, cita-cita dan kehidupan harian anda.'}</p></div><div className="career-benefit-grid">{benefits.map(({ icon, ...item }) => { const [title, description] = item[locale]; return <article className="career-benefit reveal" key={title}><span className="career-benefit-icon"><SolidIcon name={icon} /></span><h3>{title}</h3><p>{description}</p></article>; })}</div><p className="resource-sample center">{en ? 'Illustrative benefits — sample content for this page.' : 'Manfaat ilustrasi — kandungan contoh untuk halaman ini.'}</p></div></section>
     <CareerTestimonials locale={locale} />
     <section className="career-missing content-section"><div className="container career-missing-inner reveal"><span className="career-puzzle" aria-hidden="true">+</span><p className="eyebrow">{en ? 'Your next chapter' : 'Langkah seterusnya'}</p><h2>{en ? 'Fill Up the Missing Piece' : 'Lengkapkan Bahagian yang Hilang'}</h2><p>{en ? 'Your talent could be the piece we are looking for. Let’s build something meaningful together.' : 'Bakat anda mungkin pelengkap yang kami cari. Mari bina sesuatu yang bermakna bersama.'}</p><ButtonLink href={en ? '/en/hubungi-kami' : '/hubungi-kami'}>{en ? 'Apply Now' : 'Mohon Sekarang'}</ButtonLink></div></section>
   </>;

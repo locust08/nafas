@@ -1,26 +1,40 @@
-export type MotionVariant = 'left' | 'right' | 'up' | 'diagonal' | 'scale' | 'rotate' | 'layer';
+export type MotionVariant = 'left' | 'right' | 'up' | 'diagonal-left' | 'diagonal-right' | 'scale-left' | 'scale-right' | 'diagonal' | 'scale' | 'rotate' | 'layer';
 
-const entrances: Record<MotionVariant, string> = {
-  left: 'translate3d(-24px,0,0)',
-  right: 'translate3d(24px,0,0)',
-  up: 'translate3d(0,22px,0)',
-  diagonal: 'translate3d(16px,16px,0)',
-  scale: 'scale(.975)',
-  rotate: 'perspective(1200px) rotateY(3deg) translate3d(0,12px,0)',
-  layer: 'translate3d(12px,8px,0) scale(1.015)',
-};
+export const entranceEasing = 'cubic-bezier(.22,.7,.25,1)';
+
+export function entranceTransform(variant: MotionVariant, distance: number): string {
+  const diagonal = Math.round(distance * .72);
+  switch (variant) {
+    case 'left': return `translate3d(-${distance}px,0,0)`;
+    case 'right': return `translate3d(${distance}px,0,0)`;
+    case 'diagonal-left': return `translate3d(-${diagonal}px,${diagonal}px,0)`;
+    case 'diagonal': case 'diagonal-right': return `translate3d(${diagonal}px,${diagonal}px,0)`;
+    case 'scale-left': return `translate3d(-${distance}px,${Math.round(distance * .4)}px,0) scale(.975)`;
+    case 'scale-right': case 'layer': return `translate3d(${distance}px,${Math.round(distance * .4)}px,0) scale(.975)`;
+    case 'scale': case 'rotate': return `translate3d(0,${distance}px,0) scale(.975)`;
+    default: return `translate3d(0,${distance}px,0)`;
+  }
+}
+
+export function entranceDistance(width: number, height: number, mobile: boolean): number {
+  return Math.round(Math.min(mobile ? 64 : 90, Math.max(40, Math.max(width, height) * .12)));
+}
 
 // Additive transforms preserve skew, positioning and opacity from approved CSS.
 // No hidden idle state: content remains readable if observation or JS fails.
 export function animateEntrance(element: HTMLElement | SVGElement, variant: MotionVariant, delay = 0): Animation[] {
   const opacity = Number(getComputedStyle(element).opacity);
-  const timing: KeyframeAnimationOptions = { duration: 720, delay, easing: 'cubic-bezier(.22,1,.36,1)' };
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return [];
+  const rect = element.getBoundingClientRect();
+  const distance = entranceDistance(rect.width, rect.height, window.innerWidth < 768);
+  const boundedDelay = Number.isFinite(delay) ? Math.min(480, Math.max(0, delay)) : 0;
+  const timing: KeyframeAnimationOptions = { duration: Math.min(1200, 1000 + distance * 3), delay: boundedDelay, easing: entranceEasing, fill: 'backwards' };
   return [
     element.animate([
-      { transform: entrances[variant], composite: 'add' },
+      { transform: entranceTransform(variant, distance), composite: 'add' },
       { transform: 'translate3d(0,0,0)', composite: 'add' },
     ], timing),
-    element.animate([{ opacity: opacity * .35 }, { opacity }], timing),
+    element.animate([{ opacity: opacity * .65 }, { opacity }], timing),
   ];
 }
 

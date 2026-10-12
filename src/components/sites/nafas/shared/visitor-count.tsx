@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CalendarDays, Sprout } from 'lucide-react';
 
 export function VisitorCount() {
   const [count, setCount] = useState<number | null>(null);
@@ -15,7 +14,7 @@ export function VisitorCount() {
     return () => controller.abort();
   }, []);
   return <div className="visitor-panel" aria-label="Statistik pelawat">
-    <div className="visitor-stat"><span className="visitor-icon"><Sprout size={27} aria-hidden="true" /></span><div><strong>—</strong><span>Pelawat Hari Ini</span></div></div>
-    <div className="visitor-stat"><span className="visitor-icon"><CalendarDays size={26} aria-hidden="true" /></span><div><strong aria-live="polite">{count === null ? '—' : count.toLocaleString('en-MY')}</strong><span>Pelawat Bulan Ini</span></div></div>
+    <div className="visitor-stat"><span className="visitor-icon"><span className="v3-font-icon" aria-hidden="true">&#xf4d8;</span></span><div><strong>—</strong><span>Pelawat Hari Ini</span></div></div>
+    <div className="visitor-stat"><span className="visitor-icon"><span className="v3-font-icon" aria-hidden="true">&#xf073;</span></span><div><strong aria-live="polite">{count === null ? '—' : count.toLocaleString('en-MY')}</strong><span>Pelawat Bulan Ini</span></div></div>
   </div>;
 }
