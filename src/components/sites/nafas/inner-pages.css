@@ -227,10 +227,10 @@
 .about-page .flag-card:after{display:none}
 .about-page .flag-card>.media img{object-fit:fill}
 .about-page .ceo-panel .media img{object-fit:fill;width:100%;height:106.89%;top:-.07%}
-.about-page .department-card{position:relative}
-.about-page .department-card .media{position:absolute;inset:0;height:100%}
-.about-page .department-card .media:after{inset:0;height:100%;background:linear-gradient(180deg,transparent 66.827%,white 72%)}
-.about-page .department-card h3{position:absolute;left:0;right:0;bottom:0;z-index:1}
+.about-page .department-card{position:relative;display:flex;flex-direction:column}
+.about-page .department-card .media{position:relative;inset:auto;flex:0 0 auto}
+.about-page .department-card .media:after{inset:auto 0 0;height:56px;background:linear-gradient(transparent,#fff)}
+.about-page .department-card h3{position:relative;z-index:1;display:flex;flex:1;align-items:center;justify-content:center;min-height:80px;background:#fff}
 .about-page .department-card:nth-child(3) .media img{top:-14.41%;height:100%;object-fit:fill}
 .about-page .department-card:nth-child(4) .media img{top:-9.97%;height:100%;object-fit:fill}
 .about-page .department-card:nth-child(5) .media img{top:-13.58%;height:100%;object-fit:fill}
