@@ -1,37 +1,40 @@
-/* Match the homepage's visible footprint, including its curved extension. */
-:root{--hero-screen-height:95svh;--hero-space-top:140px;--hero-space-bottom:130px}
-body .home-hero{height:calc(var(--hero-screen-height) - var(--explore-below))}
-body main :is(.figma-page .page-hero,.page-hero,.editorial-hero,.career-opening,.about-page .corporate-banner){
-  box-sizing:border-box;min-height:var(--hero-screen-height);height:auto;max-height:none;
+/* Homepage retains its viewport footprint, including the Explore extension. */
+body .home-hero{height:calc(95svh - var(--explore-below))}
+@media(min-width:1024px){
+  body .home-hero .hero-copy{justify-content:flex-start;padding-top:clamp(180px,31svh,280px)}
+  body .home-hero .hero-copy p{max-width:780px}
+  body .home-hero .actions .button{font-size:clamp(16px,1.16vw,22px);min-height:clamp(48px,3.26vw,62px)}
 }
-body main :is(.figma-page .page-hero,.page-hero) .hero-copy{
-  box-sizing:border-box;min-height:var(--hero-screen-height);height:auto;
-  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
-  padding-block:var(--hero-space-top) var(--hero-space-bottom);
+/* Filtered video layers need an explicit clip to keep curved corners while
+   the browser composites them during scrolling. */
+body .about-page .corporate-banner{
+  --banner-corner:40px;
+  height:auto;min-height:0;max-height:none;aspect-ratio:16 / 9;
+  margin-bottom:0;
+  border-radius:0 0 var(--banner-corner) var(--banner-corner);
+  clip-path:inset(0 round 0 0 var(--banner-corner) var(--banner-corner));
+  isolation:isolate;
 }
-body main :is(.editorial-hero,.career-opening){padding-block:var(--hero-space-top) var(--hero-space-bottom)}
-body main .editorial-hero{display:flex;align-items:center}
-body main .about-page .corporate-banner{height:var(--hero-screen-height)}
-/* Remove oversized exported image heights; retain each image's alignment. */
+body .about-page .corporate-banner:after{border-radius:inherit}
+body .about-page .corporate-banner .hero-video{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  border-radius:inherit;clip-path:inherit;
+}
+/* Keep full-width backgrounds; sizing and foreground placement come from
+   the original page-specific Figma and responsive rules again. */
 body main :is(.figma-page .page-hero,.page-hero) .hero-background img{
   width:100%!important;height:100%!important;object-fit:cover;max-width:100%;
 }
 body main .figma-page.sustainability-page .page-hero .hero-background img{object-fit:cover}
-body main .figma-page.sustainability-page .page-hero .hero-copy{padding-block:var(--hero-space-top) var(--hero-space-bottom)}
-/* This landscape export includes bags at its right edge. Keep its field
-   aligned left behind the separate foreground bags on narrow screens. */
-body main .figma-page .product-category-hero .hero-background img{object-fit:cover;object-position:left center}
-body main .career-page .career-opening>.media img{object-fit:contain}
-body main .figma-page .product-category-hero .product-hero-bags{
-  top:auto;bottom:0;left:45%;width:55%;height:70%;max-height:var(--hero-screen-height);
+body main .figma-page .product-category-hero .hero-background img{object-position:left center}
+/* Share the About Us corner treatment across image-based page heroes.
+   Clip the whole banner so foreground artwork and overlays follow the curve. */
+body main :is(.page-hero,.figma-page .page-hero){
+  --banner-corner:40px;
+  border-radius:0 0 var(--banner-corner) var(--banner-corner);
+  clip-path:inset(0 round 0 0 var(--banner-corner) var(--banner-corner));
+  isolation:isolate;
 }
-body main .figma-page .product-category-hero .product-hero-bags img{object-fit:contain;object-position:bottom right}
-@media(max-height:740px) and (min-width:768px){:root{--hero-space-top:100px;--hero-space-bottom:100px}}
 @media(max-width:767px){
-  :root{--hero-space-top:115px;--hero-space-bottom:130px;--hero-mobile-art-height:clamp(160px,20svh,220px)}
-  body main .figma-page .product-category-hero .hero-copy{padding-bottom:calc(var(--hero-mobile-art-height) + 30px)}
-  body main .figma-page .product-category-hero .product-hero-bags{left:8%;width:84%;height:var(--hero-mobile-art-height)}
-  body main .career-page .career-opening>.media{height:var(--hero-mobile-art-height);min-height:0;aspect-ratio:auto}
+  body main :is(.page-hero,.figma-page .page-hero),body .about-page .corporate-banner{--banner-corner:28px}
 }
-@media(max-width:767px) and (max-height:740px) and (orientation:portrait){:root{--hero-space-top:100px;--hero-space-bottom:100px}}
-@media(max-height:480px) and (orientation:landscape){:root{--hero-space-top:80px;--hero-space-bottom:55px}}

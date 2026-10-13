@@ -71,6 +71,8 @@
 .product-certificate-controls{position:absolute;right:calc(340 * var(--v3-unit));top:calc(-75 * var(--v3-unit));display:flex;gap:12px}.product-certificate-controls .resource-arrow{width:40px;height:40px}.product-certificate-controls .resource-arrow svg{width:24px;height:24px}
 .product-certificate-track{display:flex;gap:calc(20 * var(--v3-unit));overflow:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 0 12px;overscroll-behavior-x:contain}
 .product-certificate-track::-webkit-scrollbar{display:none}
+.product-certificate-track{cursor:grab;user-select:none}
+.product-certificate-track[data-dragging="true"]{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
 .product-certificate-track figure{flex:0 0 calc(419 * var(--v3-unit));margin:0;scroll-snap-align:start;box-shadow:1px 1px 7px #a3a3a320;border:1px solid #e0e0e0}
 .product-certificate-track .media{height:calc(532 * var(--v3-unit))}.product-certificate-track img{object-fit:cover}
 .figma-page .product-testimonials{padding:0;position:relative}

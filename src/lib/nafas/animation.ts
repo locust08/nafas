@@ -1,4 +1,4 @@
-export type MotionVariant = 'left' | 'right' | 'up' | 'diagonal-left' | 'diagonal-right' | 'scale-left' | 'scale-right' | 'diagonal' | 'scale' | 'rotate' | 'layer';
+export type MotionVariant = 'left' | 'right' | 'up' | 'fade' | 'bounce' | 'diagonal-left' | 'diagonal-right' | 'scale-left' | 'scale-right' | 'diagonal' | 'scale' | 'rotate' | 'layer';
 
 export const entranceEasing = 'cubic-bezier(.22,.7,.25,1)';
 
@@ -22,18 +22,25 @@ export function entranceDistance(width: number, height: number, mobile: boolean)
 
 // Additive transforms preserve skew, positioning and opacity from approved CSS.
 // No hidden idle state: content remains readable if observation or JS fails.
-export function animateEntrance(element: HTMLElement | SVGElement, variant: MotionVariant, delay = 0): Animation[] {
+export function animateEntrance(element: HTMLElement | SVGElement, variant: MotionVariant, delay = 0, duration?: number, profile?: { distance: number; easing: string; maxDelay: number }): Animation[] {
   const opacity = Number(getComputedStyle(element).opacity);
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return [];
   const rect = element.getBoundingClientRect();
-  const distance = entranceDistance(rect.width, rect.height, window.innerWidth < 768);
-  const boundedDelay = Number.isFinite(delay) ? Math.min(480, Math.max(0, delay)) : 0;
-  const timing: KeyframeAnimationOptions = { duration: Math.min(1200, 1000 + distance * 3), delay: boundedDelay, easing: entranceEasing, fill: 'backwards' };
+  const distance = profile?.distance ?? entranceDistance(rect.width, rect.height, window.innerWidth < 768);
+  const boundedDelay = Number.isFinite(delay) ? Math.min(profile?.maxDelay ?? 480, Math.max(0, delay)) : 0;
+  const timing: KeyframeAnimationOptions = { duration: duration ?? Math.min(1200, 1000 + distance * 3), delay: boundedDelay, easing: profile?.easing ?? entranceEasing, fill: 'backwards' };
+  if (variant === 'fade') return [element.animate([{ opacity: 0 }, { opacity }], timing)];
+  const transforms: Keyframe[] = variant === 'bounce' ? [
+    { transform: `translate3d(0,${distance * .5}px,0) scale(.96)`, composite: 'add', offset: 0 },
+    { transform: 'translate3d(0,-8px,0) scale(1.015)', composite: 'add', offset: .65 },
+    { transform: 'translate3d(0,3px,0) scale(.995)', composite: 'add', offset: .82 },
+    { transform: 'translate3d(0,0,0) scale(1)', composite: 'add', offset: 1 },
+  ] : [
+    { transform: entranceTransform(variant, distance), composite: 'add' },
+    { transform: 'translate3d(0,0,0)', composite: 'add' },
+  ];
   return [
-    element.animate([
-      { transform: entranceTransform(variant, distance), composite: 'add' },
-      { transform: 'translate3d(0,0,0)', composite: 'add' },
-    ], timing),
+    element.animate(transforms, timing),
     element.animate([{ opacity: opacity * .65 }, { opacity }], timing),
   ];
 }

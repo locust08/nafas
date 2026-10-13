@@ -8,16 +8,16 @@ export function CategoryNavigation({ active }: { active?: string }) {
   return <nav aria-label="Kategori produk" className="category-tabs">{categories.map((category) => <Link key={category.slug} href={`/produk/${category.slug}`} aria-current={active === category.slug ? 'page' : undefined}>{category.name}</Link>)}</nav>;
 }
 
-export function ProductCard({ product }: { product: FertilizerProduct }) {
+export function ProductCard({ product, listing = false }: { product: FertilizerProduct; listing?: boolean }) {
   const category = getCategory(product.category);
-  return <Link href={productHref(product)} className={`product-card ${styles.card}`}>
+  return <Link href={productHref(product)} className={`product-card ${styles.card} ${listing ? styles.listingCard : ""}`}>
     <Media src="/sites/nafas/figma/product-bag.png" alt={`Contoh pembungkusan ${product.name}`} />
-    <p>{category?.name}</p><h3>{product.name}</h3><span className="sr-only">Maklumat Produk</span>
+    <p>{category?.name}</p><h3>{product.name}</h3><span className={listing ? styles.cardAction : "sr-only"}>Maklumat Produk</span>
   </Link>;
 }
 
-export function ProductGrid({ items }: { items: FertilizerProduct[] }) {
-  return <div className={`product-grid ${styles.grid}`}>{items.map((product) => <ProductCard product={product} key={product.slug} />)}</div>;
+export function ProductGrid({ items, listing = false }: { items: FertilizerProduct[]; listing?: boolean }) {
+  return <div className={`product-grid ${styles.grid} ${listing ? styles.categoryGrid : ""}`}>{items.map((product) => <ProductCard product={product} key={product.slug} listing={listing} />)}</div>;
 }
 
 const audience = [
@@ -38,5 +38,5 @@ export function ProductAudience() {
 }
 
 export function ProductBenefits() {
-  return <section className={styles.benefits}><div className={styles.benefitArtwork}><Media src="/sites/nafas/figma/benefits-photo.png" className={styles.benefitImage} /><Media src="/sites/nafas/figma/benefits-curve.svg" className={styles.benefitCurve} /><Media src="/sites/nafas/figma/benefits-frame.png" className={styles.benefitFrame} /></div><div className={styles.benefitCopy}><SectionHeading label="Manfaat & Hasil"><span className="green">Nilai</span> yang Diperoleh Pelanggan</SectionHeading><ul>{benefits.map(({ text }, index) => <li key={text}>{index < 3 ? <Image src={`/sites/nafas/figma/${["benefit-supply", "benefit-quality", "benefit-operations"][index]}.svg`} alt="" width={[36,39,43][index]} height={44} /> : <span className="v3-font-icon v3-handshake" aria-hidden="true">&#xf2b5;</span>}<p>{text}</p></li>)}</ul></div></section>;
+  return <section className={`product-benefits ${styles.benefits}`}><div className={`product-benefit-artwork ${styles.benefitArtwork}`}><Media src="/sites/nafas/figma/benefits-photo.png" className={styles.benefitImage} /><Media src="/sites/nafas/figma/benefits-curve.svg" className={styles.benefitCurve} /><Media src="/sites/nafas/figma/benefits-frame.png" className={styles.benefitFrame} /></div><div className={`product-benefit-copy ${styles.benefitCopy}`}><SectionHeading label="Manfaat & Hasil"><span className="green">Nilai</span> yang Diperoleh Pelanggan</SectionHeading><ul>{benefits.map(({ text }, index) => <li key={text}>{index < 3 ? <Image src={`/sites/nafas/figma/${["benefit-supply", "benefit-quality", "benefit-operations"][index]}.svg`} alt="" width={[36,39,43][index]} height={44} /> : <span className="v3-font-icon v3-handshake" aria-hidden="true">&#xf2b5;</span>}<p>{text}</p></li>)}</ul></div></section>;
 }

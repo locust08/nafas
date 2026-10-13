@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { assets } from '@/lib/nafas/assets';
 import { animateEntrance, type MotionVariant } from '@/lib/nafas/animation';
+import { registerHomepageMotion } from '@/lib/nafas/homepage-motion';
+import { registerPageMotion } from '@/lib/nafas/page-motion';
 export function CountUp({ value, suffix = '' }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLElement>(null);
   const [current, setCurrent] = useState(value);
@@ -16,12 +18,12 @@ export function CountUp({ value, suffix = '' }: { value: number; suffix?: string
       observer.disconnect();
       const start = performance.now();
       const tick = (now: number) => {
-        const progress = Math.min((now - start) / 1500, 1);
+        const progress = Math.min((now - start) / 1600, 1);
         setCurrent(Math.round(value * (1 - Math.pow(1 - progress, 3))));
         if (progress < 1) frame = requestAnimationFrame(tick);
       };
       frame = requestAnimationFrame(tick);
-    }, { threshold: .25 });
+    }, { threshold: 0, rootMargin: `0px 0px -${Math.round(window.innerHeight * .2)}px 0px` });
     observer.observe(node);
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   }, [value]);
@@ -61,6 +63,8 @@ export function MotionEnhancer() {
     if (typeof IntersectionObserver === 'undefined' || typeof Element.prototype.animate !== 'function') return;
     const root = document.querySelector('main');
     if (!root) return;
+    const homepage = !!root.querySelector('.home-hero');
+    const sequences = new Map<HTMLElement, HTMLElement[]>();
     const observed = new Set<Element>();
     const animations = new Set<Animation>();
     const stop = () => { if (preference.matches) animations.forEach(animation => animation.cancel()); };
@@ -72,8 +76,13 @@ export function MotionEnhancer() {
         element.classList.add('revealed');
         element.dataset.motionEntered = 'true';
         if (preference.matches) { observer.unobserve(element); return; }
-        const variant = element.dataset.motionVariant as MotionVariant;
-        const entrance = animateEntrance(element, variant, Number(element.dataset.motionDelay ?? 0));
+        // One viewport trigger coordinates the heading, image and details.
+        const targets = sequences.get(element) ?? [element];
+        const entrance = targets.flatMap(target => {
+          target.classList.add('revealed');
+          target.dataset.motionEntered = 'true';
+          return animateEntrance(target, target.dataset.motionVariant as MotionVariant, Number(target.dataset.motionDelay ?? 0), target.dataset.motionDuration ? Number(target.dataset.motionDuration) : undefined, { distance: window.innerWidth < 768 ? 60 : 80, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', maxDelay: 480 });
+        });
         // Finish at the natural pace, even if scrolling moves the element out
         // of view. Calling finish() here used to produce an abrupt jump.
         observer.unobserve(element);
@@ -82,52 +91,22 @@ export function MotionEnhancer() {
           animation.finished.then(() => { animations.delete(animation); observer.unobserve(element); }).catch(() => animations.delete(animation));
         });
       });
-    }, { threshold: 0.05, rootMargin: '0px 0px -24px 0px' });
+    }, { threshold: 0, rootMargin: `0px 0px -${Math.round(window.innerHeight * .2)}px 0px` });
     const register = () => {
-      const boxes = '.product-card,.news-card,.about-value,.value-card,.career-benefit,.metric,.audience-grid>article,.cards-grid>article,.benefit-strip article,.purpose-card,.ceo-panel,.department-card,.corporate-fact-list>article,.monthly-poster-card,.product-certificate-track>figure,.resource-track>figure';
-      const layers = '.farmer-layer,.sustainability-front,.sustainability-ghost';
-      const selector = `h1,h2,h3,h4,p,.button,img,${boxes},${layers},.fact-marker,.approach-icon,.expertise-icon,.solid-icon,.career-puzzle,.home-map-marker,.reveal,[data-motion]`;
-      const elements = [...root.querySelectorAll(selector), ...document.querySelectorAll('.site-footer')];
-      elements.forEach(element => {
-        if (observed.has(element) || element.closest('dialog,.career-marquee-track,form,.dropdown,.mobile-nav,.quote-panel')) return;
-        // Heroes and section backdrops stay anchored. Card artwork moves only
-        // with its complete card, never separately from its text.
-        if (element.closest('.home-hero,.page-hero,.corporate-banner,.editorial-hero,.career-opening,.hero-background,.background-section>.media,.planet-visual')) return;
-        // Containers never mask independently animated children; controls stay usable.
-        if (element.tagName === 'SECTION' || element.matches('.hero-copy,.layered-farmer,.sustainability-farmer,.expertise-card') || element.matches('.media') && !element.matches(layers)) return;
-        if (element.matches('.reveal') && !element.matches(`${boxes},${layers}`) && element.querySelector('h1,h2,h3,p,img,.media')) return;
-        if (element.parentElement?.closest(`${boxes},${layers},.button,.fact-marker,.approach-icon,.expertise-icon,.career-puzzle,.footer-bottom,.footer-brand-column`)) return;
-        if (element.matches('.sr-only') || element.closest('[aria-hidden="true"]') && !element.matches(`img,${layers},.solid-icon,.career-puzzle,.approach-icon,.expertise-icon,.fact-marker,.home-map-marker`)) return;
-        observed.add(element);
-        const node = element as HTMLElement;
-        const section = element.closest('section');
-        const sections = Array.from(root.querySelectorAll('section'));
-        const sectionIndex = section ? sections.indexOf(section) : 0;
-        const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
-        const order = Math.max(0, siblings.indexOf(element));
-        const rect = element.getBoundingClientRect();
-        const onLeft = rect.left + rect.width / 2 < window.innerWidth / 2;
-        const visual = element.matches(`img,${layers},.approach-icon,.expertise-icon,.solid-icon,.career-puzzle`);
-        let variant: MotionVariant = sectionIndex % 2 ? 'right' : 'left';
-        if (visual) variant = onLeft ? 'scale-left' : 'scale-right';
-        if (element.matches(layers)) variant = order % 2 ? 'diagonal-left' : 'diagonal-right';
-        if (element.matches(boxes)) variant = order % 2 ? 'diagonal-right' : 'diagonal-left';
-        if (element.matches('p,.button,.metric,.site-footer *')) variant = 'up';
-        if (element.matches('.site-footer,.corporate-fact-list>article')) variant = 'up';
-        const split = element.closest('.split-grid,.sustainability-approach,.testimonial-feature');
-        if (split && !visual && !element.matches(boxes)) variant = onLeft ? 'right' : 'left';
-        if (element.matches('.home-map-marker,.fact-marker')) variant = order % 2 ? 'diagonal-left' : 'diagonal-right';
-        node.dataset.motionVariant = node.getAttribute('data-motion') || variant;
-        // ICL separates labels, headings, body copy and actions by 100–200ms.
-        // Use the copy group rather than immediate siblings: labels and headings
-        // sit inside a wrapper and otherwise both receive the same zero delay.
-        const copy = element.closest('.split-copy,.hero-copy,.cta,.expertise-content,.approach-copy,.testimonial-copy,.editorial-hero,.career-missing-inner,.contact-address') ?? element.closest('article') ?? section;
-        const copyElements = copy ? Array.from(copy.querySelectorAll('h1,h2,h3,p,.button')) : [];
-        const copyOrder = copyElements.indexOf(element);
-        node.dataset.motionDelay = String(copyOrder >= 0 ? Math.min(copyOrder * 120, 480) : (order % 5) * 120);
-        if (element.matches('.site-footer')) node.dataset.motionDelay = '0';
-        node.dataset.motionRegistered = 'true';
-        observer.observe(element);
+      const configure = homepage ? registerHomepageMotion : registerPageMotion;
+      configure(root, (trigger, targets) => {
+        if (observed.has(trigger)) return;
+        observed.add(trigger);
+        sequences.set(trigger, targets.map(item => item.target));
+        targets.forEach(({ target, variant, duration, delay }) => {
+          observed.add(target);
+          target.dataset.motionRegistered = 'true';
+          target.dataset.motionVariant = variant;
+          target.dataset.motionDuration = String(duration);
+          target.dataset.motionDelay = String(delay);
+          target.dataset.motionProfile = homepage ? 'corporate-home' : 'corporate';
+        });
+        observer.observe(trigger);
       });
     };
     register();
@@ -142,10 +121,15 @@ export function MotionEnhancer() {
       additions.disconnect();
       preference.removeEventListener('change', stop);
       animations.forEach(animation => animation.cancel());
+      root.querySelectorAll<HTMLElement>('[data-motion-carousel-seen]').forEach(element => delete element.dataset.motionCarouselSeen);
       observed.forEach(element => {
         const node = element as HTMLElement;
         delete node.dataset.motionEntered;
         delete node.dataset.motionRegistered;
+        delete node.dataset.motionDuration;
+        delete node.dataset.sequenceMotion;
+        delete node.dataset.motionSequence;
+        delete node.dataset.motionProfile;
       });
     };
   }, [pathname]);

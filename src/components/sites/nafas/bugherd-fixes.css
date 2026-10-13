@@ -27,8 +27,16 @@ body .capacity{border:0;box-shadow:none}
 body .background-section>.media{mask-image:linear-gradient(to bottom,transparent,#000 24%,#000 76%,transparent)}
 body .planet-section .planet-visual{inset:0;width:100%;margin:0;box-shadow:none}
 body .content-section+.content-section{border-top:0}
-/* Blend the factory photograph into white without moving its backdrop. */
-body .about-page .about-overview>.hero-background{mask-image:linear-gradient(to bottom,transparent,#000 clamp(80px,10vw,160px))}
+/* Fade section backdrops into the white canvas, leaving card art and copy intact. */
+body main section:not(.page-hero)>.hero-background{
+  --section-blend:clamp(80px,10vw,180px);
+  mask-image:linear-gradient(to bottom,transparent,#000 var(--section-blend),#000 calc(100% - var(--section-blend)),transparent);
+}
+/* Preserve the factory's left blend as well as its top/bottom transitions. */
+body .about-page .about-overview>.hero-background{
+  mask-image:linear-gradient(to right,transparent,#000 clamp(90px,12vw,230px)),linear-gradient(to bottom,transparent,#000 var(--section-blend),#000 calc(100% - var(--section-blend)),transparent);
+  mask-composite:intersect;
+}
 /* #8, #9: V3.1 filled artwork and room below the longest card text. */
 body .expertise-card{height:auto;min-height:clamp(460px,28.65vw,550px);overflow:hidden}
 body .expertise-content{padding-bottom:40px}
