@@ -34,7 +34,7 @@
 .card{display:block;text-align:center;position:relative;height:calc(406 * var(--v3-unit));padding:calc(20 * var(--v3-unit)) 0 0;background:#fff;border-radius:0;box-shadow:1px 1px 3px #9c9c9c22;transition:box-shadow .4s}
 .card:hover{background:#fff;box-shadow:6px 9px 23px #9c9c9c26}
 .card :global(.media){height:calc(240 * var(--v3-unit));width:100%;margin:0}
-.card :global(.media) img{object-fit:contain}
+.card :global(.media) img{object-fit:contain!important}
 .card p{font-family:var(--font-body);font-size:calc(16 * var(--v3-unit));line-height:1.5;color:#1d1d1d;margin:calc(20 * var(--v3-unit)) 0 0}
 .card h3{font-family:var(--font-heading);font-size:calc(22 * var(--v3-unit));font-weight:500;line-height:1.2;margin:calc(20 * var(--v3-unit)) auto 0;max-width:90%;overflow-wrap:anywhere}
 .overviewCards{margin-top:calc(40 * var(--v3-unit))}
