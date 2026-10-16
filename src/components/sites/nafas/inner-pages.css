@@ -225,7 +225,9 @@
 .about-page .purpose-card ul{list-style:disc}
 .about-page .flag-card{clip-path:none;background:transparent;border-radius:0;overflow:visible}
 .about-page .flag-card:after{display:none}
-.about-page .flag-card>.media img{object-fit:fill}
+/* Exact Figma exports include the rounded silhouette; preserve their full edges. */
+.about-page .flag-card>.media{border-radius:0;mask-image:none;height:100%}
+.about-page .flag-card>.media img{object-fit:fill!important;height:100%;max-height:none}
 .about-page .ceo-panel .media img{object-fit:fill;width:100%;height:106.89%;top:-.07%}
 .about-page .department-card{position:relative;display:flex;flex-direction:column}
 .about-page .department-card .media{position:relative;inset:auto;flex:0 0 auto}
@@ -235,9 +237,8 @@
 .about-page .department-card:nth-child(4) .media img{top:-9.97%;height:100%;object-fit:fill}
 .about-page .department-card:nth-child(5) .media img{top:-13.58%;height:100%;object-fit:fill}
 @media(min-width:768px){
-  .about-page .purpose-grid{grid-template-columns:610fr 296fr 296fr;gap:20px;align-items:start}
-  .about-page .purpose-card-wide{height:clamp(430px,24.47917vw,470px)}
-  .about-page .flag-card{height:clamp(430px,24.13917vw,463.472px);min-height:0}
+  .about-page .purpose-grid{grid-template-columns:610fr 296fr 296fr;gap:20px;align-items:stretch}
+  .about-page .purpose-card-wide,.about-page .flag-card{height:auto;min-height:clamp(430px,24.47917vw,470px)}
 }
 @media(min-width:1200px){
   .about-page .purpose-heading{grid-template-columns:505fr 392fr;gap:clamp(100px,17.86458vw,343px);min-height:178px}
@@ -245,6 +246,25 @@
   .about-page .leadership-section>.container>.center{max-width:none}
 }
 .about-page .purpose-mission>.media img{transform:scaleX(-1)}
+/* BugHerd #15–20: keep corrections within About Us. */
+.about-page .corporate-facts:after{background:linear-gradient(to bottom,#fff 0%,#ffffffed 220px,#ffffff66 480px),linear-gradient(90deg,#fff 0%,#fffffff0 42%,#ffffff4a 100%)}
+.about-page .about-locations .media{height:auto;aspect-ratio:1838/1355;min-width:0;overflow:visible}
+.about-page .about-locations .media img{object-fit:contain;object-position:center;mix-blend-mode:normal}
+body .about-page .carousel-controls button:hover:not(:disabled){background:#7cac2f;color:#fff;border-color:#7cac2f}
+@media(min-width:768px) and (max-width:1199px){
+  .about-page .about-overview>.container{width:calc(100% - 64px)}
+  .about-page .overview-text{width:47%;max-width:440px}
+  .about-page .overview-text h2{font-size:clamp(30px,3.3vw,40px)}
+  .about-page .about-overview:after{background:linear-gradient(90deg,#fff 0%,#fffffff5 42%,#ffffff30 70%,transparent),linear-gradient(0deg,#fff,transparent 30%)}
+  body .about-page .overview-text .button{font-size:14px;padding:14px 16px;gap:8px;white-space:nowrap}
+  .about-page .benefit-strip article{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+  .about-page .benefit-strip h3{font-weight:700}
+  .about-page .benefit-strip .solid-icon-feature{color:var(--green)}
+  .about-page .about-locations>.wide-container{width:calc(100% - 64px);grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px}
+  .about-page .about-locations h2{font-size:clamp(25px,3vw,32px)}
+  .about-page .purpose-grid{align-items:stretch}
+  .about-page .purpose-card{height:100%;min-width:0}
+}
 @media(max-width:767px){.about-page .ceo-panel .media img{object-fit:cover;object-position:72% center;height:100%;top:0}.about-page .ceo-panel>div:last-child{background:linear-gradient(90deg,#eee 0%,#eeeeeee8 60%,transparent 100%)}}
 
 /* V3.1 reference: primary button and plain Visi/Misi eyebrow. */
@@ -307,3 +327,14 @@
 @media(max-width:1023px){.certificate-track{--certificate-step:650px;left:calc(50% - 310px)}.certificate-track .certificate-slide{flex-basis:620px}}
 @media(max-width:767px){.certificate-track{--certificate-step:calc(90vw + 18px);left:5%;gap:18px}.certificate-track .certificate-slide{width:90vw;flex-basis:90vw;left:auto}}
 @media(prefers-reduced-motion:reduce){.certificate-track,.certificate-track .certificate-slide{transition:none}}
+/* BugHerd #21: restore markers removed by the global list reset. */
+.services-page .split-copy ul{list-style:disc outside;padding-left:1.35em;margin-block:10px 18px}
+.services-page .split-copy ul li{padding-left:.2em;margin-bottom:.45em}
+.services-page .split-copy ul li:last-child{margin-bottom:0}
+/* #26: mobile certificate rows size to their content instead of a 470px stage. */
+@media(max-width:767px){
+  .services-page .certificate-stage{height:auto}
+  .services-page .certificate-track{position:relative;top:auto;align-items:center}
+  .services-page .certificate-track .certificate-slide{height:auto;min-height:0;align-items:center}
+  .services-page .certificate-heading{margin-bottom:28px}
+}

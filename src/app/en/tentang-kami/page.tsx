@@ -101,8 +101,8 @@ export default function AboutPage() {
         <div className="purpose-heading"><SectionHeading label="Vision, Mission & Purpose"><span className="accent">Direction</span> and Principles Guiding Our Operations</SectionHeading><p>Our principles guide every decision and action, ensuring our vision, mission and services support the growth and needs of the nation&apos;s agricultural sector.</p></div>
         <div className="purpose-grid">
           <article className="purpose-card purpose-card-wide"><Media src="/sites/nafas/figma/purpose-wide.png" className="hero-background" /><div><h3>Why We Exist</h3><ul><li>Supporting farmers and agriculture with reliable fertilizer supply.</li><li>Contributing to food security and long-term agricultural growth.</li><li>Backed by the National Farmers Organisation (NAFAS).</li><li>Operating with professionalism and operational excellence.</li></ul></div></article>
-          <article className="purpose-card flag-card purpose-vision"><Media src="/sites/nafas/figma/vision.png" className="hero-background" /><div><h3>Vision</h3><p>A farmers&apos; organisation leading the fertilizer market.</p></div></article>
-          <article className="purpose-card flag-card purpose-mission"><Media src="/sites/nafas/figma/mission.png" className="hero-background" /><div><h3>Mission</h3><p>Offering the Best Products and Services to Customers and Business Partners.</p></div></article>
+          <article className="purpose-card flag-card purpose-vision"><Media src="/sites/nafas/figma/vision-v31.png" className="hero-background" /><div><h3>Vision</h3><p>A farmers&apos; organisation leading the fertilizer market.</p></div></article>
+          <article className="purpose-card flag-card purpose-mission"><Media src="/sites/nafas/figma/mission-v31.png" className="hero-background" /><div><h3>Mission</h3><p>Offering the Best Products and Services to Customers and Business Partners.</p></div></article>
         </div>
       </div>
     </section>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </div></div>
     </section>
 
-    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Strategic Locations Across Malaysia</h2><p>We stay close to you to ensure timely fertilizer deliveries nationwide through an efficient, reliable distribution network that meets customer needs.</p></div><Media src={asset(69)} alt="NAFAS location network map in Peninsular Malaysia, Sabah and Sarawak" className="contain" /></div></section>
+    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Strategic Locations Across Malaysia</h2><p>We stay close to you to ensure timely fertilizer deliveries nationwide through an efficient, reliable distribution network that meets customer needs.</p></div><Media src="/sites/nafas/assets/about-locations-map.png" sizes="(max-width: 767px) 90vw, 55vw" alt="NAFAS location network map in Peninsular Malaysia, Sabah and Sarawak" className="contain" /></div></section>
     <CallToAction />
   </div>;
 }

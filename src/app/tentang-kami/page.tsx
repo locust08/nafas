@@ -100,8 +100,8 @@ export default function AboutPage() {
         <div className="purpose-heading"><SectionHeading label="Visi, Misi & Tujuan"><span className="accent">Arah Tuju</span> dan Prinsip yang Membimbing Operasi Kami</SectionHeading><p>Teras kami membimbing setiap Keputusan dan Tindakan, memastikan visi, misi, dan perkhidmatan menyokong pertumbuhan serta keperluan sektor pertanian negara.</p></div>
         <div className="purpose-grid">
           <article className="purpose-card purpose-card-wide"><Media src="/sites/nafas/figma/purpose-wide.png" className="hero-background" /><div><h3>Mengapa Kami Wujud</h3><ul><li>Menyokong petani dan industri pertanian dengan bekalan baja yang boleh dipercayai.</li><li>Menyumbang kepada keselamatan makanan dan pertumbuhan pertanian jangka panjang.</li><li>Disokong oleh Pertubuhan Peladang Kebangsaan (NAFAS).</li><li>Beroperasi dengan profesionalisme dan kecemerlangan operasi.</li></ul></div></article>
-          <article className="purpose-card flag-card purpose-vision"><Media src="/sites/nafas/figma/vision.png" className="hero-background" /><div><h3>Visi</h3><p>Pertubuhan peladang peneraju pasaran baja.</p></div></article>
-          <article className="purpose-card flag-card purpose-mission"><Media src="/sites/nafas/figma/mission.png" className="hero-background" /><div><h3>Misi</h3><p>Menawarkan Produk dan Perkhidmatan yang Terbaik kepada Pelanggan dan Rakan Niaga.</p></div></article>
+          <article className="purpose-card flag-card purpose-vision"><Media src="/sites/nafas/figma/vision-v31.png" className="hero-background" /><div><h3>Visi</h3><p>Pertubuhan peladang peneraju pasaran baja.</p></div></article>
+          <article className="purpose-card flag-card purpose-mission"><Media src="/sites/nafas/figma/mission-v31.png" className="hero-background" /><div><h3>Misi</h3><p>Menawarkan Produk dan Perkhidmatan yang Terbaik kepada Pelanggan dan Rakan Niaga.</p></div></article>
         </div>
       </div>
     </section>
@@ -124,7 +124,7 @@ export default function AboutPage() {
       </div></div>
     </section>
 
-    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Lokasi strategik di Seluruh Malaysia</h2><p>Kami sentiasa dekat dengan anda bagi memastikan bekalan baja dihantar tepat pada masanya ke seluruh negara melalui rangkaian pengedaran yang cekap, dipercayai, dan mampu memenuhi keperluan pelanggan.</p></div><Media src={asset(69)} alt="Peta rangkaian lokasi NAFAS di Semenanjung Malaysia, Sabah dan Sarawak" className="contain" /></div></section>
+    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Lokasi strategik di Seluruh Malaysia</h2><p>Kami sentiasa dekat dengan anda bagi memastikan bekalan baja dihantar tepat pada masanya ke seluruh negara melalui rangkaian pengedaran yang cekap, dipercayai, dan mampu memenuhi keperluan pelanggan.</p></div><Media src="/sites/nafas/assets/about-locations-map.png" sizes="(max-width: 767px) 90vw, 55vw" alt="Peta rangkaian lokasi NAFAS di Semenanjung Malaysia, Sabah dan Sarawak" className="contain" /></div></section>
     <CallToAction />
   </div>;
 }

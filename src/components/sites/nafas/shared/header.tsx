@@ -51,7 +51,23 @@ export function SiteHeader() {
     window.addEventListener('keydown', keydown);
     return () => { document.body.style.overflow = previous; window.removeEventListener('keydown', keydown); };
   }, [open]);
+  useEffect(() => {
+    const hover = window.matchMedia('(min-width: 1100px) and (hover: hover) and (pointer: fine)');
+    const cleanups = Array.from(header.current?.querySelectorAll<HTMLElement>('.desktop-nav .nav-item') ?? []).map(item => {
+      const details = item.querySelector('details');
+      if (!details) return () => {};
+      const enter = () => { if (hover.matches) { closeDropdowns(); details.open = true; } };
+      const leave = () => { if (hover.matches && !item.contains(document.activeElement)) details.open = false; };
+      const blur = (event: FocusEvent) => { if (!item.contains(event.relatedTarget as Node | null)) details.open = false; };
+      item.addEventListener('pointerenter', enter);
+      item.addEventListener('pointerleave', leave);
+      item.addEventListener('focusout', blur);
+      return () => { item.removeEventListener('pointerenter', enter); item.removeEventListener('pointerleave', leave); item.removeEventListener('focusout', blur); };
+    });
+    return () => cleanups.forEach(cleanup => cleanup());
+  }, []);
   const solid = scrolled || open;
-  const lightHero = pathname !== '/' && pathname !== '/tentang-kami';
+  const productCategoryHero = pathname.startsWith('/produk/');
+  const lightHero = pathname !== '/' && pathname !== '/tentang-kami' && !productCategoryHero;
   return <header ref={header} onClick={event => { if ((event.target as HTMLElement).closest('a')) { closeDropdowns(); setOpen(false); } }} className={`site-header ${solid ? 'solid' : ''} ${lightHero ? 'light-hero' : ''}`}><div className="header-inner"><Link href="/" className="brand" aria-label="NAFAS Bajakimia — Utama" onClick={() => setOpen(false)}><Image src={solid || lightHero ? assets.logo : assets.logoWhite} alt="NAFAS Bajakimia Sdn Bhd" width={211} height={78} priority /></Link><nav className="desktop-nav" aria-label="Navigasi utama">{navigation.map((item) => <div className="nav-item" key={item.href}>{item.children ? <><Link href={item.href} aria-current={(pathname.startsWith(item.href) || item.children.some(child => child.href === pathname)) ? 'page' : undefined}>{item.label}</Link><details><summary aria-label={`Buka menu ${item.label}`}><ChevronDown size={14} /></summary><div className="dropdown">{item.children.map((child) => <Link href={child.href} key={child.href}>{child.label}</Link>)}</div></details></> : <Link href={item.href} aria-current={pathname === item.href ? 'page' : undefined}>{item.label}</Link>}</div>)}</nav><LanguageSwitch /><Link className="header-contact button button-outline" href="/hubungi-kami">Hubungi Kami<ArrowRight size={20} /></Link><button ref={menuButton} className="menu-toggle" aria-label={open ? 'Tutup navigasi' : 'Buka navigasi'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button></div>{open && <nav ref={panel} id="mobile-navigation" className="mobile-nav" aria-label="Navigasi mudah alih">{navigation.map((item) => item.children ? <div className="mobile-nav-group" key={item.href}><Link href={item.href} onClick={() => setOpen(false)}>{item.label}</Link><details><summary aria-label={`Buka menu ${item.label}`}><ChevronDown size={18} /></summary><div className="mobile-submenu">{item.children.map((child) => <Link href={child.href} key={child.href} onClick={() => setOpen(false)}>{child.label}</Link>)}</div></details></div> : <Link href={item.href} key={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}<Link className="button" href="/hubungi-kami" onClick={() => setOpen(false)}>Hubungi Kami<ArrowRight size={20} /></Link></nav>}</header>;
 }

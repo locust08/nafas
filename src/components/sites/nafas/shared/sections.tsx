@@ -13,9 +13,9 @@ export function ButtonLink({ href, children, outline = false }: { href: string; 
 export function SectionHeading({ label, children, center = false }: { label?: string; children: ReactNode; center?: boolean }) {
   return <div className={`section-heading ${center ? 'center' : ''}`}>{label && <p className="eyebrow">{label}</p>}<h2>{children}</h2></div>;
 }
-export function PageHero({ title, children, image, action, foreground, className = '' }: { title: string; children?: ReactNode; image: string; action?: ReactNode; foreground?: string; className?: string }) {
+export function PageHero({ title, children, image, action, foreground, beforeTitle, className = '' }: { title: ReactNode; children?: ReactNode; image: string; action?: ReactNode; foreground?: string; beforeTitle?: ReactNode; className?: string }) {
   const productHero = className.includes('product-category-hero');
-  return <section className={`page-hero ${className}`}><Media src={image} priority className="hero-background" sizes={productHero ? '100vw' : undefined} />{foreground && <Media src={foreground} priority className="product-hero-bags" sizes="(max-width: 767px) 100vw, 68vw" />}<div className="container hero-copy"><h1>{title}</h1><div>{children}</div>{action}</div></section>;
+  return <section className={`page-hero ${className}`}><Media src={image} priority className="hero-background" sizes={productHero ? '100vw' : undefined} />{foreground && <Media src={foreground} priority className="product-hero-bags" sizes="(max-width: 767px) 100vw, 68vw" />}<div className="container hero-copy">{beforeTitle}<h1>{title}</h1><div>{children}</div>{action}</div></section>;
 }
 export function SplitSection({ label, title, image, imageAlt = '', children, reverse = false, className = '' }: { label?: string; title: ReactNode; image: string; imageAlt?: string; children: ReactNode; reverse?: boolean; className?: string }) {
   return <section className={`split-section ${reverse ? 'reverse' : ''} ${className}`}><div className="container split-grid"><div className="split-copy"><SectionHeading label={label}>{title}</SectionHeading>{children}</div><Media src={image} alt={imageAlt} className="split-media" sizes={image === assets.map ? '(max-width: 767px) 85vw, 48vw' : undefined} /></div></section>;

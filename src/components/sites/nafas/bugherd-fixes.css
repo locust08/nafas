@@ -1,5 +1,46 @@
 /* BugHerd #1–14: V3.1 only. Keep the current image sources and crops. */
 :root{--green:#7cac2f;--button-hover:#e8efde}
+/* #30–31: shared PageHero geometry with career/contact-specific photography. */
+body .image-content-banner{border-radius:0 0 40px 40px;overflow:hidden}
+body :is(.career-page,.contact-page) .image-content-banner:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fffffff5 0%,#ffffffdc 42%,#ffffff26 100%);pointer-events:none}
+body .career-page .image-content-banner{color:var(--ink)}
+body .career-page .image-content-banner p{color:var(--muted);text-shadow:none}
+body .image-content-banner .hero-background img{object-fit:cover!important;object-position:65% center}
+body .image-content-banner .hero-copy{z-index:1}
+body .image-content-banner h1{max-width:690px}
+@media(max-width:767px){
+  body .image-content-banner{border-radius:0 0 28px 28px}
+  body .image-content-banner .hero-copy{padding-bottom:80px}
+  body :is(.career-page,.contact-page) .image-content-banner:after{background:linear-gradient(90deg,#fffffff2,#ffffffc9 65%,#ffffff66)}
+  body .image-content-banner .hero-background img{object-position:65% center}
+}
+/* #29: use the approved About Us diagonal card treatment for news stories. */
+body .news-page .news-grid{gap:36px;padding-inline:18px;align-items:stretch}
+body .news-page .news-card{transform:skewX(-7deg);border-radius:26px;background:#fff;box-shadow:0 14px 28px #1f312214;display:flex;flex-direction:column}
+body .news-page .news-card>a{display:block;position:relative;flex:none}
+body .news-page .news-card .media{height:280px;overflow:hidden}
+body .news-page .news-card .media img{width:116%!important;max-width:none;left:-8%!important;transform:skewX(7deg) scale(1.06);object-fit:cover!important}
+body .news-page .news-card .media:after{content:'';position:absolute;inset:60% 0 0;background:linear-gradient(transparent,#fff);pointer-events:none}
+body .news-page .news-card:hover .media{transform:none}
+body .news-page .news-card-content{transform:skewX(7deg);padding:12px 36px 32px;display:flex;flex-direction:column;flex:1;min-width:0}
+body .news-page .news-card-content .text-link{margin-top:auto;padding-top:24px;align-self:flex-start}
+@media(max-width:767px){
+  body .news-page .news-grid{padding-inline:12px;gap:32px}
+  body .news-page .news-card{transform:skewX(-4deg)}
+  body .news-page .news-card .media{height:240px}
+  body .news-page .news-card .media img{transform:skewX(4deg) scale(1.06)}
+  body .news-page .news-card-content{transform:skewX(4deg);padding:12px 24px 28px}
+}
+/* #28: shared Services-style image banner for both news locales. */
+body .news-page .news-banner{border-radius:0 0 40px 40px;overflow:hidden}
+body .news-page .news-banner:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fffffff5 0%,#ffffffd9 48%,#ffffff33 100%);pointer-events:none}
+body .news-page .news-banner .hero-copy{z-index:1;padding-top:160px}
+body .news-page .news-banner h1{max-width:900px}
+body .news-page .news-banner .hero-background img{object-fit:cover!important;object-position:center}
+@media(max-width:767px){body .news-page .news-banner{min-height:600px;border-radius:0 0 28px 28px}body .news-page .news-banner .hero-copy{padding-top:120px;padding-bottom:60px}body .news-page .news-banner h1{font-size:34px}}
+/* BugHerd #22: center the complete year/month group within the poster rule. */
+body .sustainability-page #poster-bulanan .poster-navigation{justify-content:center}
+body .sustainability-page #poster-bulanan .poster-months{justify-content:center}
 html,body{overflow-x:clip}
 /* #3: reserve the border in both states so hover never moves the label. */
 body .button,body .figma-page .button{border:1px solid var(--green);transition:background .25s,color .25s,border-color .25s}
@@ -10,19 +51,49 @@ body .resource-arrow:hover:not(:disabled),body .carousel-controls button:hover:n
 body main .eyebrow,body .section-heading .eyebrow,body .split-copy .section-heading .eyebrow,body .figma-page .section-heading .eyebrow{color:var(--green)}
 body .career-missing .eyebrow{color:var(--green)}
 /* #1: include the curved extension in the 95% viewport banner. */
-body .home-hero{height:calc(95svh - var(--explore-below));min-height:0;max-height:none;--explore-cutout:clamp(140px,11.82vw,227px)}
+body .home-hero{height:calc(95svh - var(--explore-below));min-height:0;max-height:none;--explore-cutout:clamp(140px,11.82vw,227px);--explore-below:calc(var(--explore-cutout) * .436);--explore-text-size:calc(var(--explore-cutout) * .802)}
 body .home-hero .hero-copy{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-block:140px 130px}
 body .home-hero .hero-copy .actions{flex:none}
 /* Keep the video one pixel inside the SVG edge to avoid a hairline at small sizes. */
 body .home-hero .hero-video{height:calc(100% + var(--explore-below) - 1px)}
+/* Overlap the white curve with the following section by two device pixels.
+   This prevents a compositing seam while the video is scrolling. */
+body .home-hero .hero-curve:before,body .home-hero .hero-curve:after{bottom:-2px}
+body .home-hero .hero-curve-shape{height:calc(100% + 2px)}
+/* Figma 17668:1320: a 438×99 curved notch with a separate 182×180
+   rotating text ring. The notch is intentionally wider than the ring. */
+body .home-hero .hero-curve{background:transparent;mask-image:none}
+body .home-hero .hero-curve:before,body .home-hero .hero-curve:after{display:block}
+body .home-hero .hero-curve-shape{display:block}
+body .home-hero .explore-link{
+  width:var(--explore-text-size);height:var(--explore-text-size);
+  left:calc(50% - var(--explore-text-size) / 2);
+  bottom:calc(var(--explore-cutout) * -.3);
+}
+body .home-hero .explore-link svg{width:100%;height:100%}
 /* #2: contain images inside complete rounded frames, without cutting their corners. */
-body .overview{min-height:0;overflow:visible;padding-bottom:60px}
+body .overview{min-height:0;overflow:visible;padding-top:clamp(76px,5.2vw,100px);padding-bottom:60px}
 body .overview .layered-farmer{height:clamp(450px,45vw,860px)}
-body .layered-farmer .farmer-layer{clip-path:inset(0 round clamp(38px,4.32vw,83px));border:0}
+body .layered-farmer .farmer-layer{clip-path:none;border:0}
+body .layered-farmer .farmer-ghost{mask-image:linear-gradient(to bottom,#000 0,#000 68%,transparent 98%)}
 /* #5, #10: fade the factory image before the numbers, not across them. */
 body .capacity .capacity-image:after{height:clamp(100px,10vw,192px);background:linear-gradient(transparent,#fff)}
 body .capacity .metrics{margin-top:0;background:#fff}
 body .capacity{border:0;box-shadow:none}
+/* Fade the actual image edge as well as its overlay so no seam survives scaling. */
+body .capacity .capacity-image{mask-image:linear-gradient(to bottom,transparent 0,#000 100px,#000 100%)}
+/* BugHerd #23: tablet report content must not inherit desktop artboard scaling. */
+@media(min-width:768px) and (max-width:1199px){
+  body .sustainability-page #poster-bulanan .section-heading h2,
+  body .sustainability-page #laporan .section-heading h2{font-size:30px;line-height:1.2}
+  body .sustainability-page .sustainability-report{grid-template-columns:180px minmax(0,1fr);gap:28px;padding:28px;min-height:0;align-items:center}
+  body .sustainability-page .sustainability-report>.media{width:180px;height:auto;aspect-ratio:264/307;justify-self:center}
+  body .sustainability-page .sustainability-report>.media img{object-fit:contain!important}
+  body .sustainability-page .sustainability-report h3{font-size:23px;line-height:1.3;margin-bottom:18px}
+  body .sustainability-page .sustainability-report p{font-size:16px;line-height:1.8;margin-bottom:20px}
+  body .sustainability-page .report-years{height:45px;margin-top:30px}
+  body .sustainability-page .report-years>span{width:100px;font-size:20px;padding-bottom:12px}
+}
 /* #7: blend photographic sections into the surrounding white canvas. */
 body .background-section>.media{mask-image:linear-gradient(to bottom,transparent,#000 24%,#000 76%,transparent)}
 body .planet-section .planet-visual{inset:0;width:100%;margin:0;box-shadow:none}
@@ -75,26 +146,32 @@ body .figma-page .v3-image-ready img{scale:1;transition:none}
   body .career-story-slide,body .testimonial-copy{animation:none}
   body .resource-track figure,body .figma-page .v3-motion-ready,body .figma-page .v3-image-ready img{transition:none}
 }
-@media(min-width:768px) and (max-width:1023px){body .overview .container{width:calc(100% - 64px);margin-inline:auto}body .overview .split-grid{grid-template-columns:1fr 1fr;gap:24px}body .overview .split-media.layered-farmer{height:460px}body .overview .farmer-front{width:80%!important;left:10%!important}body .overview .farmer-ghost{width:84%!important;left:8%!important}body .overview{padding-block:100px 40px}}
+@media(min-width:768px) and (max-width:1023px){body .overview .container{width:calc(100% - 64px);margin-inline:auto}body .overview .split-grid{grid-template-columns:1fr 1fr;gap:24px}body .overview .split-media.layered-farmer{height:460px}body .overview .farmer-front{width:62%!important;left:19%!important}body .overview .farmer-ghost{width:70%!important;left:15%!important}body .overview{padding-block:76px 40px}}
 @media(max-width:767px){
   body .home-hero{min-height:0}
   body .home-hero .hero-copy{padding-block:115px 130px}
   body .home-hero h1{font-size:32px}
   body .home-hero .actions{gap:12px}
-  body .overview{padding-block:95px 40px}
-  body .overview .split-media.layered-farmer{height:auto;aspect-ratio:4/5}
-  body .layered-farmer .farmer-front{width:80%!important;left:10%!important}
-  body .layered-farmer .farmer-ghost{width:84%!important;left:8%!important}
+  body .overview{padding-block:76px 40px}
+  body .overview .split-media.layered-farmer{height:auto;aspect-ratio:3/5}
+  body .layered-farmer .farmer-front{width:72%!important;left:14%!important}
+  body .layered-farmer .farmer-ghost{width:78%!important;left:11%!important}
   body .capacity .metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
   body .capacity .metric{padding:12px 6px;border-bottom:0}
   body .capacity .metric+.metric{border-left:1px solid #999}
-  body .capacity .metric strong{font-size:clamp(17px,4.6vw,27px);margin-bottom:10px;white-space:nowrap}
+  body .capacity .metric strong{font-size:clamp(11px,3.65vw,24px);margin-bottom:10px;white-space:nowrap}
   body .capacity .metric span{font-size:11px;line-height:1.5;display:block}
   body .expertise-grid{padding-top:48px;padding-bottom:65px}
   body .expertise-card{min-height:0}
   body .expertise-content{padding-bottom:36px}
   .footer-brand-column{grid-column:1/-1}
 }
+/* Posters and packaging must scale to fit without cropping their printed content.
+   The explicit priority also overrides the image runtime's inline cover style. */
+body .sustainability-page .monthly-poster-card .media img,
+body .poster-preview-dialog > .media img,
+body .product-gallery .media img{object-fit:contain!important;object-position:center}
+
 @media(max-height:740px) and (min-width:768px){body .home-hero .hero-copy{padding-block:100px 100px}}
 @media(max-height:480px) and (orientation:landscape){
   body .home-hero{--explore-cutout:100px}
