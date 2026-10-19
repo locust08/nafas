@@ -1,6 +1,6 @@
 export type MotionVariant = 'left' | 'right' | 'up' | 'fade' | 'bounce' | 'diagonal-left' | 'diagonal-right' | 'scale-left' | 'scale-right' | 'diagonal' | 'scale' | 'rotate' | 'layer';
 
-export const entranceEasing = 'cubic-bezier(.22,.7,.25,1)';
+export const entranceEasing = 'cubic-bezier(.22,1,.36,1)';
 
 export function entranceTransform(variant: MotionVariant, distance: number): string {
   const diagonal = Math.round(distance * .72);
@@ -21,7 +21,7 @@ export function entranceDistance(width: number, height: number, mobile: boolean)
 }
 
 // Additive transforms preserve skew, positioning and opacity from approved CSS.
-// No hidden idle state: content remains readable if observation or JS fails.
+// Native effects leave the document readable when JavaScript is unavailable.
 export function animateEntrance(element: HTMLElement | SVGElement, variant: MotionVariant, delay = 0, duration?: number, profile?: { distance: number; easing: string; maxDelay: number }): Animation[] {
   const opacity = Number(getComputedStyle(element).opacity);
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return [];
@@ -41,7 +41,7 @@ export function animateEntrance(element: HTMLElement | SVGElement, variant: Moti
   ];
   return [
     element.animate(transforms, timing),
-    element.animate([{ opacity: opacity * .65 }, { opacity }], timing),
+    element.animate([{ opacity: 0 }, { opacity, offset: .75 }, { opacity }], timing),
   ];
 }
 

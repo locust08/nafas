@@ -25,7 +25,7 @@ export function registerPageMotion(root: HTMLElement, register: Register) {
   const sequence = (selector: string, steps: Step[]) => {
     root.querySelectorAll<HTMLElement>(selector).forEach(element => {
       if (!available(element)) return;
-      const targets = steps.flatMap(step => Array.from(element.querySelectorAll<HTMLElement>(step.selector), child => target(child, step.variant, step.delay, step.duration)));
+      const targets = steps.flatMap(step => Array.from(element.querySelectorAll<HTMLElement>(step.selector), (child, index) => target(child, step.variant, (step.delay ?? 0) + index * 180, step.duration)));
       if (!targets.length) return;
       claimed.add(element);
       register(element, targets);

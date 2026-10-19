@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { assets } from '@/lib/nafas/assets';
-import { animateEntrance, type MotionVariant } from '@/lib/nafas/animation';
+import { animateEntrance } from '@/lib/nafas/animation';
 import { registerHomepageMotion } from '@/lib/nafas/homepage-motion';
 import { registerPageMotion } from '@/lib/nafas/page-motion';
 export function CountUp({ value, suffix = '' }: { value: number; suffix?: string }) {
@@ -65,6 +65,7 @@ export function MotionEnhancer() {
     if (!root) return;
     const homepage = !!root.querySelector('.home-hero');
     const sequences = new Map<HTMLElement, HTMLElement[]>();
+    const prepared = new Map<HTMLElement, Animation[]>();
     const observed = new Set<Element>();
     const animations = new Set<Animation>();
     const stop = () => { if (preference.matches) animations.forEach(animation => animation.cancel()); };
@@ -81,7 +82,9 @@ export function MotionEnhancer() {
         const entrance = targets.flatMap(target => {
           target.classList.add('revealed');
           target.dataset.motionEntered = 'true';
-          return animateEntrance(target, target.dataset.motionVariant as MotionVariant, Number(target.dataset.motionDelay ?? 0), target.dataset.motionDuration ? Number(target.dataset.motionDuration) : undefined, { distance: window.innerWidth < 768 ? 60 : 80, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', maxDelay: 480 });
+          const effects = prepared.get(target) ?? [];
+          effects.forEach(animation => animation.play());
+          return effects;
         });
         // Finish at the natural pace, even if scrolling moves the element out
         // of view. Calling finish() here used to produce an abrupt jump.
@@ -105,6 +108,23 @@ export function MotionEnhancer() {
           target.dataset.motionDuration = String(duration);
           target.dataset.motionDelay = String(delay);
           target.dataset.motionProfile = homepage ? 'corporate-home' : 'corporate';
+          // Set the first frame before observation, so an element never flashes
+          // in its final position and then jumps backwards when it enters.
+          if (!preference.matches) {
+            const effects = animateEntrance(target, variant, delay * 1.6, duration, {
+              distance: window.innerWidth < 768 ? 44 : 72,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              maxDelay: 1200,
+            });
+            effects.forEach(animation => {
+              // Slow the whole sequence together, preserving its stagger.
+              animation.playbackRate = 0.6;
+              animation.pause();
+              animation.currentTime = 0;
+              animations.add(animation);
+            });
+            prepared.set(target, effects);
+          }
         });
         observer.observe(trigger);
       });
@@ -127,6 +147,8 @@ export function MotionEnhancer() {
         delete node.dataset.motionEntered;
         delete node.dataset.motionRegistered;
         delete node.dataset.motionDuration;
+        delete node.dataset.motionVariant;
+        delete node.dataset.motionDelay;
         delete node.dataset.sequenceMotion;
         delete node.dataset.motionSequence;
         delete node.dataset.motionProfile;

@@ -22,22 +22,22 @@ export function registerHomepageMotion(
     if (!heading) return;
     const direction: MotionVariant = copy.closest('.location') ? 'right' : 'left';
     const targets = [target(heading, direction)];
-    copy.querySelectorAll<HTMLElement>(':scope>p,:scope>.actions,:scope>.button').forEach(element => targets.push(target(element, 'up', 150, 1200)));
+    copy.querySelectorAll<HTMLElement>(':scope>p,:scope>.actions,:scope>.button').forEach((element, index) => targets.push(target(element, 'up', (index + 1) * 180, 1200)));
     register(copy, targets);
   });
 
   root.querySelectorAll<HTMLElement>('.layered-farmer').forEach(artwork => {
     const targets: HomepageMotionTarget[] = [];
     artwork.querySelectorAll<HTMLElement>('.farmer-layer').forEach((layer, index) => {
-      targets.push(target(layer, layer.matches('.ghost-left') ? 'diagonal-left' : 'diagonal-right', index * 120));
+      targets.push(target(layer, layer.matches('.ghost-left') ? 'diagonal-left' : 'diagonal-right', index * 200));
     });
     register(artwork, targets);
   });
 
   groups('.capacity>.section-heading,.news-section .section-heading', 'up');
   groups('.capacity-image,.home-map', 'left');
-  groups('.metric', 'up', 120);
-  groups('.expertise-card', 'diagonal-left', 120);
+  groups('.metric', 'up', 180);
+  groups('.expertise-card', 'diagonal-left', 180);
   groups('.home-news-featured', 'left');
   groups('.home-news-side', 'right');
   groups('.news-section .center>.button', 'up');
