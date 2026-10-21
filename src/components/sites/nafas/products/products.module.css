@@ -122,3 +122,37 @@
   .listingCard p { font-size: 14px; }
   .listingCard h3 { font-size: 22px; }
 }
+
+/* #34: keep audience copy in normal flow when cards reflow. */
+@media(max-width:1199px){
+  .audience :global(.audience-grid){grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+  .audienceCard{aspect-ratio:auto;padding-top:82%;min-height:0;max-width:417px;width:100%;margin:0 auto}
+  .audienceCopy{position:relative;left:auto;top:auto;width:auto;padding:0 13% 48px}
+  .audienceCopy h3{font-size:20px;line-height:1.35}
+  .audienceCopy p{font-size:16px;line-height:1.7}
+  .audienceImage{inset:-.56% -2.7% -9.28%;height:auto}
+  .audienceImage img{object-fit:fill!important}
+  .audienceIcon{top:0;bottom:auto;margin-top:57.3%;width:60px;height:60px}
+}
+@media(max-width:767px){
+  .audience :global(.audience-grid){grid-template-columns:1fr}
+  .audienceCard{max-width:360px}
+  .audienceCopy h3{font-size:19px}
+  .audienceCopy p{font-size:15px}
+}
+/* #35/#36: keep the prototype gallery geometry and put tablet controls
+   directly beneath the thumbnail rail instead of across the image. */
+@media(min-width:768px) and (max-width:1199px){
+  .gallery{position:relative;padding-bottom:48px}
+  .mainImage{position:static}
+  .galleryArrows{left:0;right:auto;bottom:0;width:100px}
+}
+
+/* Longer translations must also stay inside the approved desktop frame. */
+@media(min-width:1200px){
+  .audience :global(.audience-grid){align-items:stretch}
+  .audienceCard{aspect-ratio:auto;min-height:calc(539 * var(--v3-unit));padding-top:82%;margin:0 auto}
+  .audienceCopy{position:relative;left:auto;top:auto;width:auto;padding:0 12.71% calc(36 * var(--v3-unit))}
+  .audienceImage img{object-fit:fill!important}
+  .audienceIcon{top:0;margin-top:57.3%}
+}

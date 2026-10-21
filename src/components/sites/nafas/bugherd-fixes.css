@@ -190,3 +190,61 @@ body .product-gallery .media img{object-fit:contain!important;object-position:ce
   body .home-hero .actions .button{font-size:13px;min-height:42px;padding:9px 10px;gap:6px}
   body .home-hero .actions .button svg{width:18px;height:18px}
 }
+
+/* #21: numbered import origins, with each origin's products grouped below. */
+body .services-page .import-list{list-style:decimal outside;padding-inline-start:1.5em;margin-block:12px 18px}
+body .services-page .import-list>li{padding-inline-start:4px;margin-block:0 14px}
+body .services-page .import-list>li::marker{font-weight:600}
+body .services-page .import-list span{display:block;line-height:1.75}
+/* #33: preserve the complete flag artwork proportions on tablet. */
+@media(min-width:768px) and (max-width:1199px){
+  body .about-page .purpose-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:24px}
+  body .about-page .purpose-card-wide{grid-column:1/-1;height:auto;min-height:300px}
+  body .about-page .flag-card{height:auto;min-height:0;aspect-ratio:592/927}
+  body .about-page .flag-card>.media img{object-fit:contain!important}
+  body .about-page .flag-card>div:last-child{padding:24px 22px}
+}
+/* #37: certificates scroll horizontally only; vertical gestures belong to the page. */
+body .product-certificate-track{overflow-x:auto;overflow-y:hidden;align-items:start;touch-action:pan-x pan-y;overscroll-behavior-y:auto}
+body .product-certificate-track figure{height:auto;min-width:0}
+body .product-certificate-track .media{height:auto;aspect-ratio:1114/1412}
+body .product-certificate-track img{object-fit:contain!important}
+@media(max-width:1199px){
+  body .figma-page .product-certificates{margin-left:32px;margin-top:40px;padding-bottom:64px;padding-top:52px}
+  body .product-certificate-controls{top:0;right:32px}
+  body .product-certificate-track{gap:20px}
+  body .product-certificate-track figure{flex-basis:clamp(220px,34vw,360px)}
+}
+@media(max-width:767px){
+  body .figma-page .product-certificates{margin-left:24px}
+  body .product-certificate-controls{right:24px}
+  body .product-certificate-track figure{flex-basis:72vw}
+}
+/* Product detail actions match the two-button design reference. */
+body .product-inner-page .actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+body .product-inner-page .actions>.button{min-height:50px;padding:14px 24px;max-width:100%;justify-content:center}
+body .product-inner-page .actions>.button:first-child svg{display:none}
+body .product-inner-page .actions>.product-brochure-button{background:#e8efdd;color:var(--green);border:0;opacity:1;gap:12px}
+@media(max-width:767px){
+  body .product-inner-page .actions{gap:12px}
+  body .product-inner-page .actions>.button{font-size:14px;padding:12px 20px}
+}
+
+/* #2: complete rounded farmer frames, sized from their width rather than a
+   viewport-independent height that makes tablet/mobile compositions squat. */
+body .overview .farmer-layer{--farmer-radius:clamp(36px,4.32vw,83px);border-radius:var(--farmer-radius);clip-path:inset(0 round var(--farmer-radius));isolation:isolate}
+@media(min-width:768px) and (max-width:1199px){
+  body .overview .split-media.layered-farmer{height:auto;aspect-ratio:3/4}
+  body .overview .farmer-front{width:78%!important;left:11%!important}
+  body .overview .farmer-ghost{width:84%!important;left:8%!important}
+}
+@media(max-width:767px){
+  body .overview .split-media.layered-farmer{height:auto;aspect-ratio:3/4}
+  body .overview .farmer-front{width:84%!important;left:8%!important}
+  body .overview .farmer-ghost{width:88%!important;left:6%!important}
+}
+
+@media(max-width:767px){
+  body .about-page .flag-card{height:auto;min-height:0;aspect-ratio:592/927}
+  body .about-page .flag-card>.media img{object-fit:contain!important}
+}
