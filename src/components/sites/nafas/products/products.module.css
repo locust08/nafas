@@ -106,7 +106,7 @@
 }
 
 /* Category listings retain existing artwork and detail-page links. */
-.resultCount { margin: 0 0 24px; color: #606060; text-align: center; }
+.resultCount { margin: 0 0 24px; color: var(--muted); text-align: center; }
 .categoryGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 22px; }
 .listingCard { height: auto; min-height: 380px; padding: 24px 20px; border: 1px solid #e7ebdf; border-radius: 16px; display: flex; flex-direction: column; align-items: center; }
 .listingCard :global(.media) { height: 210px; }

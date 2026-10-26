@@ -2,20 +2,23 @@
 :root{--green:#7cac2f;--button-hover:#e8efde}
 /* #30–31: shared PageHero geometry with career/contact-specific photography. */
 body .image-content-banner{border-radius:0 0 40px 40px;overflow:hidden}
-body :is(.career-page,.contact-page) .image-content-banner:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fffffff5 0%,#ffffffdc 42%,#ffffff26 100%);pointer-events:none}
-body .career-page .image-content-banner{color:var(--ink)}
-body .career-page .image-content-banner p{color:var(--muted);text-shadow:none}
+body :is(.career-page,.contact-page) .image-content-banner:after{content:none}
+body :is(.career-page,.contact-page,.news-page) :is(.image-content-banner,.news-banner){color:#fff}
+body :is(.career-page,.contact-page,.news-page) :is(.image-content-banner,.news-banner) :is(p,.breadcrumbs){color:#fff}
+body :is(.career-page,.contact-page,.news-page) :is(.image-content-banner,.news-banner) .hero-copy{text-shadow:0 1px 3px #000,0 2px 10px #0009}
 body .image-content-banner .hero-background img{object-fit:cover!important;object-position:65% center}
 body .image-content-banner .hero-copy{z-index:1}
 body .image-content-banner h1{max-width:690px}
 @media(max-width:767px){
   body .image-content-banner{border-radius:0 0 28px 28px}
   body .image-content-banner .hero-copy{padding-bottom:80px}
-  body :is(.career-page,.contact-page) .image-content-banner:after{background:linear-gradient(90deg,#fffffff2,#ffffffc9 65%,#ffffff66)}
   body .image-content-banner .hero-background img{object-position:65% center}
 }
+/* Keep navigation readable over the unfiltered banner photography. */
+body:has(main :is(.image-content-banner,.news-banner)) .site-header.light-hero{background:#ffffffef;color:var(--ink);box-shadow:var(--shadow);backdrop-filter:blur(14px)}
 /* #29: use the approved About Us diagonal card treatment for news stories. */
-body .news-page .news-grid{gap:36px;padding-inline:18px;align-items:stretch}
+body .news-page .news-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;padding-inline:18px;align-items:stretch}
+@media(min-width:768px) and (max-width:1099px){body .news-page .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 body .news-page .news-card{transform:skewX(-7deg);border-radius:26px;background:#fff;box-shadow:0 14px 28px #1f312214;display:flex;flex-direction:column}
 body .news-page .news-card>a{display:block;position:relative;flex:none}
 body .news-page .news-card .media{height:280px;overflow:hidden}
@@ -25,7 +28,7 @@ body .news-page .news-card:hover .media{transform:none}
 body .news-page .news-card-content{transform:skewX(7deg);padding:12px 36px 32px;display:flex;flex-direction:column;flex:1;min-width:0}
 body .news-page .news-card-content .text-link{margin-top:auto;padding-top:24px;align-self:flex-start}
 @media(max-width:767px){
-  body .news-page .news-grid{padding-inline:12px;gap:32px}
+  body .news-page .news-grid{grid-template-columns:1fr;padding-inline:12px;gap:32px}
   body .news-page .news-card{transform:skewX(-4deg)}
   body .news-page .news-card .media{height:240px}
   body .news-page .news-card .media img{transform:skewX(4deg) scale(1.06)}
@@ -33,7 +36,7 @@ body .news-page .news-card-content .text-link{margin-top:auto;padding-top:24px;a
 }
 /* #28: shared Services-style image banner for both news locales. */
 body .news-page .news-banner{border-radius:0 0 40px 40px;overflow:hidden}
-body .news-page .news-banner:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fffffff5 0%,#ffffffd9 48%,#ffffff33 100%);pointer-events:none}
+body .news-page .news-banner:after{content:none}
 body .news-page .news-banner .hero-copy{z-index:1;padding-top:160px}
 body .news-page .news-banner h1{max-width:900px}
 body .news-page .news-banner .hero-background img{object-fit:cover!important;object-position:center}
@@ -224,7 +227,7 @@ body .product-certificate-track img{object-fit:contain!important}
 body .product-inner-page .actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 body .product-inner-page .actions>.button{min-height:50px;padding:14px 24px;max-width:100%;justify-content:center}
 body .product-inner-page .actions>.button:first-child svg{display:none}
-body .product-inner-page .actions>.product-brochure-button{background:#e8efdd;color:var(--green);border:0;opacity:1;gap:12px}
+body .product-inner-page .actions>.product-brochure-button{background:var(--button-hover);color:var(--green);border:0;opacity:1;gap:12px}
 @media(max-width:767px){
   body .product-inner-page .actions{gap:12px}
   body .product-inner-page .actions>.button{font-size:14px;padding:12px 20px}
@@ -248,3 +251,21 @@ body .overview .farmer-layer{--farmer-radius:clamp(36px,4.32vw,83px);border-radi
   body .about-page .flag-card{height:auto;min-height:0;aspect-ratio:592/927}
   body .about-page .flag-card>.media img{object-fit:contain!important}
 }
+
+/* Shared Figma roles and archive navigation, in both languages. */
+body .site-header .brand{aspect-ratio:211/87}
+body .site-header .brand img{height:100%;object-fit:contain}
+body .footer-brand img{width:clamp(220px,14.427083vw,277px);height:auto;aspect-ratio:277/108;object-fit:cover;object-position:50% 38%;max-width:100%}
+body .site-footer h2{font-family:var(--font-heading),sans-serif;font-size:clamp(18px,1.145833vw,22px);font-weight:500;line-height:1.2}
+body .visitor-panel{border-color:#00a650;background:rgb(255 255 255 / 30%)}
+body .sustainability-page .resource-years{display:flex;flex-wrap:nowrap;justify-content:safe center;gap:0;width:100%;max-width:100%;height:auto;margin:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+body .sustainability-page .resource-years button{flex:0 0 auto;min-width:70px;padding:10px 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ink);font-family:var(--font-heading),sans-serif;font-size:clamp(16px,1.145833vw,22px);font-weight:500;line-height:1.3;cursor:pointer}
+body .sustainability-page .resource-years button[aria-pressed=true]{border-bottom-color:currentColor}
+body .sustainability-page .resource-years button:focus-visible{outline:2px solid var(--green-dark);outline-offset:-3px}
+body .sustainability-page .report-years{margin-top:30px;border-bottom:2px solid var(--line)}
+body .sustainability-page .poster-navigation{min-width:0}
+body .sustainability-page .resource-empty{min-height:80px}
+body .sustainability-page .monthly-poster-grid{height:auto;overflow-y:hidden}
+
+body .site-header .brand{position:relative;overflow:hidden}
+body .site-header .brand img.brand-white{position:absolute;left:-.15%;top:-.57%;width:111.85%;max-width:none;height:100.28%;object-fit:fill}
