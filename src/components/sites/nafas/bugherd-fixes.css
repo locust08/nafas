@@ -3,16 +3,16 @@
 /* #30–31: shared PageHero geometry with career/contact-specific photography. */
 body .image-content-banner{border-radius:0 0 40px 40px;overflow:hidden}
 body :is(.career-page,.contact-page) .image-content-banner:after{content:none}
-body :is(.career-page,.contact-page,.news-page) :is(.image-content-banner,.news-banner){color:#fff}
-body :is(.career-page,.contact-page,.news-page) :is(.image-content-banner,.news-banner) :is(p,.breadcrumbs){color:#fff}
-body :is(.career-page,.contact-page,.news-page) :is(.image-content-banner,.news-banner) .hero-copy{text-shadow:0 1px 3px #000,0 2px 10px #0009}
-body .image-content-banner .hero-background img{object-fit:cover!important;object-position:65% center}
+body :is(.career-page,.contact-page,.news-page,.distributor-page) :is(.image-content-banner,.news-banner){color:var(--ink)}
+body :is(.career-page,.contact-page,.news-page,.distributor-page) :is(.image-content-banner,.news-banner) :is(p,.breadcrumbs){color:var(--ink)}
+body :is(.career-page,.contact-page,.news-page,.distributor-page) :is(.image-content-banner,.news-banner) .hero-copy{text-shadow:none}
+body .image-content-banner .hero-background img{object-fit:cover!important;object-position:center}
 body .image-content-banner .hero-copy{z-index:1}
 body .image-content-banner h1{max-width:690px}
 @media(max-width:767px){
   body .image-content-banner{border-radius:0 0 28px 28px}
   body .image-content-banner .hero-copy{padding-bottom:80px}
-  body .image-content-banner .hero-background img{object-position:65% center}
+  body .image-content-banner .hero-background img{object-position:center}
 }
 /* Keep navigation readable over the unfiltered banner photography. */
 body:has(main :is(.image-content-banner,.news-banner)) .site-header.light-hero{background:#ffffffef;color:var(--ink);box-shadow:var(--shadow);backdrop-filter:blur(14px)}
@@ -38,7 +38,7 @@ body .news-page .news-card-content .text-link{margin-top:auto;padding-top:24px;a
 body .news-page .news-banner{border-radius:0 0 40px 40px;overflow:hidden}
 body .news-page .news-banner:after{content:none}
 body .news-page .news-banner .hero-copy{z-index:1;padding-top:160px}
-body .news-page .news-banner h1{max-width:900px}
+body .news-page .news-banner h1{max-width:690px}
 body .news-page .news-banner .hero-background img{object-fit:cover!important;object-position:center}
 @media(max-width:767px){body .news-page .news-banner{min-height:600px;border-radius:0 0 28px 28px}body .news-page .news-banner .hero-copy{padding-top:120px;padding-bottom:60px}body .news-page .news-banner h1{font-size:34px}}
 /* BugHerd #22: center the complete year/month group within the poster rule. */
