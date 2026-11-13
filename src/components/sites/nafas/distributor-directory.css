@@ -1,0 +1,31 @@
+/* Sizing follows the Stuttgart showroom reference: 3-col grid, 28px gap, 16px-radius cards with 28px padding. */
+.distributor-directory{max-width:1200px;margin:40px auto 0}
+.distributor-filter{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin:0 auto 44px}
+.distributor-filter button{appearance:none;background:#fff;color:#4a5568;border:1px solid #cbd5e1;padding:10px 22px;font:inherit;font-size:15px;font-weight:700;line-height:1.5;border-radius:9999px;cursor:pointer;transition:.25s;white-space:nowrap}
+.distributor-filter button:hover{border-color:var(--green-dark);color:var(--green-dark);background:#f8fafc}
+.distributor-filter button.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark);box-shadow:0 4px 12px rgba(0,100,48,.25)}
+.distributor-filter button:focus-visible,.distributor-map:focus-visible{outline:2px solid var(--green-dark);outline-offset:2px}
+.distributor-status{margin:-24px 0 24px;text-align:center;color:var(--muted);font-size:14px}
+.distributor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:60px}
+.distributor-benefits .distributor-card{display:flex;flex-direction:column;min-width:0;padding:28px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.03);transition:.25s}
+.distributor-benefits .distributor-card:hover{transform:translateY(-4px);border-color:var(--green-dark);box-shadow:0 12px 28px rgba(8,34,64,.08)}
+.distributor-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f1f5f9}
+.distributor-benefits .distributor-card h3{margin:0;font-size:19px;font-weight:800;line-height:1.35;color:#1a1a1a;overflow-wrap:anywhere}
+.distributor-badge{display:inline-block;padding:4px 10px;font-size:12px;font-weight:700;line-height:1.5;text-transform:uppercase;letter-spacing:.05em;border-radius:4px;white-space:nowrap;background:#eaf3e6;color:var(--green-dark)}
+.distributor-info-list{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;flex-grow:1}
+.distributor-info-row{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.55;color:#334155;overflow-wrap:anywhere}
+.distributor-benefits .distributor-info-row svg{margin:2px 0 0;flex-shrink:0;color:var(--green)}
+.distributor-info-row strong{font-weight:700}
+.distributor-info-row a{color:inherit;text-decoration:none}
+.distributor-info-row a:hover{color:var(--green-dark);text-decoration:underline}
+.distributor-actions{display:flex;gap:10px;margin-top:auto;padding-top:16px;border-top:1px solid #f1f5f9}
+.distributor-map{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 14px;font-size:14px;white-space:nowrap;font-weight:700;line-height:1.5;border-radius:6px;text-decoration:none;text-align:center;transition:.2s;background:#f8fafc;color:#334155;border:1px solid #cbd5e1}
+.distributor-map:hover{background:#eef2f6;border-color:#94a3b8}
+/* Client-supplied icons, recoloured through the button's text colour */
+.distributor-map-icon{display:inline-block;flex:none;width:22px;height:22px;background-color:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
+.distributor-map-icon.map-pin{-webkit-mask-image:url('/sites/nafas/assets/icons/map-pin.png');mask-image:url('/sites/nafas/assets/icons/map-pin.png')}
+.distributor-map-icon.waze-logo{-webkit-mask-image:url('/sites/nafas/assets/icons/waze.png');mask-image:url('/sites/nafas/assets/icons/waze.png')}
+.distributor-map.waze{background:#33ccff;border-color:#33ccff;color:#fff}
+.distributor-map.waze:hover{background:#1fbdf2;border-color:#1fbdf2}
+@media(max-width:1100px){.distributor-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.distributor-grid{grid-template-columns:1fr}.distributor-filter{justify-content:flex-start;margin-bottom:36px}.distributor-status{margin-top:-16px}}

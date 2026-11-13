@@ -32,3 +32,13 @@ body .site-header .mobile-nav>a.button svg{flex:none;width:20px;height:20px}
 .site-header.light-hero:not(.solid) .language{color:var(--green-dark)}
 
 .site-header .language-switch{display:flex;align-items:center;gap:clamp(8px,1.2vw,23px);margin-left:auto;flex:none}.site-header .language-switch .language{margin-left:0}.site-header .language-switch a{display:inline-block;text-decoration:none}.site-header .language-switch .language-divider{display:inline-block}.site-header .language-switch a:hover{color:var(--green)}
+
+@media(max-width:1099px){
+  .site-header .menu-toggle{min-width:44px;min-height:44px;flex:none}
+  .site-header .language-switch{gap:4px}
+  .site-header .language-switch a{display:grid;place-items:center;min-width:44px;min-height:44px}
+}
+@media(max-width:359px){
+  .site-header .header-inner{padding-inline:10px;gap:8px}
+  .site-header .brand{flex-basis:104px}
+}

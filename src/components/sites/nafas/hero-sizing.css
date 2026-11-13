@@ -38,3 +38,21 @@ body main :is(.page-hero,.figma-page .page-hero){
 @media(max-width:767px){
   body main :is(.page-hero,.figma-page .page-hero),body .about-page .corporate-banner{--banner-corner:28px}
 }
+
+/* Narrow crops bring the photography behind the copy; preserve its contrast. */
+@media(max-width:1099px){
+  body main :is(.image-content-banner,.news-banner) .hero-background:after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,#fffffff2,#ffffffc9 50%,#ffffff00 85%);
+  }
+  body main :is(.career-page,.contact-page,.distributor-page) .image-content-banner p{text-shadow:none}
+}
+@media(min-width:768px) and (max-width:1099px){
+  body main .image-content-banner .hero-copy>div,
+  body main .news-banner .hero-copy>p:not(.eyebrow){max-width:55%}
+}
+@media(max-width:767px){
+  body main :is(.image-content-banner,.news-banner) .hero-background:after{
+    background:linear-gradient(180deg,#ffffffeb,#ffffffdb 70%,#ffffff00);
+  }
+}

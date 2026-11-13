@@ -14,14 +14,25 @@ const expertise = [
   { image:58, icon:'truck', title:"Integrated Supply Chain Management", text:"Management from sourcing to distribution ensures reliable supply." },
   { image:6, icon:'sprout', title:"Decades of Proven Experience", text:"More than 50 years of experience in fertilizer and agricultural supply networks." },
 ];
-// The Figma strip uses sample marks. They are displayed as design placeholders,
-// without presenting them as verified NAFAS partners.
+// Strategic partner logos supplied by the client ("Logo Rakan Strategik" folder).
+// `wide` marks landscape logos that get a wider slot in the marquee.
 const partnerLogos = [
-  { image:'/sites/nafas/assets/partners-v3-1/82d46.png', name:'ADNOC' }, { image:'/sites/nafas/assets/partners-v3-1/ae1ed.png', name:'Aramco' },
-  { image:'/sites/nafas/assets/partners-v3-1/88ab2.png', name:'DEWA' }, { image:'/sites/nafas/assets/partners-v3-1/8da11.png', name:'ExxonMobil' },
-  { image:'/sites/nafas/assets/partners-v3-1/ad266.png', name:'Ministry of Water and Electricity' }, { image:'/sites/nafas/assets/partners-v3-1/6dd05.png', name:'JKR' },
-  { image:'/sites/nafas/assets/partners-v3-1/478b3.png', name:'Larsen & Toubro' }, { image:'/sites/nafas/assets/partners-v3-1/981bb.png', name:'Microsoft' },
-  { image:'/sites/nafas/assets/partners-v3-1/3d18a.png', name:"Sabah Water Department" }, { image:'/sites/nafas/assets/partners-v3-1/2f9f9.png', name:'Dubai World Trade Centre' },
+  { image:'/sites/nafas/assets/partners-v4/mardi.png', name:'MARDI' },
+  { image:'/sites/nafas/assets/partners-v4/mpob.png', name:'MPOB' },
+  { image:'/sites/nafas/assets/partners-v4/lembaga-koko-malaysia.png', name:'Malaysian Cocoa Board' },
+  { image:'/sites/nafas/assets/partners-v4/lembaga-getah-malaysia.png', name:'Malaysian Rubber Board' },
+  { image:'/sites/nafas/assets/partners-v4/felcra-berhad.png', name:'FELCRA Berhad' },
+  { image:'/sites/nafas/assets/partners-v4/felda.png', name:'FELDA' },
+  { image:'/sites/nafas/assets/partners-v4/maybank.png', name:'Maybank' },
+  { image:'/sites/nafas/assets/partners-v4/cimb.png', name:'CIMB Bank' },
+  { image:'/sites/nafas/assets/partners-v4/al-rajhi-bank.png', name:'Al Rajhi Bank' },
+  { image:'/sites/nafas/assets/partners-v4/sinergi-perdana.png', name:'Sinergi Perdana', wide:true },
+  { image:'/sites/nafas/assets/partners-v4/sd-guthrie.png', name:'SD Guthrie' },
+  { image:'/sites/nafas/assets/partners-v4/th-plantations.png', name:'TH Plantations', wide:true },
+  { image:'/sites/nafas/assets/partners-v4/ioi.jpg', name:'IOI' },
+  { image:'/sites/nafas/assets/partners-v4/genting-plantations.png', name:'Genting Plantations', wide:true },
+  { image:'/sites/nafas/assets/partners-v4/boustead-plantations.png', name:'Boustead Plantations' },
+  { image:'/sites/nafas/assets/partners-v4/phosphate-resources-malaysia.png', name:'Phosphate Resources Malaysia', wide:true },
 ];
 
 function LayeredFarmerImage() {
@@ -86,10 +97,10 @@ export function HomePage() {
         </article>;
       })}
     </section>
-    <section className="partners" aria-label="Sample partner logo layout">
+    <section className="partners" aria-label="Strategic partners">
       <div className="partner-marquee"><div className="partner-names">
-        {[...partnerLogos, ...partnerLogos].map((logo, index) => <span key={`${logo.name}-${index}`} aria-hidden={index >= partnerLogos.length}>
-          <Image src={logo.image} alt={index < partnerLogos.length ? `${logo.name} — sample logo` : ''} width={138} height={110} sizes="219px" />
+        {[...partnerLogos, ...partnerLogos].map((logo, index) => <span key={`${logo.name}-${index}`} className={logo.wide ? 'wide' : undefined} aria-hidden={index >= partnerLogos.length}>
+          <Image src={logo.image} alt={index < partnerLogos.length ? `${logo.name} logo` : ''} width={138} height={110} sizes="219px" />
         </span>)}
       </div></div>
     </section>
