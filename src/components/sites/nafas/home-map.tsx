@@ -1,9 +1,6 @@
 import Image from 'next/image';
-
-// Homepage marker positions follow the marked Figma review image.
-// The About map retains its own asset and arrangement.
-const markers = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+import { mapHotspots } from '@/lib/nafas/map-hotspots';
 
 export function HomeMap() {
-  return <div className="home-map" role="img" aria-label="Peta rangkaian lokasi NAFAS di Malaysia"><Image src="/sites/nafas/assets/home-map-base.png" alt="" fill sizes="(max-width: 767px) 90vw, 55vw" />{markers.map(index => <span key={index} className={`home-map-marker marker-${index}`} aria-hidden="true" />)}</div>;
+  return <div className="home-map" role="group" aria-label="Peta rangkaian lokasi NAFAS di Malaysia"><Image src="/sites/nafas/assets/home-map-base.png" alt="" fill sizes="(max-width: 767px) 90vw, 55vw" />{mapHotspots.map(({ name, state, left, top }) => <button key={name} type="button" className="home-map-marker" style={{ left: `${left}%`, top: `${top}%` }} aria-label={`${name}, ${state}`}><span className="home-map-label">{name}<small>{state}</small></span></button>)}</div>;
 }

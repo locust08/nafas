@@ -9,6 +9,8 @@ import { CallToAction, Media, SectionHeading } from '@/components/sites/nafas/sh
 import { CountUp, HeroVideo, ScrollLine } from '@/components/sites/nafas/shared/motion';
 import { MilestoneCarousel } from '@/components/sites/nafas/inner-interactions';
 import '@/components/sites/nafas/inner-pages.css';
+import { DepartmentSlider } from '@/components/sites/nafas/department-slider';
+import { AboutLocationList, AboutLocationMap } from '@/components/sites/nafas/about-locations';
 
 export const metadata: Metadata = {
   title: 'Tentang Kami',
@@ -22,12 +24,23 @@ const values = [
   { title: 'Daya Saing', text: 'Pengalaman industri dekad memastikan operasi cekap dan kompetitif.', image: 57, icon: 'trend-badge.svg' },
 ];
 
+const aboutLocations = [
+  { name: 'Prai', state: 'Pulau Pinang', left: 6.8, top: 27.6 },
+  { name: 'Gurun', state: 'Kedah', left: 10.2, top: 15.6 },
+  { name: 'Port Klang', state: 'Selangor', left: 13.8, top: 48.9 },
+  { name: 'Kuching', state: 'Sarawak', left: 38.1, top: 71.9 },
+  { name: 'Bintulu', state: 'Sarawak', left: 58.5, top: 52.0 },
+  { name: 'Sandakan', state: 'Sabah', left: 91.0, top: 36.4 },
+  { name: 'Sipitang', state: 'Sabah', left: 72.7, top: 40.4 },
+  { name: 'Kota Kinabalu', state: 'Sabah', left: 79.1, top: 30.2 },
+];
+
 const departments = [
-  { name: 'Bahagian Pemasaran dan Jualan', image: 'department-sales.png' },
-  { name: 'Bahagian Operasi dan Logistik', image: 'department-operations.png' },
-  { name: 'Bahagian Kewangan dan Akaun', image: 'department-finance.png' },
-  { name: 'Bahagian Agronomi & Teknikal', image: 'department-agronomy.png' },
-  { name: 'Bahagian Pengurusan dan Pentadbiran', image: 'department-management.png' },
+  { name: 'Bahagian Jualan dan Pemasaran', image: 'department-sales.jpg' },
+  { name: 'Bahagian Logistik, Perolehan dan Pergudangan', image: 'department-operations.jpg' },
+  { name: 'Bahagian Akaun dan Kewangan', image: 'department-finance.png' },
+  { name: 'Bahagian Agronomi', image: 'department-agronomy.jpg' },
+  { name: 'Bahagian Pengurusan dan Pentadbiran', image: 'department-management.jpg' },
 ];
 
 const milestones = [
@@ -108,7 +121,7 @@ export default function AboutPage() {
 
     <section id="carta-organisasi" className="content-section leadership-section">
       <div className="container"><SectionHeading label="Carta Organisasi" center><span className="accent">Kepimpinan</span> yang menggerakkan Operasi Kami</SectionHeading><p className="center">Kepimpinan NAFAS Bajakimia menyatukan kepakaran strategik, operasi dan agronomi demi mencapai matlamat bersama.</p><article className="ceo-panel"><Media src="/sites/nafas/figma/ceo.png" className="hero-background" alt="Zalifudin bin Md Arshad, Ketua Pegawai Eksekutif" /><div><h3>Ketua Pegawai Eksekutif</h3><p>Zalifudin bin Md Arshad</p></div></article></div>
-      <div className="wide-container department-grid">{departments.map(({ name, image }) => <article className="department-card" key={name}><Media src={`/sites/nafas/figma/${image}`} alt={`Pasukan ${name}`} sizes="(max-width: 767px) 100vw, 20vw" /><h3>{name}</h3></article>)}</div>
+      <div className="wide-container"><DepartmentSlider items={departments} label="Bahagian NAFAS Bajakimia" /></div>
     </section>
 
     <section className="milestone-section content-section"><Media src="/sites/nafas/figma/milestone.png" className="hero-background" /><MilestoneCarousel items={milestones} /></section>
@@ -124,7 +137,7 @@ export default function AboutPage() {
       </div></div>
     </section>
 
-    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Lokasi strategik di Seluruh Malaysia</h2><p>Kami sentiasa dekat dengan anda bagi memastikan bekalan baja dihantar tepat pada masanya ke seluruh negara melalui rangkaian pengedaran yang cekap, dipercayai, dan mampu memenuhi keperluan pelanggan.</p></div><Media src="/sites/nafas/assets/about-locations-map.png" sizes="(max-width: 767px) 90vw, 55vw" alt="Peta rangkaian lokasi NAFAS di Semenanjung Malaysia, Sabah dan Sarawak" className="contain" /></div></section>
+    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Lokasi strategik di Seluruh Malaysia</h2><p>Kami sentiasa dekat dengan anda bagi memastikan bekalan baja dihantar tepat pada masanya ke seluruh negara melalui rangkaian pengedaran yang cekap, dipercayai, dan mampu memenuhi keperluan pelanggan.</p><AboutLocationList locations={aboutLocations} /></div><AboutLocationMap locations={aboutLocations} label="Peta rangkaian lokasi NAFAS di Semenanjung Malaysia, Sabah dan Sarawak" /></div></section>
     <CallToAction />
   </div>;
 }

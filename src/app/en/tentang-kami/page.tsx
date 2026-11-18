@@ -10,6 +10,8 @@ import { CallToAction, Media, SectionHeading } from "@/components/sites/nafas/en
 import { CountUp, HeroVideo, ScrollLine } from "@/components/sites/nafas/en/shared/motion";
 import { MilestoneCarousel } from "@/components/sites/nafas/en/inner-interactions";
 import '@/components/sites/nafas/inner-pages.css';
+import { DepartmentSlider } from '@/components/sites/nafas/department-slider';
+import { AboutLocationList, AboutLocationMap } from '@/components/sites/nafas/about-locations';
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -23,12 +25,23 @@ const values = [
   { title: "Competitiveness", text: "Decades of industry experience ensure efficient, competitive operations.", image: 57, icon: 'trend-badge.svg' },
 ];
 
+const aboutLocations = [
+  { name: 'Prai', state: 'Penang', left: 6.8, top: 27.6 },
+  { name: 'Gurun', state: 'Kedah', left: 10.2, top: 15.6 },
+  { name: 'Port Klang', state: 'Selangor', left: 13.8, top: 48.9 },
+  { name: 'Kuching', state: 'Sarawak', left: 38.1, top: 71.9 },
+  { name: 'Bintulu', state: 'Sarawak', left: 58.5, top: 52.0 },
+  { name: 'Sandakan', state: 'Sabah', left: 91.0, top: 36.4 },
+  { name: 'Sipitang', state: 'Sabah', left: 72.7, top: 40.4 },
+  { name: 'Kota Kinabalu', state: 'Sabah', left: 79.1, top: 30.2 },
+];
+
 const departments = [
-  { name: "Marketing and Sales Division", image: 'department-sales.png' },
-  { name: "Operations and Logistics Division", image: 'department-operations.png' },
-  { name: "Finance and Accounts Division", image: 'department-finance.png' },
-  { name: "Agronomy & Technical Division", image: 'department-agronomy.png' },
-  { name: "Management and Administration Division", image: 'department-management.png' },
+  { name: "Sales and Marketing Division", image: 'department-sales.jpg' },
+  { name: "Logistics, Procurement and Warehousing Division", image: 'department-operations.jpg' },
+  { name: "Account and Finance Division", image: 'department-finance.png' },
+  { name: "Agronomy Division", image: 'department-agronomy.jpg' },
+  { name: "Management and Administration Division", image: 'department-management.jpg' },
 ];
 
 const milestones = [
@@ -109,7 +122,7 @@ export default function AboutPage() {
 
     <section id="carta-organisasi" className="content-section leadership-section">
       <div className="container"><SectionHeading label="Organisation Chart" center><span className="accent">Leadership</span> Driving Our Operations</SectionHeading><p className="center">NAFAS Bajakimia&apos;s leadership combines strategic, operational and agronomic expertise to achieve shared goals.</p><article className="ceo-panel"><Media src="/sites/nafas/figma/ceo.png" className="hero-background" alt="Zalifudin bin Md Arshad, Chief Executive Officer" /><div><h3>Chief Executive Officer</h3><p>Zalifudin bin Md Arshad</p></div></article></div>
-      <div className="wide-container department-grid">{departments.map(({ name, image }) => <article className="department-card" key={name}><Media src={`/sites/nafas/figma/${image}`} alt={`Team ${name}`} sizes="(max-width: 767px) 100vw, 20vw" /><h3>{name}</h3></article>)}</div>
+      <div className="wide-container"><DepartmentSlider items={departments} label="Departments" /></div>
     </section>
 
     <section className="milestone-section content-section"><Media src="/sites/nafas/figma/milestone.png" className="hero-background" /><MilestoneCarousel items={milestones} /></section>
@@ -125,7 +138,7 @@ export default function AboutPage() {
       </div></div>
     </section>
 
-    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Strategic Locations Across Malaysia</h2><p>We stay close to you to ensure timely fertilizer deliveries nationwide through an efficient, reliable distribution network that meets customer needs.</p></div><Media src="/sites/nafas/assets/about-locations-map.png" sizes="(max-width: 767px) 90vw, 55vw" alt="NAFAS location network map in Peninsular Malaysia, Sabah and Sarawak" className="contain" /></div></section>
+    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Strategic Locations Across Malaysia</h2><p>We stay close to you to ensure timely fertilizer deliveries nationwide through an efficient, reliable distribution network that meets customer needs.</p><AboutLocationList locations={aboutLocations} /></div><AboutLocationMap locations={aboutLocations} label="NAFAS location network map in Peninsular Malaysia, Sabah and Sarawak" /></div></section>
     <CallToAction />
   </div>;
 }

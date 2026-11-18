@@ -29,3 +29,25 @@
 .distributor-map.waze:hover{background:#1fbdf2;border-color:#1fbdf2}
 @media(max-width:1100px){.distributor-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.distributor-grid{grid-template-columns:1fr}.distributor-filter{justify-content:flex-start;margin-bottom:36px}.distributor-status{margin-top:-16px}}
+
+/* BugHerd #42: underline tabs, same pattern as the sustainability report year tabs */
+.distributor-filter{flex-wrap:nowrap;justify-content:flex-start;gap:0;overflow-x:auto;overflow-y:hidden;border:0;box-shadow:inset 0 -3px #c5c5c5;margin:0 0 44px;scrollbar-width:none}
+.distributor-filter::-webkit-scrollbar{display:none}
+.distributor-filter button,.distributor-filter button:hover{background:none;box-shadow:none;border:0;border-bottom:3px solid transparent;border-radius:0;margin:0;flex:none;padding:15px 16px;font-family:var(--font-heading),sans-serif;font-size:18px;font-weight:600;color:var(--ink)}
+.distributor-filter button:hover{color:var(--green-dark)}
+.distributor-filter button.active{background:none;box-shadow:none;border-bottom-color:var(--ink);color:var(--ink)}
+/* BugHerd #43: slanted card like Nilai Teras, product-list shadow instead of a border */
+.distributor-benefits .distributor-card{padding:0;border:0;border-radius:26px;overflow:hidden;transform:skewX(-7deg);box-shadow:1px 1px 3px #9c9c9c22;transition:box-shadow .4s,transform .4s}
+.distributor-benefits .distributor-card:hover{transform:skewX(-7deg) translateY(-4px);border-color:transparent;box-shadow:6px 9px 23px #9c9c9c26}
+.distributor-card-body{display:flex;flex-direction:column;flex:1;min-width:0;padding:28px 36px;transform:skewX(7deg)}
+.distributor-grid{gap:32px}
+/* BugHerd #44: solid icons */
+.distributor-info-row .solid-icon{width:18px;margin-top:2px;font-size:16px;color:var(--green)}
+/* BugHerd #45: pill buttons, Google Map in light green */
+.distributor-map{border-radius:9999px;padding:10px 18px;font-family:var(--font-heading),sans-serif;font-size:15px;font-weight:600}
+.distributor-map:not(.waze){background:#e8eedd;border-color:#e8eedd;color:#7aab2f}
+.distributor-map:not(.waze):hover{background:#dce6cb;border-color:#dce6cb}
+.distributor-map.waze{border-radius:9999px}
+@media(max-width:720px){.distributor-filter{margin-bottom:36px}.distributor-filter button{font-size:16px;min-width:80px}.distributor-card-body{padding:24px 28px}.distributor-benefits .distributor-card{transform:skewX(-4deg)}.distributor-benefits .distributor-card:hover{transform:skewX(-4deg)}.distributor-card-body{transform:skewX(4deg)}}
+/* Global `.distributor-benefits svg{margin-bottom:25px}` pushed the arrow out of line */
+.distributor-benefits .distributor-map svg{flex:none;margin:0;color:inherit}

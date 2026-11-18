@@ -1,7 +1,8 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Home, Truck, Trophy } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { SolidIcon } from '@/components/sites/nafas/shared/solid-icon';
 import { asset } from '@/lib/nafas/assets';
 import { Media } from './shared/sections';
 
@@ -12,7 +13,7 @@ export function MilestoneCarousel({ items }: { items: string[][] }) {
   return <div className="milestone-carousel wide-container" role="region" aria-roledescription="karusel" aria-label="Pencapaian syarikat" tabIndex={0} onKeyDown={(event) => { if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); } if (event.key === 'ArrowRight') { event.preventDefault(); move(1); } }}>
     <div className="carousel-controls"><button onClick={() => move(-1)} aria-label="Pencapaian sebelumnya"><ArrowLeft aria-hidden="true" /></button><button onClick={() => move(1)} aria-label="Pencapaian seterusnya"><ArrowRight aria-hidden="true" /></button></div>
     <div className="milestone-description" aria-live="polite" aria-atomic="true"><h2>{items[active][1]}</h2><p>{active + 1} / {items.length}</p></div>
-    <div className="milestone-markers">{items.slice(start, start + 3).map(([year], position) => { const Icon = [Home, Truck, Trophy][position]; return <button key={year} onClick={() => setActive(start + position)} aria-pressed={active === start + position}><strong>{year}</strong><span><Icon aria-hidden="true" /></span></button>; })}</div>
+    <div className="milestone-markers">{items.slice(start, start + 3).map(([year], position) => { const icon = (['home', 'truck', 'trophy'] as const)[position]; return <button key={year} onClick={() => setActive(start + position)} aria-pressed={active === start + position}><strong>{year}</strong><span><SolidIcon name={icon} /></span></button>; })}</div>
   </div>;
 }
 

@@ -4,6 +4,7 @@ const glyphs = {
   health: '\uf21e', learning: '\uf19d', holiday: '\uf5ca',
   team: '\uf0c0', shield: '\uf3ed', coffee: '\uf0f4',
   globe: '\uf0ac', flask: '\uf0c3',
+  building: '\uf1ad', home: '\uf015', trophy: '\uf091',
 } as const;
 
 export type SolidIconName = keyof typeof glyphs;

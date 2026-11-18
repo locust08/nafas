@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Building2, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { SolidIcon } from './shared/solid-icon';
 import { distributorCount, distributorStates, type Distributor } from '@/lib/nafas/distributors';
 import './distributor-directory.css';
 
@@ -39,21 +40,21 @@ export function DistributorDirectory({ labels }: { labels: DistributorLabels }) 
     <div className="distributor-grid">
       {visible.flatMap((state) => state.distributors.map((distributor) => {
         const links = mapLinks(distributor, state.name);
-        return <article key={`${state.slug}-${distributor.name}`} className="distributor-card">
+        return <article key={`${state.slug}-${distributor.name}`} className="distributor-card"><div className="distributor-card-body">
           <div className="distributor-card-header">
             <h3>{distributor.name}</h3>
             <span className="distributor-badge">{state.name}</span>
           </div>
           <div className="distributor-info-list">
-            <div className="distributor-info-row"><MapPin size={16} aria-hidden="true" /><div><strong>{labels.address}:</strong><br />{distributor.address}, {distributor.postcode} {state.name}.</div></div>
-            <div className="distributor-info-row"><Phone size={16} aria-hidden="true" /><div><strong>{labels.phone}:</strong><br />{distributor.phones.map((phone, index) => <span key={phone}>{index > 0 && ' / '}<a href={`tel:${phone.replace(/[^\d+]/g, '')}`}>{phone}</a></span>)}</div></div>
-            {distributor.email && <div className="distributor-info-row"><Mail size={16} aria-hidden="true" /><div><strong>{labels.email}:</strong><br /><a href={`mailto:${distributor.email}`}>{distributor.email}</a></div></div>}
-            {distributor.regNo && <div className="distributor-info-row"><Building2 size={16} aria-hidden="true" /><div><strong>{labels.companyNo}:</strong><br />{distributor.registrar ? `${distributor.registrar} ` : ''}{distributor.regNo}</div></div>}
+            <div className="distributor-info-row"><SolidIcon name="location" /><div><strong>{labels.address}:</strong><br />{distributor.address}, {distributor.postcode} {state.name}.</div></div>
+            <div className="distributor-info-row"><SolidIcon name="phone" /><div><strong>{labels.phone}:</strong><br />{distributor.phones.map((phone, index) => <span key={phone}>{index > 0 && ' / '}<a href={`tel:${phone.replace(/[^\d+]/g, '')}`}>{phone}</a></span>)}</div></div>
+            {distributor.email && <div className="distributor-info-row"><SolidIcon name="mail" /><div><strong>{labels.email}:</strong><br /><a href={`mailto:${distributor.email}`}>{distributor.email}</a></div></div>}
+            {distributor.regNo && <div className="distributor-info-row"><SolidIcon name="building" /><div><strong>{labels.companyNo}:</strong><br />{distributor.registrar ? `${distributor.registrar} ` : ''}{distributor.regNo}</div></div>}
           </div>
           <div className="distributor-actions">
-            <a className="distributor-map" href={links.google} target="_blank" rel="noopener noreferrer"><i className="distributor-map-icon map-pin" aria-hidden="true" /><span>{labels.googleMap}</span></a>
+            <a className="distributor-map" href={links.google} target="_blank" rel="noopener noreferrer"><i className="distributor-map-icon map-pin" aria-hidden="true" /><span>{labels.googleMap}</span><ArrowRight size={18} aria-hidden="true" /></a>
             <a className="distributor-map waze" href={links.waze} target="_blank" rel="noopener noreferrer"><i className="distributor-map-icon waze-logo" aria-hidden="true" /><span>{labels.waze}</span></a>
-          </div>
+          </div></div>
         </article>;
       }))}
     </div>
