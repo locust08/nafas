@@ -76,10 +76,17 @@
 .distributor-benefits .distributor-card-header,.distributor-benefits .distributor-info-row,.distributor-benefits .distributor-actions{transform:skewX(7deg);transform-origin:0 50%}
 @media(max-width:720px){.distributor-benefits .distributor-card-header,.distributor-benefits .distributor-info-row,.distributor-benefits .distributor-actions{transform:skewX(4deg)}}
 
-/* The two map buttons wrap instead of running past the slanted card edge when a card is narrow (phones, 2-column tablets) */
-.distributor-actions{flex-wrap:wrap}
-.distributor-benefits .distributor-map{flex:1 1 130px}
-@media(max-width:480px){.distributor-benefits .distributor-map{padding:10px 12px;font-size:14px}}
+/* The two map buttons always sit side by side; on narrow cards they shrink (smaller type, padding and icons) instead of wrapping */
+.distributor-actions{flex-wrap:nowrap}
+.distributor-benefits .distributor-map{flex:1 1 auto;min-width:0}
+@media(max-width:1100px){
+  .distributor-actions{gap:8px}
+  .distributor-benefits .distributor-map{padding:10px 8px;gap:5px;font-size:14px}
+  .distributor-benefits .distributor-map svg:not(.distributor-map-icon){width:15px;height:15px}
+  .distributor-map-icon.map-pin{font-size:17px}
+  .distributor-map-icon.waze-logo{width:22px;height:22px}
+}
+@media(max-width:340px){.distributor-actions{flex-wrap:wrap}.distributor-benefits .distributor-map{flex:1 1 130px}}
 
 /* Narrower screens: the state tabs scroll sideways, so fade the right edge to hint that more tabs follow */
 @media(max-width:1279px){
