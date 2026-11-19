@@ -9,8 +9,7 @@ import { CallToAction, Media, SectionHeading } from '@/components/sites/nafas/sh
 import { CountUp, HeroVideo, ScrollLine } from '@/components/sites/nafas/shared/motion';
 import { MilestoneCarousel } from '@/components/sites/nafas/inner-interactions';
 import '@/components/sites/nafas/inner-pages.css';
-import { DepartmentSlider } from '@/components/sites/nafas/department-slider';
-import { AboutLocationList, AboutLocationMap } from '@/components/sites/nafas/about-locations';
+import { AboutLocationMap } from '@/components/sites/nafas/about-locations';
 
 export const metadata: Metadata = {
   title: 'Tentang Kami',
@@ -85,7 +84,7 @@ export default function AboutPage() {
       <div className="container"><div className="overview-text">
         <SectionHeading label="Gambaran Syarikat">Bekalan baja negara sejak <span className="accent">1974</span></SectionHeading>
         <p>Sejak 1974, NAFAS Bajakimia mengurus import, pengilangan, pengangkutan, dan pengedaran baja melalui cawangan PPK seluruh Malaysia.</p>
-        <button className="button" type="button" disabled title="Profil syarikat belum tersedia">Muat Turun Profil Syarikat<ArrowRight size={22} aria-hidden="true" /></button>
+        <a className="button" href="/sites/nafas/documents/company-profile-nbksb-2026.pdf" target="_blank" rel="noopener noreferrer" download="NBKSB-Company-Profile-2026.pdf">Muat Turun Profil Syarikat<ArrowRight size={22} aria-hidden="true" /></a>
         <div className="experience"><span className="experience-icon"><Image src="/sites/nafas/figma/thumb.svg" width={35.1937} height={33.0001} alt="" /></span><div><CountUp value={50} suffix="+" /><h3>Tahun Pengalaman</h3><p>Pengalaman luas sokong baja negara.</p></div></div>
       </div></div>
     </section>
@@ -121,7 +120,7 @@ export default function AboutPage() {
 
     <section id="carta-organisasi" className="content-section leadership-section">
       <div className="container"><SectionHeading label="Carta Organisasi" center><span className="accent">Kepimpinan</span> yang menggerakkan Operasi Kami</SectionHeading><p className="center">Kepimpinan NAFAS Bajakimia menyatukan kepakaran strategik, operasi dan agronomi demi mencapai matlamat bersama.</p><article className="ceo-panel"><Media src="/sites/nafas/figma/ceo.png" className="hero-background" alt="Zalifudin bin Md Arshad, Ketua Pegawai Eksekutif" /><div><h3>Ketua Pegawai Eksekutif</h3><p>Zalifudin bin Md Arshad</p></div></article></div>
-      <div className="wide-container"><DepartmentSlider items={departments} label="Bahagian NAFAS Bajakimia" /></div>
+      <div className="wide-container department-grid">{departments.map(({ name, image }) => <article className="department-card" key={name}><Media src={`/sites/nafas/figma/${image}`} alt={`Pasukan ${name}`} sizes="(max-width: 767px) 100vw, 20vw" /><h3>{name}</h3></article>)}</div>
     </section>
 
     <section className="milestone-section content-section"><Media src="/sites/nafas/figma/milestone.png" className="hero-background" /><MilestoneCarousel items={milestones} /></section>
@@ -137,7 +136,7 @@ export default function AboutPage() {
       </div></div>
     </section>
 
-    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Lokasi strategik di Seluruh Malaysia</h2><p>Kami sentiasa dekat dengan anda bagi memastikan bekalan baja dihantar tepat pada masanya ke seluruh negara melalui rangkaian pengedaran yang cekap, dipercayai, dan mampu memenuhi keperluan pelanggan.</p><AboutLocationList locations={aboutLocations} /></div><AboutLocationMap locations={aboutLocations} label="Peta rangkaian lokasi NAFAS di Semenanjung Malaysia, Sabah dan Sarawak" /></div></section>
+    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Lokasi strategik di Seluruh Malaysia</h2><p>Kami sentiasa dekat dengan anda bagi memastikan bekalan baja dihantar tepat pada masanya ke seluruh negara melalui rangkaian pengedaran yang cekap, dipercayai, dan mampu memenuhi keperluan pelanggan.</p></div><AboutLocationMap locations={aboutLocations} label="Peta rangkaian lokasi NAFAS di Semenanjung Malaysia, Sabah dan Sarawak" /></div></section>
     <CallToAction />
   </div>;
 }

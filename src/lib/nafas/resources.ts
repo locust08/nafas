@@ -10,16 +10,16 @@ const fallback: EducationContent = {
     { id: '2026-08', year: 2026, month: 8, title: 'Bersama Komuniti Lebih Maju', image: '/sites/nafas/figma/poster-august.png', description: 'Contoh poster pendidikan mengenai komuniti pertanian.', sample: true },
     { id: '2026-07', year: 2026, month: 7, title: 'Setiap Titisan Bermakna', image: '/sites/nafas/figma/poster-july.png', description: 'Contoh poster pendidikan mengenai pemuliharaan sumber air.', sample: true },
   ],
-  reports: [{ id: '2026', year: 2026, title: 'Laporan Disember Kelestarian 2026', cover: '/sites/nafas/figma/report-cover.png', description: 'Laporan tahunan yang memaparkan pencapaian, inisiatif dan komitmen kami dalam menyokong kelestarian alam sekitar dan komuniti.', sample: true }],
+  reports: [{ id: '2025', year: 2025, title: "Laporan Kemampanan dan ESG 2025", cover: '/sites/nafas/reports/laporan-kemampanan-esg-2025-cover.webp', description: "Laporan tahunan NAFAS Bajakimia mengenai prestasi alam sekitar, sosial dan tadbir urus (ESG) serta usaha kemampanan syarikat.", pdfUrl: '/sites/nafas/reports/laporan-kemampanan-esg-2025-nbksb.pdf' }],
 };
 
 function record(value: unknown): value is Record<string, unknown> { return typeof value === 'object' && value !== null; }
 function media(value: unknown): value is string { return typeof value === 'string' && (/^\/(?!\/)/.test(value) || /^https:\/\//.test(value)); }
 function poster(value: unknown): value is MonthlyPoster {
-  return record(value) && typeof value.id === 'string' && typeof value.year === 'number' && value.year >= 2026 && Number.isInteger(value.year) && typeof value.month === 'number' && Number.isInteger(value.month) && value.month >= 1 && value.month <= 12 && typeof value.title === 'string' && media(value.image) && typeof value.description === 'string';
+  return record(value) && typeof value.id === 'string' && typeof value.year === 'number' && value.year >= 2025 && Number.isInteger(value.year) && typeof value.month === 'number' && Number.isInteger(value.month) && value.month >= 1 && value.month <= 12 && typeof value.title === 'string' && media(value.image) && typeof value.description === 'string';
 }
 function report(value: unknown): value is SustainabilityReport {
-  return record(value) && typeof value.id === 'string' && typeof value.year === 'number' && value.year >= 2026 && Number.isInteger(value.year) && typeof value.title === 'string' && media(value.cover) && typeof value.description === 'string' && (value.pdfUrl === undefined || media(value.pdfUrl));
+  return record(value) && typeof value.id === 'string' && typeof value.year === 'number' && value.year >= 2025 && Number.isInteger(value.year) && typeof value.title === 'string' && media(value.cover) && typeof value.description === 'string' && (value.pdfUrl === undefined || media(value.pdfUrl));
 }
 
 // An optional CMS endpoint publishes the same typed document. Local samples keep the UI reviewable.

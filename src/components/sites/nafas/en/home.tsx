@@ -7,6 +7,7 @@ import { articles } from "@/lib/nafas/en/news";
 import { CountUp, HeroVideo } from './shared/motion';
 import { HomeMap } from './home-map';
 import { ButtonLink, CallToAction, Media, SectionHeading } from './shared/sections';
+import { partnerLogoBox } from '@/lib/nafas/partner-logo-size';
 
 const expertise = [
   { image:19, icon:'ship', title:"Large-scale Urea Supply Expertise", text:"Specialising in large-scale urea fertilizer importing and distribution." },
@@ -99,7 +100,7 @@ export function HomePage() {
     </section>
     <section className="partners" aria-label="Strategic partners">
       <div className="partner-marquee"><div className="partner-names">
-        {[...partnerLogos, ...partnerLogos].map((logo, index) => <span key={`${logo.name}-${index}`} className={logo.wide ? 'wide' : undefined} aria-hidden={index >= partnerLogos.length}>
+        {[...partnerLogos, ...partnerLogos].map((logo, index) => <span key={`${logo.name}-${index}`} style={partnerLogoBox(logo.image)} aria-hidden={index >= partnerLogos.length}>
           <Image src={logo.image} alt={index < partnerLogos.length ? `${logo.name} logo` : ''} width={138} height={110} sizes="219px" />
         </span>)}
       </div></div>

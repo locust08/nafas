@@ -51,3 +51,11 @@
 @media(max-width:720px){.distributor-filter{margin-bottom:36px}.distributor-filter button{font-size:16px;min-width:80px}.distributor-card-body{padding:24px 28px}.distributor-benefits .distributor-card{transform:skewX(-4deg)}.distributor-benefits .distributor-card:hover{transform:skewX(-4deg)}.distributor-card-body{transform:skewX(4deg)}}
 /* Global `.distributor-benefits svg{margin-bottom:25px}` pushed the arrow out of line */
 .distributor-benefits .distributor-map svg{flex:none;margin:0;color:inherit}
+
+/* BugHerd #43: thin outline back on the cards, together with the shadow */
+.distributor-benefits .distributor-card{border:1px solid #e4e7e0}
+.distributor-benefits .distributor-card:hover{border-color:#cfd6c6}
+/* BugHerd #44: solid Google Map icon (font glyph) and the client-supplied black-line Waze icon (kept in its own colours) */
+.distributor-map-icon.map-pin{-webkit-mask-image:none;mask-image:none;background:none;width:auto;height:auto;font-size:20px;line-height:1;display:inline-flex;align-items:center}
+.distributor-map-icon.map-pin::before{content:'\f5a0';font-family:'NAFAS Figma Icons';font-weight:900}
+.distributor-map-icon.waze-logo{width:26px;height:26px;-webkit-mask:none;mask:none;background:url('/sites/nafas/assets/icons/waze-color.png') center/contain no-repeat}

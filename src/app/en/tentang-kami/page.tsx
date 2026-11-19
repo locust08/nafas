@@ -10,8 +10,7 @@ import { CallToAction, Media, SectionHeading } from "@/components/sites/nafas/en
 import { CountUp, HeroVideo, ScrollLine } from "@/components/sites/nafas/en/shared/motion";
 import { MilestoneCarousel } from "@/components/sites/nafas/en/inner-interactions";
 import '@/components/sites/nafas/inner-pages.css';
-import { DepartmentSlider } from '@/components/sites/nafas/department-slider';
-import { AboutLocationList, AboutLocationMap } from '@/components/sites/nafas/about-locations';
+import { AboutLocationMap } from '@/components/sites/nafas/about-locations';
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -86,7 +85,7 @@ export default function AboutPage() {
       <div className="container"><div className="overview-text">
         <SectionHeading label="Company Overview">Supplying the Nation&apos;s Fertilizers Since <span className="accent">1974</span></SectionHeading>
         <p>Since 1974, NAFAS Bajakimia has managed fertilizer importing, manufacturing, transport and distribution through PPK branches across Malaysia.</p>
-        <button className="button" type="button" disabled title="Company profile not yet available">Download Company Profile<ArrowRight size={22} aria-hidden="true" /></button>
+        <a className="button" href="/sites/nafas/documents/company-profile-nbksb-2026.pdf" target="_blank" rel="noopener noreferrer" download="NBKSB-Company-Profile-2026.pdf">Download Company Profile<ArrowRight size={22} aria-hidden="true" /></a>
         <div className="experience"><span className="experience-icon"><Image src="/sites/nafas/figma/thumb.svg" width={35.1937} height={33.0001} alt="" /></span><div><CountUp value={50} suffix="+" /><h3>Years of Experience</h3><p>Extensive experience supporting national fertilizer supply.</p></div></div>
       </div></div>
     </section>
@@ -122,7 +121,7 @@ export default function AboutPage() {
 
     <section id="carta-organisasi" className="content-section leadership-section">
       <div className="container"><SectionHeading label="Organisation Chart" center><span className="accent">Leadership</span> Driving Our Operations</SectionHeading><p className="center">NAFAS Bajakimia&apos;s leadership combines strategic, operational and agronomic expertise to achieve shared goals.</p><article className="ceo-panel"><Media src="/sites/nafas/figma/ceo.png" className="hero-background" alt="Zalifudin bin Md Arshad, Chief Executive Officer" /><div><h3>Chief Executive Officer</h3><p>Zalifudin bin Md Arshad</p></div></article></div>
-      <div className="wide-container"><DepartmentSlider items={departments} label="Departments" /></div>
+      <div className="wide-container department-grid">{departments.map(({ name, image }) => <article className="department-card" key={name}><Media src={`/sites/nafas/figma/${image}`} alt={`Team ${name}`} sizes="(max-width: 767px) 100vw, 20vw" /><h3>{name}</h3></article>)}</div>
     </section>
 
     <section className="milestone-section content-section"><Media src="/sites/nafas/figma/milestone.png" className="hero-background" /><MilestoneCarousel items={milestones} /></section>
@@ -138,7 +137,7 @@ export default function AboutPage() {
       </div></div>
     </section>
 
-    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Strategic Locations Across Malaysia</h2><p>We stay close to you to ensure timely fertilizer deliveries nationwide through an efficient, reliable distribution network that meets customer needs.</p><AboutLocationList locations={aboutLocations} /></div><AboutLocationMap locations={aboutLocations} label="NAFAS location network map in Peninsular Malaysia, Sabah and Sarawak" /></div></section>
+    <section id="lokasi" className="about-locations content-section"><div className="wide-container"><div><h2>Strategic Locations Across Malaysia</h2><p>We stay close to you to ensure timely fertilizer deliveries nationwide through an efficient, reliable distribution network that meets customer needs.</p></div><AboutLocationMap locations={aboutLocations} label="NAFAS location network map in Peninsular Malaysia, Sabah and Sarawak" /></div></section>
     <CallToAction />
   </div>;
 }

@@ -25,7 +25,7 @@ export function MonthlyPosters({ items }: { items: MonthlyPoster[] }) {
 
 export function ReportLibrary({ items }: { items: SustainabilityReport[] }) {
   const years = getResourceYears(items);
-  const [year, setYear] = useState(years[0]);
+  const [year, setYear] = useState(years.find(value => items.some(item => item.year === value)) ?? years[0]);
   const reports = items.filter(item => item.year === year);
   const [selected, setSelected] = useState<SustainabilityReport | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
