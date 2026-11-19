@@ -280,11 +280,11 @@ body .milestone-markers span .solid-icon{font-size:24px;color:inherit}
 
 /* BugHerd #46: hotspot markers with labels (hover, focus or tap) */
 body .home-map-marker{pointer-events:auto;cursor:pointer;padding:0;appearance:none}
-body .home-map-marker:hover,body .home-map-marker:focus-visible{z-index:3}
+body .home-map-marker:hover,body .home-map-marker:focus,body .home-map-marker:focus-visible{z-index:3}
 body .home-map-label{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translate(-50%,6px);display:flex;flex-direction:column;align-items:center;padding:6px 12px;border-radius:8px;background:#fff;color:#1d1d1d;box-shadow:0 6px 18px #1f312226;font:600 13px/1.3 var(--font-heading),sans-serif;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,transform .2s}
 body .home-map-label small{font:400 11px/1.3 var(--font-body,inherit);color:#595959}
 body .home-map-label:after{content:'';position:absolute;top:100%;left:50%;width:8px;height:8px;background:#fff;transform:translate(-50%,-4px) rotate(45deg)}
-body .home-map-marker:hover .home-map-label,body .home-map-marker:focus-visible .home-map-label{opacity:1;visibility:visible;transform:translate(-50%,0)}
+body .home-map-marker:hover .home-map-label,body .home-map-marker:focus .home-map-label,body .home-map-marker:focus-visible .home-map-label{opacity:1;visibility:visible;transform:translate(-50%,0)}
 body .home-map-marker:focus-visible{outline:2px solid #005a44;outline-offset:6px}
 
 /* BugHerd #51: department photos supplied by the client are pre-cropped, so drop the old per-card offsets */
@@ -303,10 +303,30 @@ body .partners .partner-names img{height:100%;width:100%;object-fit:contain}
 
 /* BugHerd #50: numbered pins; "Place, State" label shows on hover or keyboard focus (no list) */
 .about-location-pin{position:absolute;width:34px;height:34px;padding:0;border:0;background:none;transform:translate(-50%,-100%);cursor:pointer;appearance:none}
-.about-location-pin:hover,.about-location-pin:focus-visible{z-index:3}
+.about-location-pin:hover,.about-location-pin:focus,.about-location-pin:focus-visible{z-index:3}
 .about-location-drop{position:absolute;inset:0;display:grid;place-items:center;border:2px solid #fff;border-radius:50% 50% 50% 0;background:#c8102e;box-shadow:0 3px 8px #0003;transform:rotate(-45deg)}
 .about-location-drop b{transform:rotate(45deg);color:#fff;font:700 15px/1 var(--font-heading),sans-serif}
 .about-location-label{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);opacity:0;visibility:hidden;white-space:nowrap;padding:6px 12px;border-radius:8px;background:#fff;color:#1a2d6b;box-shadow:0 6px 18px #1f312233;font:700 14px/1.3 var(--font-heading),sans-serif;pointer-events:none;transition:opacity .2s}
-.about-location-pin:hover .about-location-label,.about-location-pin:focus-visible .about-location-label{opacity:1;visibility:visible}
+.about-location-pin:hover .about-location-label,.about-location-pin:focus .about-location-label,.about-location-pin:focus-visible .about-location-label{opacity:1;visibility:visible}
 .about-location-pin:focus-visible{outline:2px solid #1a2d6b;outline-offset:4px}
 @media(max-width:767px){.about-location-pin{width:26px;height:26px}.about-location-drop b{font-size:11px}.about-location-label{font-size:12px}}
+
+/* Labels near the left or right edge of a map hang inward so they are never clipped on small screens */
+.about-location-pin.label-start .about-location-label{left:0;transform:none}
+.about-location-pin.label-end .about-location-label{left:auto;right:0;transform:none}
+body .home-map-marker.label-start .home-map-label{left:-8px;transform:translate(0,6px)}
+body .home-map-marker.label-end .home-map-label{left:auto;right:-8px;transform:translate(0,6px)}
+body .home-map-marker.label-start:hover .home-map-label,body .home-map-marker.label-start:focus .home-map-label,body .home-map-marker.label-end:hover .home-map-label,body .home-map-marker.label-end:focus .home-map-label{transform:none}
+body .home-map-marker.label-start .home-map-label:after{left:16px}
+body .home-map-marker.label-end .home-map-label:after{left:auto;right:16px;transform:translate(0,-4px) rotate(45deg)}
+
+/* Phones: stronger fade behind the milestone copy so it stays readable over the photo */
+@media(max-width:767px){.about-page .milestone-section:after{background:linear-gradient(90deg,#fffffff0 0%,#ffffffb3 58%,#ffffff00 100%)}}
+
+/* Report covers are portrait (910x1287), so the cover box follows that ratio instead of the old 264x307 crop */
+body .sustainability-page .sustainability-report>.media{height:auto!important;aspect-ratio:910/1287!important}
+body .sustainability-page .sustainability-report>.media img{object-fit:cover!important}
+@media(max-width:767px){body .sustainability-page .sustainability-report>.media{width:min(264px,100%)!important}}
+
+/* Bigger invisible tap area around the small home-map dots on touch screens */
+@media(pointer:coarse){body .home-map-marker:before{content:'';position:absolute;inset:-10px;border-radius:50%}}

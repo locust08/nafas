@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { SolidIcon } from './shared/solid-icon';
 import { distributorCount, distributorStates, type Distributor } from '@/lib/nafas/distributors';
@@ -30,6 +30,28 @@ export function DistributorDirectory({ labels }: { labels: DistributorLabels }) 
   const [active, setActive] = useState('all');
   const visible = distributorStates.filter((state) => active === 'all' || state.slug === active);
   const shown = visible.reduce((total, state) => total + state.distributors.length, 0);
+  const grid = useRef<HTMLDivElement>(null);
+
+  // Cards fade in up one by one as they scroll into view, and again after every filter change (Stuttgart showroom reference).
+  useLayoutEffect(() => {
+    const element = grid.current;
+    if (!element) return;
+    const cards = Array.from(element.querySelectorAll<HTMLElement>('.distributor-card'));
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      cards.forEach((card) => card.classList.add('is-revealed'));
+      return;
+    }
+    element.classList.add('motion-ready');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, [active]);
 
   return <div className="distributor-directory">
     <div className="distributor-filter" role="group" aria-label={labels.filterLabel}>
@@ -37,10 +59,10 @@ export function DistributorDirectory({ labels }: { labels: DistributorLabels }) 
       {distributorStates.map((state) => <button key={state.slug} type="button" className={active === state.slug ? 'active' : ''} aria-pressed={active === state.slug} onClick={() => setActive(state.slug)}>{state.name} ({state.distributors.length})</button>)}
     </div>
     <p className="distributor-status" role="status" aria-live="polite">{shown} {labels.countSuffix}</p>
-    <div className="distributor-grid">
-      {visible.flatMap((state) => state.distributors.map((distributor) => {
+    <div className="distributor-grid" key={active} ref={grid}>
+      {visible.flatMap((state) => state.distributors.map((distributor) => ({ state, distributor }))).map(({ state, distributor }, index) => {
         const links = mapLinks(distributor, state.name);
-        return <article key={`${state.slug}-${distributor.name}`} className="distributor-card"><div className="distributor-card-body">
+        return <article key={`${state.slug}-${distributor.name}`} className="distributor-card" style={{ '--card-index': index % 6 } as CSSProperties}><div className="distributor-card-body">
           <div className="distributor-card-header">
             <h3>{distributor.name}</h3>
             <span className="distributor-badge">{state.name}</span>
@@ -56,7 +78,7 @@ export function DistributorDirectory({ labels }: { labels: DistributorLabels }) 
             <a className="distributor-map waze" href={links.waze} target="_blank" rel="noopener noreferrer"><i className="distributor-map-icon waze-logo" aria-hidden="true" /><span>{labels.waze}</span></a>
           </div></div>
         </article>;
-      }))}
+      })}
     </div>
   </div>;
 }

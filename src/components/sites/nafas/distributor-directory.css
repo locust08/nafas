@@ -59,3 +59,30 @@
 .distributor-map-icon.map-pin{-webkit-mask-image:none;mask-image:none;background:none;width:auto;height:auto;font-size:20px;line-height:1;display:inline-flex;align-items:center}
 .distributor-map-icon.map-pin::before{content:'\f5a0';font-family:'NAFAS Figma Icons';font-weight:900}
 .distributor-map-icon.waze-logo{width:26px;height:26px;-webkit-mask:none;mask:none;background:url('/sites/nafas/assets/icons/waze-color.png') center/contain no-repeat}
+
+/* Hover and entrance follow the Stuttgart showroom reference: lift 4px, brand-colour border, soft shadow; cards fade in up one by one. Brand colour here is green. */
+.distributor-benefits .distributor-card:hover{transform:skewX(-7deg) translateY(-4px);border-color:var(--green);box-shadow:0 12px 28px rgba(0,100,48,.14)}
+.distributor-grid.motion-ready .distributor-card:not(.is-revealed){opacity:0;transform:skewX(-7deg) translateY(32px)}
+.distributor-grid.motion-ready .distributor-card{transition:opacity .95s cubic-bezier(.16,1,.3,1) calc(var(--card-index,0)*.18s),transform .95s cubic-bezier(.16,1,.3,1) calc(var(--card-index,0)*.18s),box-shadow .35s ease,border-color .35s ease}
+.distributor-grid.motion-ready .distributor-card.is-revealed:hover{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease,border-color .35s ease}
+@media(max-width:720px){
+  .distributor-benefits .distributor-card:hover{transform:skewX(-4deg) translateY(-4px)}
+  .distributor-grid.motion-ready .distributor-card:not(.is-revealed){transform:skewX(-4deg) translateY(32px)}
+}
+@media(prefers-reduced-motion:reduce){.distributor-grid.motion-ready .distributor-card{transition:none}}
+
+/* The body now shares the card's slant, so every row sits the same distance from the diagonal edge; each row is skewed back so its text stays upright. */
+.distributor-benefits .distributor-card-body{transform:none}
+.distributor-benefits .distributor-card-header,.distributor-benefits .distributor-info-row,.distributor-benefits .distributor-actions{transform:skewX(7deg);transform-origin:0 50%}
+@media(max-width:720px){.distributor-benefits .distributor-card-header,.distributor-benefits .distributor-info-row,.distributor-benefits .distributor-actions{transform:skewX(4deg)}}
+
+/* The two map buttons wrap instead of running past the slanted card edge when a card is narrow (phones, 2-column tablets) */
+.distributor-actions{flex-wrap:wrap}
+.distributor-benefits .distributor-map{flex:1 1 130px}
+@media(max-width:480px){.distributor-benefits .distributor-map{padding:10px 12px;font-size:14px}}
+
+/* Narrower screens: the state tabs scroll sideways, so fade the right edge to hint that more tabs follow */
+@media(max-width:1279px){
+  .distributor-filter{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .distributor-filter button{font-size:16px;padding:15px 12px}
+}
